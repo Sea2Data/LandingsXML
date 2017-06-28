@@ -1,0 +1,107 @@
+<jxb:bindings version="2.1"
+              xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+              xmlns:xs="http://www.w3.org/2001/XMLSchema"
+              xmlns:annox="http://annox.dev.java.net"
+              xmlns:namespace="http://jaxb2-commons.dev.java.net/namespace-prefix"
+              xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+              jxb:extensionBindingPrefixes="xjc annox">
+    <!-- By Kjetil Fjellheim (IMR) -->
+    <!--
+    This document is referenced from the pom and is used to change the generated classes.
+    The following has been added. -->
+
+    <jxb:bindings schemaLocation="../resources/landinger.xsd" node="/xs:schema">
+        <jxb:schemaBindings>
+            <jxb:package name="LandingsTypes.v1" />
+        </jxb:schemaBindings>
+        <jxb:bindings>
+            <namespace:prefix name="" />
+        </jxb:bindings>
+        <jxb:bindings node="//xs:complexType[@name='LandingsdataType']">
+            <annox:annotate target="package">@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters({@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigDecimalAdapter.class, type = java.math.BigDecimal.class),@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigIntegerAdapter.class, type = java.math.BigInteger.class)})</annox:annotate>
+            <annox:annotate>
+                <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="landingsdata"/>
+            </annox:annotate>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:complexType[@name='SeddellinjeType']">
+            <annox:annotate target="package">@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters({@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigDecimalAdapter.class, type = java.math.BigDecimal.class),@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigIntegerAdapter.class, type = java.math.BigInteger.class)})</annox:annotate>            
+            <annox:annotate>
+                <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="selldellinje"/>
+            </annox:annotate>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:complexType[@name='DokumentType']">
+            <annox:annotate target="package">@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters({@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigDecimalAdapter.class, type = java.math.BigDecimal.class),@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigIntegerAdapter.class, type = java.math.BigInteger.class)})</annox:annotate>            
+            <annox:annotate>
+                <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="dokument"/>
+            </annox:annotate>
+        </jxb:bindings>      
+        <jxb:bindings node="//xs:complexType[@name='SalgslagType']">
+            <annox:annotate target="package">@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters({@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigDecimalAdapter.class, type = java.math.BigDecimal.class),@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigIntegerAdapter.class, type = java.math.BigInteger.class)})</annox:annotate>            
+            <annox:annotate>
+                <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="salgslag"/>
+            </annox:annotate>
+        </jxb:bindings>  
+        <jxb:bindings node="//xs:complexType[@name='MottakerType']">
+            <annox:annotate target="package">@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters({@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigDecimalAdapter.class, type = java.math.BigDecimal.class),@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigIntegerAdapter.class, type = java.math.BigInteger.class)})</annox:annotate>            
+            <annox:annotate>
+                <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="mottaker"/>
+            </annox:annotate>
+        </jxb:bindings>                        
+        <jxb:bindings node="//xs:complexType[@name='LandingOgProduksjonType']">
+            <annox:annotate target="package">@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters({@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigDecimalAdapter.class, type = java.math.BigDecimal.class),@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigIntegerAdapter.class, type = java.math.BigInteger.class)})</annox:annotate>            
+            <annox:annotate>
+                <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="produksjon"/>
+            </annox:annotate>
+        </jxb:bindings>   
+        <jxb:bindings node="//xs:complexType[@name='FangstdataType']">
+            <annox:annotate target="package">@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters({@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigDecimalAdapter.class, type = java.math.BigDecimal.class),@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigIntegerAdapter.class, type = java.math.BigInteger.class)})</annox:annotate>            
+            <annox:annotate>
+                <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="fangstdata"/>
+            </annox:annotate>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:complexType[@name='FiskerType']">
+            <annox:annotate target="package">@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters({@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigDecimalAdapter.class, type = java.math.BigDecimal.class),@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigIntegerAdapter.class, type = java.math.BigInteger.class)})</annox:annotate>            
+            <annox:annotate>
+                <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="fisker"/>
+            </annox:annotate>
+        </jxb:bindings> 
+        <jxb:bindings node="//xs:complexType[@name='FartøyType']">
+            <annox:annotate target="package">@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters({@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigDecimalAdapter.class, type = java.math.BigDecimal.class),@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigIntegerAdapter.class, type = java.math.BigInteger.class)})</annox:annotate>            
+            <annox:annotate>
+                <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="fartøy"/>
+            </annox:annotate>
+            
+            <jxb:bindings node="//xs:complexType[@name='MottakendeFartøyType']">
+                <annox:annotate target="package">@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters({@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigDecimalAdapter.class, type = java.math.BigDecimal.class),@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigIntegerAdapter.class, type = java.math.BigInteger.class)})</annox:annotate>            
+                <annox:annotate>
+                    <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="mottakendefartøy"/>
+                </annox:annotate>
+            </jxb:bindings>
+            <jxb:bindings node="//xs:complexType[@name='KvoteType']">
+                <annox:annotate target="package">@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters({@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigDecimalAdapter.class, type = java.math.BigDecimal.class),@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigIntegerAdapter.class, type = java.math.BigInteger.class)})</annox:annotate>            
+                <annox:annotate>
+                    <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="kvote"/>
+                </annox:annotate>
+            </jxb:bindings>
+            <jxb:bindings node="//xs:complexType[@name='RedskapType']">
+                <annox:annotate target="package">@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters({@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigDecimalAdapter.class, type = java.math.BigDecimal.class),@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigIntegerAdapter.class, type = java.math.BigInteger.class)})</annox:annotate>            
+                <annox:annotate>
+                    <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="redskap"/>
+                </annox:annotate>
+            </jxb:bindings>
+            <jxb:bindings node="//xs:complexType[@name='DellandingType']">
+                <annox:annotate target="package">@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters({@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigDecimalAdapter.class, type = java.math.BigDecimal.class),@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigIntegerAdapter.class, type = java.math.BigInteger.class)})</annox:annotate>            
+                <annox:annotate>
+                    <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="dellanding"/>
+                </annox:annotate>
+            </jxb:bindings>
+            <jxb:bindings node="//xs:complexType[@name='ProduktType']">
+                <annox:annotate target="package">@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters({@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigDecimalAdapter.class, type = java.math.BigDecimal.class),@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigIntegerAdapter.class, type = java.math.BigInteger.class)})</annox:annotate>            
+                <annox:annotate>
+                    <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="produkt"/>
+                </annox:annotate>
+            </jxb:bindings>
+        </jxb:bindings>
+    </jxb:bindings>
+
+</jxb:bindings>
