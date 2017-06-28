@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://tempuri.org/XMLSchema.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/XMLSchema.xsd"
+    xmlns:mstns="http://tempuri.org/XMLSchema.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  >
+    <xs:complexType name="Dokument">
+      <xs:sequence>
+        <xs:element name="Dokumentnummer" type="xs:string"></xs:element>
+        <xs:element name="Dokumenttype_Kode" type="xs:integer"></xs:element>
+        <xs:element name="Dokumenttype_Bokmål" type="xs:string"></xs:element>
+        <xs:element name="DokumentVersjonsnummer" type="xs:integer"></xs:element>
+        <xs:element name="DokumentFormulardato" type="xs:date"></xs:element>
+        <xs:element name="DokumentElektroniskDato" type="xs:string"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Salgslag">
+      <xs:sequence>
+        <xs:element name="SalgslagID" type="xs:integer"></xs:element>
+        <xs:element name="Salgslag_kode" type="xs:string"></xs:element>
+        <xs:element name="Salgslag" type="xs:string"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Mottaker">
+      <xs:sequence>
+        <xs:element name="Mottakernasjonalitet_kode" type="xs:string"></xs:element>
+        <xs:element name="Mottakernasjonalitet_bokmål" type="xs:string"></xs:element>
+        <xs:element name="Mottaksstasjon" type="xs:string"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="LandingOgProduksjon">
+      <xs:sequence>
+        <xs:element name="Landingskommune_kode" type="xs:integer"></xs:element>
+        <xs:element name="Landingskommune" type="xs:string"></xs:element>
+        <xs:element name="Landingsfylke_kode" type="xs:integer"></xs:element>
+        <xs:element name="Landingsfylke" type="xs:string"></xs:element>
+        <xs:element name="Landingsnasjon_kode" type="xs:string"></xs:element>
+        <xs:element name="Landingsnasjon_bokmål" type="xs:string"></xs:element>
+        <xs:element name="Produksjonsanlegg" type="xs:string"></xs:element>
+        <xs:element name="Produksjonskommune_kode" type="xs:string"></xs:element>
+        <xs:element name="Produksjonskommune" type="xs:string"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Fisker">
+      <xs:sequence>
+        <xs:element name="Fiskerkommune_kode" type="xs:integer"></xs:element>
+        <xs:element name="Fiskerkommune" type="xs:string"></xs:element>
+        <xs:element name="Fiskernasjonalitet_kode" type="xs:string"></xs:element>
+        <xs:element name="Fiskernasjonalitet_bokmål" type="xs:string"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Fartøy">
+      <xs:sequence>
+        <xs:element name="Fartøynavn" type="xs:string"></xs:element>
+        <xs:element name="FartøyID" type="xs:string"></xs:element>
+        <xs:element name="Registreringsmerke_seddel" type="xs:string"></xs:element>
+        <xs:element name="Radiokallesignal_seddel" type="xs:string"></xs:element>
+        <xs:element name="StørsteLengde" type="xs:decimal"></xs:element>
+        <xs:element name="Lengdegruppe_kode" type="xs:string"></xs:element>
+        <xs:element name="Lengdegruppe_bokmål" type="xs:string"></xs:element>
+        <xs:element name="Bruttotonnasje1969" type="xs:integer"></xs:element>
+        <xs:element name="BruttotonnasjeAnnen" type="xs:integer"></xs:element>
+        <xs:element name="Byggeår" type="xs:integer"></xs:element>
+        <xs:element name="Ombyggingsår" type="xs:integer"></xs:element>
+        <xs:element name="Motorkraft" type="xs:integer"></xs:element>
+        <xs:element name="Motorbyggeår" type="xs:integer"></xs:element>
+        <xs:element name="FartøyGjelderFraDato" type="xs:date"></xs:element>
+        <xs:element name="FartøyGjelderTilDato" type="xs:string"></xs:element>
+        <xs:element name="Fartøytype_kode" type="xs:string"></xs:element>
+        <xs:element name="Fartøytype_bokmål" type="xs:string"></xs:element>
+        <xs:element name="KvotefartøyRegMerke" type="xs:string"></xs:element>
+        <xs:element name="Fartøykommune_kode" type="xs:integer"></xs:element>
+        <xs:element name="Fartøykommune" type="xs:string"></xs:element>
+        <xs:element name="Fartøyfylke_kode" type="xs:integer"></xs:element>
+        <xs:element name="Fartøyfylke" type="xs:string"></xs:element>
+        <xs:element name="Fartøynasjonalitet_kode" type="xs:string"></xs:element>
+        <xs:element name="Fartøynasjonalitet_bokmål" type="xs:string"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="MottakendeFartøy">
+      <xs:sequence>
+        <xs:element name="MottakendeFartøyRegMerke" type="xs:string"></xs:element>
+        <xs:element name="MottakendeFartøyRKAL" type="xs:string"></xs:element>
+        <xs:element name="MottakendeFartøytype_kode" type="xs:string"></xs:element>
+        <xs:element name="MottakendeFart.type_bokmål" type="xs:string"></xs:element>
+        <xs:element name="MottakendeFartøynasj_kode" type="xs:string"></xs:element>
+        <xs:element name="MottakendeFartøynasj_bokmål" type="xs:string"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Datoer">
+      <xs:sequence>
+        <xs:element name="Fangstår" type="xs:integer"></xs:element>
+        <xs:element name="SisteFangstdato" type="xs:date"></xs:element>
+        <xs:element name="Landingsdato" type="xs:string"></xs:element>
+        <xs:element name="Landingsklokkeslett" type="xs:string"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Kvote">
+      <xs:sequence>
+        <xs:element name="Kvotetype_kode" type="xs:string"></xs:element>
+        <xs:element name="Kvotetype_bokmål" type="xs:string"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Redskap">
+      <xs:sequence>
+        <xs:element name="Redskap_kode" type="xs:string"></xs:element>
+        <xs:element name="Redskap_bokmål" type="xs:string"></xs:element>
+        <xs:element name="HovedgruppeRedskap_kode" type="xs:string"></xs:element>
+        <xs:element name="HovedgruppeRedskap_bokmål" type="xs:string"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Geografi">
+      <xs:sequence>
+        <xs:element name="Fangstfelt_kode" type="xs:string"></xs:element>
+        <xs:element name="KystHav_kode" type="xs:integer"></xs:element>
+        <xs:element name="Hovedområde_kode" type="xs:integer"></xs:element>
+        <xs:element name="Hovedområde_bokmål" type="xs:string"></xs:element>
+        <xs:element name="Lokasjon_kode" type="xs:string"></xs:element>
+        <xs:element name="Sone_kode" type="xs:string"></xs:element>
+        <xs:element name="Sone_bokmål" type="xs:string"></xs:element>
+        <xs:element name="Områdegruppering_bokmål" type="xs:string"></xs:element>
+        <xs:element name="HovedområdeFAO_kode" type="xs:string"></xs:element>
+        <xs:element name="HovedområdeFAO_bokmål" type="xs:string"></xs:element>
+        <xs:element name="NordSørFor62GraderNord" type="xs:string"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Diverse">
+      <xs:sequence>
+        <xs:element name="Fangstdagbok_nummer" type="xs:long"></xs:element>
+        <xs:element name="Fangstdagbok_turnummer" type="xs:long"></xs:element>
+        <xs:element name="Dellanding_signal" type="xs:integer"></xs:element>
+        <xs:element name="NesteMottaksstasjon" type="xs:string"></xs:element>
+        <xs:element name="ForrigeMottakstasjon" type="xs:string"></xs:element>
+        <xs:element name="Linjenummer" type="xs:long"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Art">
+      <xs:sequence>
+        <xs:element name="Art_kode" type="xs:string"></xs:element>
+        <xs:element name="Art_bokmål" type="xs:string"></xs:element>
+        <xs:element name="ArtsgruppeHistorisk_kode" type="xs:string"></xs:element>
+        <xs:element name="ArtsgruppeHistorisk_bokmål" type="xs:string"></xs:element>
+        <xs:element name="HovedgruppeArt_kode" type="xs:string"></xs:element>
+        <xs:element name="HovedgruppeArt_bokmål" type="xs:string"></xs:element>
+        <xs:element name="ArtFAO_kode" type="xs:string"></xs:element>
+        <xs:element name="ArtFAO_bokmål" type="xs:string"></xs:element>
+        <xs:element name="Produkttilstand_kode" type="xs:string"></xs:element>
+        <xs:element name="Produkttilstand_bokmål" type="xs:string"></xs:element>
+        <xs:element name="Konserveringsmåte_kode" type="xs:string"></xs:element>
+        <xs:element name="Konserveringsmåte_bokmål" type="xs:string"></xs:element>
+        <xs:element name="Landingsmåte_kode" type="xs:string"></xs:element>
+        <xs:element name="Landingsmåte_bokmål" type="xs:string"></xs:element>
+        <xs:element name="Kvalitet_kode" type="xs:string"></xs:element>
+        <xs:element name="Kvalitet_bokmål" type="xs:string"></xs:element>
+        <xs:element name="Størrelsesgruppering_kode" type="xs:string"></xs:element>
+        <xs:element name="Anvendelse_kode" type="xs:string"></xs:element>
+        <xs:element name="Anvendelse_bokmål" type="xs:string"></xs:element>
+        <xs:element name="HovedgruppeAnvendelse_kode" type="xs:string"></xs:element>
+        <xs:element name="HovedgruppeAnvendelse_bokmål" type="xs:string"></xs:element>
+        <xs:element name="AntallStykk" type="xs:integer"></xs:element>
+        <xs:element name="Bruttovekt" type="xs:decimal"></xs:element>
+        <xs:element name="Produktvekt" type="xs:decimal"></xs:element>
+        <xs:element name="Rundvekt" type="xs:decimal"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+</xs:schema>
