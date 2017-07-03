@@ -111,7 +111,6 @@
             <xs:element name="FartøyGjelderTilDato" type="xs:string"></xs:element>
             <xs:element name="Fartøytype_kode" type="xs:string"></xs:element>
             <xs:element name="Fartøytype_bokmål" type="xs:string"></xs:element>
-            <xs:element name="KvotefartøyRegMerke" type="xs:string"></xs:element>
             <xs:element name="Fartøykommune_kode" type="xs:integer"></xs:element>
             <xs:element name="Fartøykommune" type="xs:string"></xs:element>
             <xs:element name="Fartøyfylke_kode" type="xs:integer"></xs:element>
@@ -132,6 +131,7 @@
     </xs:complexType>
     <xs:complexType name="KvoteType">
         <xs:sequence>
+            <xs:element name="KvotefartøyRegMerke" type="xs:string"></xs:element>
             <xs:element name="Kvotetype_kode" type="xs:string"></xs:element>
             <xs:element name="Kvotetype_bokmål" type="xs:string"></xs:element>
         </xs:sequence>
@@ -170,7 +170,6 @@
             <xs:element name="ForrigeMottakstasjon" type="xs:string"></xs:element>
         </xs:sequence>
     </xs:complexType>
-
     <xs:complexType name="ProduktType">
         <xs:sequence>
             <xs:element name="Art_kode" type="xs:string"></xs:element>
