@@ -11,6 +11,11 @@
             <artifactId>commons-documentation-jaxb</artifactId>
             <version>1.1.4-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>no.imr.sea2data</groupId>
+            <artifactId>Formats</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

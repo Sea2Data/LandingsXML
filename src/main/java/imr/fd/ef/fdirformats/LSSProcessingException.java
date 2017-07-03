@@ -6,14 +6,13 @@
 package imr.fd.ef.fdirformats;
 
 /**
- * Read LSS files and converts to xml
+ *
  * @author Edvin Fuglebakk edvin.fuglebakk@imr.no
  */
-public class XMLConverter {
-    
-    //read lss
-    //look up columns by name to make sure
-    // build jax objects
-    // write xml
+class LSSProcessingException extends Exception {
+
+    public LSSProcessingException(String msg) {
+        super(msg);
+    }
     
 }
