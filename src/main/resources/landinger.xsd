@@ -51,7 +51,7 @@
             <xs:element name="Dokumenttype_Kode" type="xs:integer"></xs:element>
             <xs:element name="Dokumenttype_Bokmål" type="xs:string"></xs:element>
             <xs:element name="DokumentVersjonsnummer" type="xs:integer"></xs:element>
-            <xs:element name="DokumentFormulardato" type="xs:date"></xs:element>
+            <xs:element name="DokumentFormulardato" type="xs:string"></xs:element>
             <xs:element name="DokumentElektroniskDato" type="xs:string"></xs:element>
         </xs:sequence>
     </xs:complexType>
@@ -107,7 +107,7 @@
             <xs:element name="Ombyggingsår" type="xs:integer"></xs:element>
             <xs:element name="Motorkraft" type="xs:integer"></xs:element>
             <xs:element name="Motorbyggeår" type="xs:integer"></xs:element>
-            <xs:element name="FartøyGjelderFraDato" type="xs:date"></xs:element>
+            <xs:element name="FartøyGjelderFraDato" type="xs:string"></xs:element>
             <xs:element name="FartøyGjelderTilDato" type="xs:string"></xs:element>
             <xs:element name="Fartøytype_kode" type="xs:string"></xs:element>
             <xs:element name="Fartøytype_bokmål" type="xs:string"></xs:element>
@@ -147,7 +147,7 @@
     <xs:complexType name="FangstdataType">
         <xs:sequence>
             <xs:element name="Fangstår" type="xs:integer"></xs:element>
-            <xs:element name="SisteFangstdato" type="xs:date"></xs:element>
+            <xs:element name="SisteFangstdato" type="xs:string"></xs:element>
             <xs:element name="Fangstfelt_kode" type="xs:string"></xs:element>
             <xs:element name="KystHav_kode" type="xs:integer"></xs:element>
             <xs:element name="Hovedområde_kode" type="xs:integer"></xs:element>
