@@ -5,6 +5,7 @@
  */
 package imr.fd.ef.fdirformats;
 
+import HierarchicalData.SchemaReader;
 import LandingsTypes.v1.DellandingType;
 import LandingsTypes.v1.DokumentType;
 import LandingsTypes.v1.FangstdataType;
@@ -41,25 +42,46 @@ import javax.xml.bind.JAXBException;
 
 /**
  * Read LSS files and converts to xml.
+ * 
+ * 2do: Handle encoding for output
+ * Handle convertion back to flat table.
  *
  * @author Edvin Fuglebakk edvin.fuglebakk@imr.no
  */
 public class LSS2XMLConverter {
 
     ObjectFactory factory;
-    Map<String, Integer> indexMap; // maps header of column to 0-baed column index.
+    TouchedMap<String, Integer> indexMap; // maps header of column to 0-baed column index.
+    protected String encoding;
+    private LSSadapters.BigDecimalAdapter decimaladapter;
 
     public LSS2XMLConverter() {
         this.factory = new ObjectFactory();
-        this.indexMap = new HashMap<>();
+        this.indexMap = new TouchedMap<>();
+        this.decimaladapter = new LSSadapters.BigDecimalAdapter();
     }
 
-    public static void convertFile(File lss, File xml) throws JAXBException, FileNotFoundException, LSSProcessingException, IOException, Exception {
+    public static void main(String[] args) throws LSSProcessingException, IOException, FileNotFoundException, Exception {
+        if (args.length < 2) {
+            SchemaReader schemareader = new SchemaReader(LSS2XMLConverter.class.getClassLoader().getResourceAsStream("landinger.xsd"));
+            System.out.println("Converts LSS file to xml-format: " + schemareader.getTargetNameSpace());
+            System.out.println("Usage: <LSS file> <xml file> [encoding]");
+        }
+        String encoding = System.getProperty("file.encoding");
+        if (args.length == 3){
+            encoding = args[2];
+        }
+        LSS2XMLConverter.convertFile(new File(args[0]), new File(args[1]), encoding);
+    }
+
+    public static void convertFile(File lss, File xml, String encoding) throws JAXBException, FileNotFoundException, LSSProcessingException, IOException, Exception {
         InputStream instream = new FileInputStream(lss);
         LSS2XMLConverter converter = new LSS2XMLConverter();
         
+        converter.setEncoding(encoding);
+
         List<List<String>> rows = converter.readLSS(instream);
-        
+
         converter.processHeader(rows.remove(0));
         LandingsdataType data = converter.processRows(rows);
 
@@ -68,21 +90,39 @@ public class LSS2XMLConverter {
     }
 
     /**
+     * Get encoding used
+     * @return 
+     */
+    public String getEncoding() {
+        return encoding;
+    }
+
+    /**
+     * Set encoding used
+     * @param encoding 
+     */
+    public void setEncoding(String encoding) {
+        this.encoding = encoding;
+    }
+
+    /**
      * Read LSS file as pipe delimited file.
+     *
      * @param lss
-     * @return Linked list of all rows in file, including header. Each row is an ArrayList
-     * @throws IOException 
+     * @return Linked list of all rows in file, including header. Each row is an
+     * ArrayList
+     * @throws IOException
      */
     protected List<List<String>> readLSS(InputStream lss) throws IOException {
-        InputStreamReader instream = new InputStreamReader(lss);
+        InputStreamReader instream = new InputStreamReader(lss, this.encoding);
         BufferedReader in = new BufferedReader(instream);
-        String delim = "|";
+        String delim = "\\|";
 
         List<List<String>> rows = new LinkedList<>();
         for (String line = in.readLine(); line != null; line = in.readLine()) {
             rows.add(new ArrayList<>(Arrays.asList(line.split(delim))));
         }
-        
+
         return rows;
     }
 
@@ -100,7 +140,7 @@ public class LSS2XMLConverter {
     }
 
     /**
-     * Processes rows from LLS. Consumes row elements as processed
+     * Processes rows from LLS.
      *
      * @param rows
      * @return
@@ -111,11 +151,16 @@ public class LSS2XMLConverter {
         for (List<String> row : rows) {
             landingsdata.getSelldellinje().add(this.processRow(row));
         }
+
+        if (indexMap.untouched().size() > 0) {
+            throw new LSSProcessingException("Some columns not handled: " + indexMap.untouched());
+        }
+
         return landingsdata;
     }
 
     /**
-     * Processes row from LLS consumes elements of rows as processed
+     * Processes row from LLS
      *
      * @param row
      * @return
@@ -123,9 +168,8 @@ public class LSS2XMLConverter {
      * the end
      */
     protected SeddellinjeType processRow(List<String> row) throws LSSProcessingException, Exception {
-
         SeddellinjeType linje = this.factory.createSeddellinjeType();
-        linje.setLinjenummer(new Long(row.remove(this.indexMap.get("Linjenummer").intValue())));
+        linje.setLinjenummer(this.parseLong(row.get(this.indexMap.get("Linjenummer"))));
         linje.setDokument(this.processDokument(row));
         linje.setDellanding(this.processDellanding(row));
         linje.setFangstdata(this.processFangsData(row));
@@ -139,258 +183,248 @@ public class LSS2XMLConverter {
         linje.setSalgslag(this.processSalgslag(row));
         linje.setKvote(this.processKvote(row));
 
-        if (row.size() > 0) {
-            throw new LSSProcessingException("Some columns not handled: " + row.toString());
-        }
-
         return linje;
     }
 
     private DokumentType processDokument(List<String> row) throws Exception {
-        int lpre = row.size();
+
         DokumentType dokument = this.factory.createDokumentType();
-        dokument.setDokumentnummer(row.remove(this.indexMap.get("Dokumentnummer").intValue()));
-        dokument.setDokumenttypeKode(new BigInteger(row.remove(this.indexMap.get("Dokumenttype (kode)").intValue())));
-        dokument.setDokumenttypeBokmål(row.remove(this.indexMap.get("Dokumenttype (bokmål)").intValue()));
-        dokument.setDokumentVersjonsnummer(new BigInteger(row.remove(this.indexMap.get("Dokument versjonsnummer").intValue())));        
-        dokument.setDokumentFormulardato(row.remove(this.indexMap.get("Dokument formulardato").intValue()));
-        dokument.setDokumentElektroniskDato(row.remove(this.indexMap.get("Dokument elektronisk dato").intValue()));
-        
-        if (lpre == row.size()){
-            return null;
-        }
-        
+        dokument.setDokumentnummer(row.get(this.indexMap.get("Dokumentnummer")));
+        dokument.setDokumenttypeKode(this.parseBigInteger(row.get(this.indexMap.get("Dokumenttype (kode)"))));
+        dokument.setDokumenttypeBokmål(row.get(this.indexMap.get("Dokumenttype (bokmål)")));
+        dokument.setDokumentVersjonsnummer(this.parseBigInteger(row.get(this.indexMap.get("Dokument versjonsnummer"))));
+        dokument.setDokumentFormulardato(row.get(this.indexMap.get("Dokument formulardato")));
+        dokument.setDokumentElektroniskDato(row.get(this.indexMap.get("Dokument elektronisk dato")));
+
         return dokument;
     }
 
     private DellandingType processDellanding(List<String> row) {
-        int lpre = row.size();
         DellandingType dell = this.factory.createDellandingType();
-        dell.setDellandingSignal(new BigInteger(row.remove(this.indexMap.get("Dellanding (signal)").intValue())));
-        dell.setForrigeMottakstasjon(row.remove(this.indexMap.get("Neste mottaksstasjon").intValue()));
-        dell.setNesteMottaksstasjon(row.remove(this.indexMap.get("Forrige mottakstasjon").intValue()));
-        
-        if (lpre == row.size()){
-            return null;
-        }
+        dell.setDellandingSignal(this.parseBigInteger(row.get(this.indexMap.get("Dellanding (signal)"))));
+        dell.setForrigeMottakstasjon(row.get(this.indexMap.get("Neste mottaksstasjon")));
+        dell.setNesteMottaksstasjon(row.get(this.indexMap.get("Forrige mottakstasjon")));
 
         return dell;
     }
 
     private FangstdataType processFangsData(List<String> row) {
-        int lpre = row.size();
-        
         FangstdataType fangst = this.factory.createFangstdataType();
-        fangst.setFangstdagbokNummer(new Long(row.remove(this.indexMap.get("Fangstdagbok (nummer)").intValue())));
-        fangst.setFangstdagbokTurnummer(new Long(row.remove(this.indexMap.get("Fangstdagbok (turnummer)").intValue())));
-        fangst.setFangstfeltKode(row.remove(this.indexMap.get("Fangstfelt (kode)").intValue()));
-        fangst.setFangstår(new BigInteger(row.remove(this.indexMap.get("Fangstår").intValue())));
-        fangst.setHovedområdeBokmål(row.remove(this.indexMap.get("Hovedområde (bokmål)").intValue()));
-        fangst.setHovedområdeFAOBokmål(row.remove(this.indexMap.get("Hovedområde FAO (bokmål)").intValue()));
-        fangst.setHovedområdeFAOKode(row.remove(this.indexMap.get("Hovedområde FAO (kode)").intValue()));
-        fangst.setHovedområdeKode(new BigInteger(row.remove(this.indexMap.get("Hovedområde (kode)").intValue())));
-        fangst.setKystHavKode(new BigInteger(row.remove(this.indexMap.get("Kyst/hav (kode)").intValue())));
-        fangst.setLokasjonKode(row.remove(this.indexMap.get("Lokasjon (kode)").intValue()));
-        fangst.setNordSørFor62GraderNord(row.remove(this.indexMap.get("Nord/sør for 62 grader nord").intValue()));
-        fangst.setOmrådegrupperingBokmål(row.remove(this.indexMap.get("Områdegruppering (bokmål)").intValue()));
-        fangst.setSisteFangstdato(row.remove(this.indexMap.get("Siste fangstdato").intValue()));
-        fangst.setSoneBokmål(row.remove(this.indexMap.get("Sone (bokmål)").intValue()));
-        fangst.setSoneKode(row.remove(this.indexMap.get("Sone (kode)").intValue()));
-        
-        if (row.size() == lpre){
-            return null;
-        }
-        
+        fangst.setFangstdagbokNummer(this.parseLong(row.get(this.indexMap.get("Fangstdagbok (nummer)"))));
+        fangst.setFangstdagbokTurnummer(this.parseLong(row.get(this.indexMap.get("Fangstdagbok (turnummer)"))));
+        fangst.setFangstfeltKode(row.get(this.indexMap.get("Fangstfelt (kode)")));
+        fangst.setFangstår(this.parseBigInteger(row.get(this.indexMap.get("Fangstår"))));
+        fangst.setHovedområdeBokmål(row.get(this.indexMap.get("Hovedområde (bokmål)")));
+        fangst.setHovedområdeFAOBokmål(row.get(this.indexMap.get("Hovedområde FAO (bokmål)")));
+        fangst.setHovedområdeFAOKode(row.get(this.indexMap.get("Hovedområde FAO (kode)")));
+        fangst.setHovedområdeKode(this.parseBigInteger(row.get(this.indexMap.get("Hovedområde (kode)"))));
+        fangst.setKystHavKode(this.parseBigInteger(row.get(this.indexMap.get("Kyst/hav (kode)"))));
+        fangst.setLokasjonKode(row.get(this.indexMap.get("Lokasjon (kode)")));
+        fangst.setNordSørFor62GraderNord(row.get(this.indexMap.get("Nord/sør for 62 grader nord")));
+        fangst.setOmrådegrupperingBokmål(row.get(this.indexMap.get("Områdegruppering (bokmål)")));
+        fangst.setSisteFangstdato(row.get(this.indexMap.get("Siste fangstdato")));
+        fangst.setSoneBokmål(row.get(this.indexMap.get("Sone (bokmål)")));
+        fangst.setSoneKode(row.get(this.indexMap.get("Sone (kode)")));
+
         return fangst;
     }
 
-    private FartøyType processFartøy(List<String> row) {
-        int lpre = row.size();
-        
+    private FartøyType processFartøy(List<String> row) throws Exception {
         FartøyType fartøy = this.factory.createFartøyType();
-        fartøy.setBruttotonnasje1969(new BigInteger(row.remove(this.indexMap.get("Bruttotonnasje 1969").intValue())));
-        fartøy.setBruttotonnasjeAnnen(new BigInteger(row.remove(this.indexMap.get("Bruttotonnasje annen").intValue())));
-        fartøy.setByggeår(new BigInteger(row.remove(this.indexMap.get("Byggeår").intValue())));
-        fartøy.setFartøyGjelderFraDato(row.remove(this.indexMap.get("Fartøy gjelder fra dato").intValue()));
-        fartøy.setFartøyGjelderTilDato(row.remove(this.indexMap.get("Fartøy gjelder til dato").intValue()));
-        fartøy.setFartøyID(row.remove(this.indexMap.get("Fartøy ID").intValue()));
-        fartøy.setFartøyfylke(row.remove(this.indexMap.get("Fartøyfylke").intValue()));
-        fartøy.setFartøyfylkeKode(new BigInteger(row.remove(this.indexMap.get("Fartøyfylke (kode)").intValue())));
-        fartøy.setFartøykommune(row.remove(this.indexMap.get("Fartøykommune").intValue()));
-        fartøy.setFartøykommuneKode(new BigInteger(row.remove(this.indexMap.get("Fartøykommune (kode)").intValue())));
-        fartøy.setFartøynasjonalitetBokmål(row.remove(this.indexMap.get("Fartøynasjonalitet (bokmål)").intValue()));
-        fartøy.setFartøynasjonalitetKode(row.remove(this.indexMap.get("Fartøynasjonalitet (kode)").intValue()));
-        fartøy.setFartøynavn(row.remove(this.indexMap.get("Fartøynavn").intValue()));
-        fartøy.setFartøytypeBokmål(row.remove(this.indexMap.get("Fartøytype (bokmål)").intValue()));
-        fartøy.setFartøytypeKode(row.remove(this.indexMap.get("Fartøytype (kode)").intValue()));
-        fartøy.setLengdegruppeKode(row.remove(this.indexMap.get("Lengdegruppe (kode)").intValue()));
-        fartøy.setLengdegruppeBokmål(row.remove(this.indexMap.get("Lengdegruppe (bokmål)").intValue()));
-        fartøy.setMotorbyggeår(new BigInteger(row.remove(this.indexMap.get("Motorbyggeår").intValue())));
-        fartøy.setMotorkraft(new BigInteger(row.remove(this.indexMap.get("Motorkraft").intValue())));
-        fartøy.setOmbyggingsår(new BigInteger(row.remove(this.indexMap.get("Ombyggingsår").intValue())));
-        fartøy.setRadiokallesignalSeddel(row.remove(this.indexMap.get("Radiokallesignal (seddel)").intValue()));
-        fartøy.setRegistreringsmerkeSeddel(row.remove(this.indexMap.get("Registreringsmerke (seddel)").intValue()));
-        fartøy.setStørsteLengde(new BigDecimal(row.remove(this.indexMap.get("Største lengde").intValue())));
+        fartøy.setBruttotonnasje1969(this.parseBigInteger(row.get(this.indexMap.get("Bruttotonnasje 1969"))));
+        fartøy.setBruttotonnasjeAnnen(this.parseBigInteger(row.get(this.indexMap.get("Bruttotonnasje annen"))));
+        fartøy.setByggeår(this.parseBigInteger(row.get(this.indexMap.get("Byggeår"))));
+        fartøy.setFartøyGjelderFraDato(row.get(this.indexMap.get("Fartøy gjelder fra dato")));
+        fartøy.setFartøyGjelderTilDato(row.get(this.indexMap.get("Fartøy gjelder til dato")));
+        fartøy.setFartøyID(row.get(this.indexMap.get("Fartøy ID")));
+        fartøy.setFartøyfylke(row.get(this.indexMap.get("Fartøyfylke")));
+        fartøy.setFartøyfylkeKode(this.parseBigInteger(row.get(this.indexMap.get("Fartøyfylke (kode)"))));
+        fartøy.setFartøykommune(row.get(this.indexMap.get("Fartøykommune")));
+        fartøy.setFartøykommuneKode(this.parseBigInteger(row.get(this.indexMap.get("Fartøykommune (kode)"))));
+        fartøy.setFartøynasjonalitetBokmål(row.get(this.indexMap.get("Fartøynasjonalitet (bokmål)")));
+        fartøy.setFartøynasjonalitetKode(row.get(this.indexMap.get("Fartøynasjonalitet (kode)")));
+        fartøy.setFartøynavn(row.get(this.indexMap.get("Fartøynavn")));
+        fartøy.setFartøytypeBokmål(row.get(this.indexMap.get("Fartøytype (bokmål)")));
+        fartøy.setFartøytypeKode(row.get(this.indexMap.get("Fartøytype (kode)")));
+        fartøy.setLengdegruppeKode(row.get(this.indexMap.get("Lengdegruppe (kode)")));
+        fartøy.setLengdegruppeBokmål(row.get(this.indexMap.get("Lengdegruppe (bokmål)")));
+        fartøy.setMotorbyggeår(this.parseBigInteger(row.get(this.indexMap.get("Motorbyggeår"))));
+        fartøy.setMotorkraft(this.parseBigInteger(row.get(this.indexMap.get("Motorkraft"))));
+        fartøy.setOmbyggingsår(this.parseBigInteger(row.get(this.indexMap.get("Ombyggingsår"))));
+        fartøy.setRadiokallesignalSeddel(row.get(this.indexMap.get("Radiokallesignal (seddel)")));
+        fartøy.setRegistreringsmerkeSeddel(row.get(this.indexMap.get("Registreringsmerke (seddel)")));
+        fartøy.setStørsteLengde(this.parseBigDecimal(row.get(this.indexMap.get("Største lengde"))));
 
-        if (lpre == row.size()){
-            return null;
-        }
-        
         return fartøy;
     }
 
     private FiskerType processFisker(List<String> row) {
-        int lpre = row.size();
-        
         FiskerType fisker = this.factory.createFiskerType();
-        fisker.setFiskerkommune(row.remove(this.indexMap.get("Fiskerkommune").intValue()));
-        fisker.setFiskerkommuneKode(new BigInteger(row.remove(this.indexMap.get("Fiskerkommune (kode)").intValue())));
-        fisker.setFiskernasjonalitetBokmål(row.remove(this.indexMap.get("Fiskernasjonalitet (bokmål)").intValue()));
-        fisker.setFiskernasjonalitetKode(row.remove(this.indexMap.get("Fiskernasjonalitet (kode)").intValue()));
-        
-        if (lpre == row.size()){
-            return null;
-        }
-        
+        fisker.setFiskerkommune(row.get(this.indexMap.get("Fiskerkommune")));
+        fisker.setFiskerkommuneKode(this.parseBigInteger(row.get(this.indexMap.get("Fiskerkommune (kode)"))));
+        fisker.setFiskernasjonalitetBokmål(row.get(this.indexMap.get("Fiskernasjonalitet (bokmål)")));
+        fisker.setFiskernasjonalitetKode(row.get(this.indexMap.get("Fiskernasjonalitet (kode)")));
+
         return fisker;
     }
 
     private MottakendeFartøyType processMottakendeFartøy(List<String> row) {
-        int lpre = row.size();
-        
         MottakendeFartøyType mfart = this.factory.createMottakendeFartøyType();
-        mfart.setMottakendeFartøyRKAL(row.remove(this.indexMap.get("Mottakende fartøy rkal").intValue()));
-        mfart.setMottakendeFartøyRegMerke(row.remove(this.indexMap.get("Mottakende fartøy reg.merke").intValue()));
-        mfart.setMottakendeFartøynasjBokmål(row.remove(this.indexMap.get("Mottakende fart.nasj (bokmål)").intValue()));
-        mfart.setMottakendeFartøynasjKode(row.remove(this.indexMap.get("Mottakende fartøynasj. (kode)").intValue()));
-        mfart.setMottakendeFartøytypeBokmål(row.remove(this.indexMap.get("Mottakende fart.type (bokmål)").intValue()));
-        mfart.setMottakendeFartøytypeKode(row.remove(this.indexMap.get("Mottakende fartøytype (kode)").intValue()));
-        
-        if (lpre == row.size()){
-            return null;
-        }
-        
+        mfart.setMottakendeFartøyRKAL(row.get(this.indexMap.get("Mottakende fartøy rkal")));
+        mfart.setMottakendeFartøyRegMerke(row.get(this.indexMap.get("Mottakende fartøy reg.merke")));
+        mfart.setMottakendeFartøynasjBokmål(row.get(this.indexMap.get("Mottakende fart.nasj (bokmål)")));
+        mfart.setMottakendeFartøynasjKode(row.get(this.indexMap.get("Mottakende fartøynasj. (kode)")));
+        mfart.setMottakendeFartøytypeBokmål(row.get(this.indexMap.get("Mottakende fart.type (bokmål)")));
+        mfart.setMottakendeFartøytypeKode(row.get(this.indexMap.get("Mottakende fartøytype (kode)")));
+
         return mfart;
     }
 
     private MottakerType processMottaker(List<String> row) {
-        int lpre = row.size();
-        
         MottakerType mottaker = this.factory.createMottakerType();
-        mottaker.setMottakernasjonalitetBokmål(row.remove(this.indexMap.get("Mottakernasjonalitet (bokmål)").intValue()));
-        mottaker.setMottakernasjonalitetKode(row.remove(this.indexMap.get("Mottakernasjonalitet (kode)").intValue()));
-        mottaker.setMottaksstasjon(row.remove(this.indexMap.get("Mottaksstasjon").intValue()));
-        
-        if (row.size() == lpre){
-            return null;
-        }
-        
+        mottaker.setMottakernasjonalitetBokmål(row.get(this.indexMap.get("Mottakernasjonalitet (bokmål)")));
+        mottaker.setMottakernasjonalitetKode(row.get(this.indexMap.get("Mottakernasjonalitet (kode)")));
+        mottaker.setMottaksstasjon(row.get(this.indexMap.get("Mottaksstasjon")));
+
         return mottaker;
     }
 
     private LandingOgProduksjonType processProduksjon(List<String> row) {
-        int lpre = row.size();
-        
         LandingOgProduksjonType produksjon = this.factory.createLandingOgProduksjonType();
-        produksjon.setLandingsdato(row.remove(this.indexMap.get("Landingsdato").intValue()));
-        produksjon.setLandingsfylke(row.remove(this.indexMap.get("Landingsfylke").intValue()));
-        produksjon.setLandingsfylkeKode(new BigInteger(row.remove(this.indexMap.get("Landingsfylke (kode)").intValue())));
-        produksjon.setLandingsklokkeslett(row.remove(this.indexMap.get("Landingsklokkeslett").intValue()));
-        produksjon.setLandingskommune(row.remove(this.indexMap.get("Landingskommune").intValue()));
-        produksjon.setLandingskommuneKode(new BigInteger(row.remove(this.indexMap.get("Landingskommune (kode)").intValue())));
-        produksjon.setLandingsnasjonBokmål(row.remove(this.indexMap.get("Landingsnasjon (bokmål)").intValue()));
-        produksjon.setLandingsnasjonKode(row.remove(this.indexMap.get("Landingsnasjon (kode)").intValue()));
-        produksjon.setProduksjonsanlegg(row.remove(this.indexMap.get("Produksjonsanlegg").intValue()));
-        produksjon.setProduksjonskommune(row.remove(this.indexMap.get("Produksjonskommune").intValue()));
-        produksjon.setProduksjonskommuneKode(row.remove(this.indexMap.get("Produksjonskommune (kode)").intValue()));
-        
-        if (row.size() == lpre){
-            return null;
-        }
-        
+        produksjon.setLandingsdato(row.get(this.indexMap.get("Landingsdato")));
+        produksjon.setLandingsfylke(row.get(this.indexMap.get("Landingsfylke")));
+        produksjon.setLandingsfylkeKode(this.parseBigInteger(row.get(this.indexMap.get("Landingsfylke (kode)"))));
+        produksjon.setLandingsklokkeslett(row.get(this.indexMap.get("Landingsklokkeslett")));
+        produksjon.setLandingskommune(row.get(this.indexMap.get("Landingskommune")));
+        produksjon.setLandingskommuneKode(this.parseBigInteger(row.get(this.indexMap.get("Landingskommune (kode)"))));
+        produksjon.setLandingsnasjonBokmål(row.get(this.indexMap.get("Landingsnasjon (bokmål)")));
+        produksjon.setLandingsnasjonKode(row.get(this.indexMap.get("Landingsnasjon (kode)")));
+        produksjon.setProduksjonsanlegg(row.get(this.indexMap.get("Produksjonsanlegg")));
+        produksjon.setProduksjonskommune(row.get(this.indexMap.get("Produksjonskommune")));
+        produksjon.setProduksjonskommuneKode(row.get(this.indexMap.get("Produksjonskommune (kode)")));
+
         return produksjon;
     }
 
     private RedskapType processRedskap(List<String> row) {
-        int lpre = row.size();
-        
         RedskapType redskap = this.factory.createRedskapType();
-        redskap.setHovedgruppeRedskapBokmål(row.remove(this.indexMap.get("Hovedgruppe redskap (bokmål)").intValue()));
-        redskap.setHovedgruppeRedskapKode(row.remove(this.indexMap.get("Hovedgruppe redskap (kode)").intValue()));
-        redskap.setRedskapBokmål(row.remove(this.indexMap.get("Redskap (bokmål)").intValue()));
-        redskap.setRedskapKode(row.remove(this.indexMap.get("Redskap (kode)").intValue()));
-        
-        if (lpre == row.size()){
-            return null;
-        }
-        
+        redskap.setHovedgruppeRedskapBokmål(row.get(this.indexMap.get("Hovedgruppe redskap (bokmål)")));
+        redskap.setHovedgruppeRedskapKode(row.get(this.indexMap.get("Hovedgruppe redskap (kode)")));
+        redskap.setRedskapBokmål(row.get(this.indexMap.get("Redskap (bokmål)")));
+        redskap.setRedskapKode(row.get(this.indexMap.get("Redskap (kode)")));
+
         return redskap;
     }
 
     private SalgslagType processSalgslag(List<String> row) {
-        int lpre = row.size();
-        
         SalgslagType salgslag = this.factory.createSalgslagType();
-        salgslag.setSalgslag(row.remove(this.indexMap.get("Salgslag").intValue()));
-        salgslag.setSalgslagID(new BigInteger(row.remove(this.indexMap.get("Salgslag ID").intValue())));
-        salgslag.setSalgslagKode(row.remove(this.indexMap.get("Salgslag (kode)").intValue()));
-        
-        if (lpre == row.size()){
-            return null;
-        }
-        
+        salgslag.setSalgslag(row.get(this.indexMap.get("Salgslag")));
+        salgslag.setSalgslagID(this.parseBigInteger(row.get(this.indexMap.get("Salgslag ID"))));
+        salgslag.setSalgslagKode(row.get(this.indexMap.get("Salgslag (kode)")));
+
         return salgslag;
     }
 
-    private ProduktType processProdukt(List<String> row) {
-        int lpre = row.size();
-        
+    private ProduktType processProdukt(List<String> row) throws Exception {
         ProduktType produkt = this.factory.createProduktType();
-        produkt.setAntallStykk(new BigInteger(row.remove(this.indexMap.get("Antall stykk").intValue())));
-        produkt.setAnvendelseBokmål(row.remove(this.indexMap.get("Anvendelse (bokmål)").intValue()));
-        produkt.setAnvendelseKode(row.remove(this.indexMap.get("Anvendelse (kode)").intValue()));
-        produkt.setArtBokmål(row.remove(this.indexMap.get("Art (bokmål)").intValue()));
-        produkt.setArtFAOBokmål(row.remove(this.indexMap.get("Art FAO (bokmål)").intValue()));
-        produkt.setArtFAOKode(row.remove(this.indexMap.get("Art FAO (kode)").intValue()));
-        produkt.setArtKode(row.remove(this.indexMap.get("Art (kode)").intValue()));
-        produkt.setArtsgruppeHistoriskBokmål(row.remove(this.indexMap.get("Artsgruppe historisk (bokmål)").intValue()));
-        produkt.setArtsgruppeHistoriskKode(row.remove(this.indexMap.get("Artsgruppe historisk (kode)").intValue()));
-        produkt.setBruttovekt(new BigDecimal(row.remove(this.indexMap.get("Bruttovekt").intValue())));
-        produkt.setHovedgruppeAnvendelseBokmål(row.remove(this.indexMap.get("Hovedgr anvendelse (bokmål)").intValue()));
-        produkt.setHovedgruppeAnvendelseKode(row.remove(this.indexMap.get("Hovedgruppe anvendelse (kode)").intValue()));
-        produkt.setHovedgruppeArtBokmål(row.remove(this.indexMap.get("Hovedgruppe art (bokmål)").intValue()));
-        produkt.setHovedgruppeArtKode(row.remove(this.indexMap.get("Hovedgruppe art (kode)").intValue()));
-        produkt.setKonserveringsmåteBokmål(row.remove(this.indexMap.get("Konserveringsmåte (bokmål)").intValue()));
-        produkt.setKonserveringsmåteKode(row.remove(this.indexMap.get("Konserveringsmåte (kode)").intValue()));
-        produkt.setKvalitetBokmål(row.remove(this.indexMap.get("Kvalitet (bokmål)").intValue()));
-        produkt.setKvalitetKode(row.remove(this.indexMap.get("Kvalitet (kode)").intValue()));
-        produkt.setLandingsmåteBokmål(row.remove(this.indexMap.get("Landingsmåte (bokmål)").intValue()));
-        produkt.setLandingsmåteKode(row.remove(this.indexMap.get("Landingsmåte (kode)").intValue()));
-        produkt.setProdukttilstandBokmål(row.remove(this.indexMap.get("Produkttilstand (bokmål)").intValue()));
-        produkt.setProdukttilstandKode(row.remove(this.indexMap.get("Produkttilstand (kode)").intValue()));
-        produkt.setProduktvekt(new BigDecimal(row.remove(this.indexMap.get("Produktvekt").intValue())));
-        produkt.setRundvekt(new BigDecimal(row.remove(this.indexMap.get("Rundvekt").intValue())));
-        produkt.setStørrelsesgrupperingKode(row.remove(this.indexMap.get("Størrelsesgruppering (kode)").intValue()));
-        
-        if (lpre == row.size()){
-            return null;
-        }
+        produkt.setAntallStykk(this.parseBigInteger(row.get(this.indexMap.get("Antall stykk"))));
+        produkt.setAnvendelseBokmål(row.get(this.indexMap.get("Anvendelse (bokmål)")));
+        produkt.setAnvendelseKode(row.get(this.indexMap.get("Anvendelse (kode)")));
+        produkt.setArtBokmål(row.get(this.indexMap.get("Art (bokmål)")));
+        produkt.setArtFAOBokmål(row.get(this.indexMap.get("Art FAO (bokmål)")));
+        produkt.setArtFAOKode(row.get(this.indexMap.get("Art FAO (kode)")));
+        produkt.setArtKode(row.get(this.indexMap.get("Art (kode)")));
+        produkt.setArtsgruppeHistoriskBokmål(row.get(this.indexMap.get("Artsgruppe historisk (bokmål)")));
+        produkt.setArtsgruppeHistoriskKode(row.get(this.indexMap.get("Artsgruppe historisk (kode)")));
+        produkt.setBruttovekt(this.parseBigDecimal(row.get(this.indexMap.get("Bruttovekt"))));
+        produkt.setHovedgruppeAnvendelseBokmål(row.get(this.indexMap.get("Hovedgr anvendelse (bokmål)")));
+        produkt.setHovedgruppeAnvendelseKode(row.get(this.indexMap.get("Hovedgruppe anvendelse (kode)")));
+        produkt.setHovedgruppeArtBokmål(row.get(this.indexMap.get("Hovedgruppe art (bokmål)")));
+        produkt.setHovedgruppeArtKode(row.get(this.indexMap.get("Hovedgruppe art (kode)")));
+        produkt.setKonserveringsmåteBokmål(row.get(this.indexMap.get("Konserveringsmåte (bokmål)")));
+        produkt.setKonserveringsmåteKode(row.get(this.indexMap.get("Konserveringsmåte (kode)")));
+        produkt.setKvalitetBokmål(row.get(this.indexMap.get("Kvalitet (bokmål)")));
+        produkt.setKvalitetKode(row.get(this.indexMap.get("Kvalitet (kode)")));
+        produkt.setLandingsmåteBokmål(row.get(this.indexMap.get("Landingsmåte (bokmål)")));
+        produkt.setLandingsmåteKode(row.get(this.indexMap.get("Landingsmåte (kode)")));
+        produkt.setProdukttilstandBokmål(row.get(this.indexMap.get("Produkttilstand (bokmål)")));
+        produkt.setProdukttilstandKode(row.get(this.indexMap.get("Produkttilstand (kode)")));
+        produkt.setProduktvekt(this.parseBigDecimal(row.get(this.indexMap.get("Produktvekt"))));
+        produkt.setRundvekt(this.parseBigDecimal(row.get(this.indexMap.get("Rundvekt"))));
+        produkt.setStørrelsesgrupperingKode(row.get(this.indexMap.get("Størrelsesgruppering (kode)")));
+
         return produkt;
     }
 
     private KvoteType processKvote(List<String> row) {
-        int lpre = row.size();
-        
         KvoteType kvote = this.factory.createKvoteType();
-        kvote.setKvotefartøyRegMerke(row.remove(this.indexMap.get("Kvotefartøy reg.merke").intValue()));
-        kvote.setKvotetypeBokmål(row.remove(this.indexMap.get("Kvotetype (bokmål)").intValue()));
-        kvote.setKvotetypeKode(row.remove(this.indexMap.get("Kvotetype (kode)").intValue()));
-        
-        if (row.size() == lpre){
+        kvote.setKvotefartøyRegMerke(row.get(this.indexMap.get("Kvotefartøy reg.merke")));
+        kvote.setKvotetypeBokmål(row.get(this.indexMap.get("Kvotetype (bokmål)")));
+        kvote.setKvotetypeKode(row.get(this.indexMap.get("Kvotetype (kode)")));
+
+        return kvote;
+    }
+
+    private long parseLong(String l) {
+        if (l.length()==0){
+            return 0;
+        }
+        return new Long(l);
+    }
+
+    private BigInteger parseBigInteger(String i) {
+        if (i.length()==0){
             return null;
         }
+        return new BigInteger(i);
+    }
+
+    private BigDecimal parseBigDecimal(String d) throws Exception {
+        if (d.length()==0){
+            return null;
+        }
+        return this.decimaladapter.parse(d);
+    }
+
+    //keeps track of which keys has been accessed, so that we can ensure that all columns have been processed.
+    private static class TouchedMap<K, V> extends HashMap<K, V> {
+
+        private Map<K, Boolean> touched;
+
+        public TouchedMap() {
+            super();
+            touched = new HashMap<>();
+        }
+
+        @Override
+        public V put(K key, V value) {
+            if (!touched.containsKey(key)) {
+                touched.put(key, Boolean.FALSE);
+            }
+
+            return super.put(key, value);
+        }
         
-        return kvote;
+        @Override
+        public V get(Object key){
+            touched.put((K)key, Boolean.TRUE);
+            return super.get(key);
+        }
+        
+        /**
+         * Returns list of all keys that have never been "getted".
+         * @return 
+         */
+        public List<K> untouched(){
+            List<K> untouched = new ArrayList<>();
+            for ( Entry<K, Boolean> entries: this.touched.entrySet()){
+                if (!entries.getValue()){
+                    untouched.add(entries.getKey());
+                }
+            }
+            return untouched;
+        }
+
     }
 
 }
