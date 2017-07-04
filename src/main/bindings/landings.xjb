@@ -15,9 +15,6 @@
         <jxb:schemaBindings>
             <jxb:package name="LandingsTypes.v1" />
         </jxb:schemaBindings>
-        <jxb:globalBindings>
-            <jxb:javaType name="java.util.Date" xmlType="xs:date" />
-        </jxb:globalBindings>
         <jxb:bindings>
             <namespace:prefix name="" />
         </jxb:bindings>
@@ -37,7 +34,7 @@
         </jxb:bindings>
         <jxb:bindings node="//xs:complexType[@name='DokumentType']">
             <inheritance:extends> HierarchicalData.HierarchicalData </inheritance:extends>
-            <annox:annotate target="package">@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters({@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigDecimalAdapter.class, type = java.math.BigDecimal.class),@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigIntegerAdapter.class, type = java.math.BigInteger.class), @javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.DateAdapter.class, type = java.util.Date.class)})</annox:annotate>            
+            <annox:annotate target="package">@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters({@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigDecimalAdapter.class, type = java.math.BigDecimal.class),@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = adapters.BigIntegerAdapter.class, type = java.math.BigInteger.class)})</annox:annotate>            
             <annox:annotate>
                 <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="dokument"/>
             </annox:annotate>
