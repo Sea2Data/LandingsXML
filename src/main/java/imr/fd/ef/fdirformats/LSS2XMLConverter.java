@@ -19,7 +19,6 @@ import LandingsTypes.v1.MottakerType;
 import LandingsTypes.v1.ObjectFactory;
 import LandingsTypes.v1.ProduktType;
 import LandingsTypes.v1.RedskapType;
-import LandingsTypes.v1.SalgslagType;
 import LandingsTypes.v1.SeddellinjeType;
 import java.io.BufferedReader;
 import java.io.File;
@@ -32,19 +31,18 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.nio.file.FileAlreadyExistsException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import javax.xml.bind.JAXBException;
 
 /**
  * Read LSS files and converts to xml.
- * 
- * 2do: Handle encoding for output
- * Handle convertion back to flat table.
+ *
+ * 2do: Handle encoding for output Handle convertion back to flat table.
  *
  * @author Edvin Fuglebakk edvin.fuglebakk@imr.no
  */
@@ -52,8 +50,8 @@ public class LSS2XMLConverter {
 
     ObjectFactory factory;
     TouchedMap<String, Integer> indexMap; // maps header of column to 0-baed column index.
-    protected String encoding;
     private LSSadapters.BigDecimalAdapter decimaladapter;
+    private String LSSdelim = "\\|";
 
     public LSS2XMLConverter() {
         this.factory = new ObjectFactory();
@@ -66,64 +64,41 @@ public class LSS2XMLConverter {
             SchemaReader schemareader = new SchemaReader(LSS2XMLConverter.class.getClassLoader().getResourceAsStream("landinger.xsd"));
             System.out.println("Converts LSS file to xml-format: " + schemareader.getTargetNameSpace());
             System.out.println("Usage: <LSS file> <xml file> [encoding]");
+            System.exit(0);
         }
         String encoding = System.getProperty("file.encoding");
-        if (args.length == 3){
+        if (args.length == 3) {
             encoding = args[2];
+        }
+        File landings_xml = new File(args[1]);
+        if (landings_xml.length() > 0) {
+            throw new FileAlreadyExistsException("Landings xml file already exist");
         }
         LSS2XMLConverter.convertFile(new File(args[0]), new File(args[1]), encoding);
     }
 
     public static void convertFile(File lss, File xml, String encoding) throws JAXBException, FileNotFoundException, LSSProcessingException, IOException, Exception {
         InputStream instream = new FileInputStream(lss);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(instream, encoding));
+
         LSS2XMLConverter converter = new LSS2XMLConverter();
-        
-        converter.setEncoding(encoding);
 
-        List<List<String>> rows = converter.readLSS(instream);
-
-        converter.processHeader(rows.remove(0));
-        LandingsdataType data = converter.processRows(rows);
-
-        OutputStream stream = new FileOutputStream(xml);
-        HierarchicalData.IO.save(stream, data);
-    }
-
-    /**
-     * Get encoding used
-     * @return 
-     */
-    public String getEncoding() {
-        return encoding;
-    }
-
-    /**
-     * Set encoding used
-     * @param encoding 
-     */
-    public void setEncoding(String encoding) {
-        this.encoding = encoding;
-    }
-
-    /**
-     * Read LSS file as pipe delimited file.
-     *
-     * @param lss
-     * @return Linked list of all rows in file, including header. Each row is an
-     * ArrayList
-     * @throws IOException
-     */
-    protected List<List<String>> readLSS(InputStream lss) throws IOException {
-        InputStreamReader instream = new InputStreamReader(lss, this.encoding);
-        BufferedReader in = new BufferedReader(instream);
-        String delim = "\\|";
-
-        List<List<String>> rows = new LinkedList<>();
-        for (String line = in.readLine(); line != null; line = in.readLine()) {
-            rows.add(new ArrayList<>(Arrays.asList(line.split(delim))));
+        converter.processHeader(converter.getRow(reader.readLine()));
+        LandingsdataType landingsdata = converter.factory.createLandingsdataType();
+        for (String line = reader.readLine(); line != null; line = reader.readLine()) {
+            landingsdata.getSelldellinje().add(converter.processRow(converter.getRow(line)));
         }
 
-        return rows;
+        if (converter.indexMap.untouched().size() > 0) {
+            throw new LSSProcessingException("Some columns not handled: " + converter.indexMap.untouched());
+        }
+
+        reader.close();
+        instream.close();
+
+        OutputStream stream = new FileOutputStream(xml);
+        HierarchicalData.IO.save(stream, landingsdata);
+        stream.close();
     }
 
     /**
@@ -139,24 +114,11 @@ public class LSS2XMLConverter {
         }
     }
 
-    /**
-     * Processes rows from LLS.
-     *
-     * @param rows
-     * @return
-     * @throws LSSProcessingException
-     */
-    protected LandingsdataType processRows(List<List<String>> rows) throws LSSProcessingException, Exception {
-        LandingsdataType landingsdata = this.factory.createLandingsdataType();
-        for (List<String> row : rows) {
-            landingsdata.getSelldellinje().add(this.processRow(row));
-        }
-
-        if (indexMap.untouched().size() > 0) {
-            throw new LSSProcessingException("Some columns not handled: " + indexMap.untouched());
-        }
-
-        return landingsdata;
+    private List<String> getRow(String line) {
+        line += " ";
+        String[] a = line.split(this.LSSdelim);
+        a[a.length - 1] = a[a.length - 1].trim(); //deal with delimiters at end of line..
+        return new ArrayList<>(Arrays.asList(a));
     }
 
     /**
@@ -180,7 +142,6 @@ public class LSS2XMLConverter {
         linje.setProduksjon(this.processProduksjon(row));
         linje.setProdukt(this.processProdukt(row));
         linje.setRedskap(this.processRedskap(row));
-        linje.setSalgslag(this.processSalgslag(row));
         linje.setKvote(this.processKvote(row));
 
         return linje;
@@ -195,6 +156,9 @@ public class LSS2XMLConverter {
         dokument.setDokumentVersjonsnummer(this.parseBigInteger(row.get(this.indexMap.get("Dokument versjonsnummer"))));
         dokument.setDokumentFormulardato(row.get(this.indexMap.get("Dokument formulardato")));
         dokument.setDokumentElektroniskDato(row.get(this.indexMap.get("Dokument elektronisk dato")));
+        dokument.setSalgslag(row.get(this.indexMap.get("Salgslag")));
+        dokument.setSalgslagID(this.parseBigInteger(row.get(this.indexMap.get("Salgslag ID"))));
+        dokument.setSalgslagKode(row.get(this.indexMap.get("Salgslag (kode)")));
 
         return dokument;
     }
@@ -316,15 +280,6 @@ public class LSS2XMLConverter {
         return redskap;
     }
 
-    private SalgslagType processSalgslag(List<String> row) {
-        SalgslagType salgslag = this.factory.createSalgslagType();
-        salgslag.setSalgslag(row.get(this.indexMap.get("Salgslag")));
-        salgslag.setSalgslagID(this.parseBigInteger(row.get(this.indexMap.get("Salgslag ID"))));
-        salgslag.setSalgslagKode(row.get(this.indexMap.get("Salgslag (kode)")));
-
-        return salgslag;
-    }
-
     private ProduktType processProdukt(List<String> row) throws Exception {
         ProduktType produkt = this.factory.createProduktType();
         produkt.setAntallStykk(this.parseBigInteger(row.get(this.indexMap.get("Antall stykk"))));
@@ -366,21 +321,21 @@ public class LSS2XMLConverter {
     }
 
     private long parseLong(String l) {
-        if (l.length()==0){
+        if (l.length() == 0) {
             return 0;
         }
         return new Long(l);
     }
 
     private BigInteger parseBigInteger(String i) {
-        if (i.length()==0){
+        if (i.length() == 0) {
             return null;
         }
         return new BigInteger(i);
     }
 
     private BigDecimal parseBigDecimal(String d) throws Exception {
-        if (d.length()==0){
+        if (d.length() == 0) {
             return null;
         }
         return this.decimaladapter.parse(d);
@@ -404,21 +359,22 @@ public class LSS2XMLConverter {
 
             return super.put(key, value);
         }
-        
+
         @Override
-        public V get(Object key){
-            touched.put((K)key, Boolean.TRUE);
+        public V get(Object key) {
+            touched.put((K) key, Boolean.TRUE);
             return super.get(key);
         }
-        
+
         /**
          * Returns list of all keys that have never been "getted".
-         * @return 
+         *
+         * @return
          */
-        public List<K> untouched(){
+        public List<K> untouched() {
             List<K> untouched = new ArrayList<>();
-            for ( Entry<K, Boolean> entries: this.touched.entrySet()){
-                if (!entries.getValue()){
+            for (Entry<K, Boolean> entries : this.touched.entrySet()) {
+                if (!entries.getValue()) {
                     untouched.add(entries.getKey());
                 }
             }

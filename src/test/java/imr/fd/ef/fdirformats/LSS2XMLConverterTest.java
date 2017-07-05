@@ -5,11 +5,7 @@
  */
 package imr.fd.ef.fdirformats;
 
-import LandingsTypes.v1.LandingsdataType;
-import LandingsTypes.v1.SeddellinjeType;
 import java.io.File;
-import java.io.InputStream;
-import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -22,22 +18,22 @@ import static org.junit.Assert.*;
  * @author Edvin Fuglebakk edvin.fuglebakk@imr.no
  */
 public class LSS2XMLConverterTest {
-    
+
     public LSS2XMLConverterTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -48,14 +44,14 @@ public class LSS2XMLConverterTest {
     @Test
     public void testMain() throws Exception {
         System.out.println("main");
-        
-        File tmp = File.createTempFile("landinger_", ".tmp");
+
+        File tmp = File.createTempFile("landinger_test_main_", ".tmp");
         tmp.deleteOnExit();
-                
+
         File lss = new File(LSS2XMLConverterTest.class.getClassLoader().getResource("FDIR_HI_LSS_FANGST_2015_100_lines.psv").toURI());
-        
+
         long size = tmp.length();
-        
+
         String[] args = {lss.getAbsolutePath(), tmp.getAbsolutePath(), "iso-8859-1"};
         LSS2XMLConverter.main(args);
 
@@ -68,69 +64,44 @@ public class LSS2XMLConverterTest {
     @Test
     public void testConvertFile() throws Exception {
         System.out.println("convertFile");
-        File lss = null;
-        File xml = null;
-        LSS2XMLConverter.convertFile(lss, xml, null);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
+        File lss = new File(LSS2XMLConverterTest.class.getClassLoader().getResource("FDIR_HI_LSS_FANGST_2015_100_lines.psv").toURI());
+        File xml = File.createTempFile("landinger_test_convert_", ".tmp");
+
+        long size = xml.length();
+
+        xml.deleteOnExit();
+        LSS2XMLConverter.convertFile(lss, xml, "iso-8859-1");
+
+        assertTrue(xml.length() > size);
+
     }
 
     /**
-     * Test of readLSS method, of class LSS2XMLConverter.
+     * Test of convertFile method, of class LSS2XMLConverter.
      */
     @Test
-    public void testReadLSS() throws Exception {
-        System.out.println("readLSS");
-        InputStream lss = null;
-        LSS2XMLConverter instance = new LSS2XMLConverter();
-        List<List<String>> expResult = null;
-        List<List<String>> result = instance.readLSS(lss);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testConvertFileException() throws Exception {
+        System.out.println("convertFile");
+
+        File lss = new File(LSS2XMLConverterTest.class.getClassLoader().getResource("FDIR_HI_LSS_FANGST_2015_100_lines_extra_column.psv").toURI());
+        File xml = File.createTempFile("landinger_test_convert_", ".tmp");
+        xml.deleteOnExit();
+
+        long size = xml.length();
+
+        try {
+            LSS2XMLConverter.convertFile(lss, xml, "iso-8859-1");
+            fail("Exception expected");
+        } catch (Exception e) {
+
+        }
+
+        assertTrue(xml.length() == size);
+
     }
 
-    /**
-     * Test of processHeader method, of class LSS2XMLConverter.
-     */
-    @Test
-    public void testProcessHeader() {
-        System.out.println("processHeader");
-        List<String> headerRow = null;
-        LSS2XMLConverter instance = new LSS2XMLConverter();
-        instance.processHeader(headerRow);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+ 
 
-    /**
-     * Test of processRows method, of class LSS2XMLConverter.
-     */
-    @Test
-    public void testProcessRows() throws Exception {
-        System.out.println("processRows");
-        List<List<String>> rows = null;
-        LSS2XMLConverter instance = new LSS2XMLConverter();
-        LandingsdataType expResult = null;
-        LandingsdataType result = instance.processRows(rows);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
-    /**
-     * Test of processRow method, of class LSS2XMLConverter.
-     */
-    @Test
-    public void testProcessRow() throws Exception {
-        System.out.println("processRow");
-        List<String> row = null;
-        LSS2XMLConverter instance = new LSS2XMLConverter();
-        SeddellinjeType expResult = null;
-        SeddellinjeType result = instance.processRow(row);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-    
 }
