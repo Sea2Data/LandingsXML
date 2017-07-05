@@ -26,7 +26,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.math.BigDecimal;
@@ -63,6 +62,7 @@ public class LSS2XMLConverter {
         if (args.length < 2) {
             SchemaReader schemareader = new SchemaReader(LSS2XMLConverter.class.getClassLoader().getResourceAsStream("landinger.xsd"));
             System.out.println("Converts LSS file to xml-format: " + schemareader.getTargetNameSpace());
+            System.out.println("Memory intensive for large files. Consider increasing heap size, java option: -Xmx<maxheapsize>, e.g: -Xmx8g");
             System.out.println("Usage: <LSS file> <xml file> [encoding]");
             System.exit(0);
         }
@@ -78,17 +78,32 @@ public class LSS2XMLConverter {
     }
 
     public static void convertFile(File lss, File xml, String encoding) throws JAXBException, FileNotFoundException, LSSProcessingException, IOException, Exception {
-        InputStream instream = new FileInputStream(lss);
+        FileInputStream instream = new FileInputStream(lss);
+        
+        //count lines
+        int nlines = 0;
         BufferedReader reader = new BufferedReader(new InputStreamReader(instream, encoding));
+        for (String line = reader.readLine(); line != null; line = reader.readLine()) {
+            nlines += 1;
+        }
+        instream.getChannel().position(0);
+        reader = new BufferedReader(new InputStreamReader(instream, encoding));
 
         LSS2XMLConverter converter = new LSS2XMLConverter();
-
         converter.processHeader(converter.getRow(reader.readLine()));
-        LandingsdataType landingsdata = converter.factory.createLandingsdataType();
-        for (String line = reader.readLine(); line != null; line = reader.readLine()) {
-            landingsdata.getSelldellinje().add(converter.processRow(converter.getRow(line)));
-        }
+        List<SeddellinjeType> linjer = new ArrayList<>(nlines);
 
+        int l = 1;
+        for (String line = reader.readLine(); line != null; line = reader.readLine()) {
+            linjer.add(converter.processRow(converter.getRow(line)));
+            System.out.println("nr: " + l + "/" + nlines);
+            l++;
+        }
+        
+
+        LandingsdataType landingsdata = converter.factory.createLandingsdataType();
+        landingsdata.getSeddellinje().addAll(linjer);
+        
         if (converter.indexMap.untouched().size() > 0) {
             throw new LSSProcessingException("Some columns not handled: " + converter.indexMap.untouched());
         }
