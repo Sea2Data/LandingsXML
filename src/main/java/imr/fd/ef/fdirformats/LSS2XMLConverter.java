@@ -7,7 +7,6 @@ package imr.fd.ef.fdirformats;
 
 import HierarchicalData.SchemaReader;
 import LandingsTypes.v1.DellandingType;
-import LandingsTypes.v1.DokumentType;
 import LandingsTypes.v1.FangstdataType;
 import LandingsTypes.v1.FartøyType;
 import LandingsTypes.v1.FiskerType;
@@ -147,7 +146,6 @@ public class LSS2XMLConverter {
     protected SeddellinjeType processRow(List<String> row) throws LSSProcessingException, Exception {
         SeddellinjeType linje = this.factory.createSeddellinjeType();
         linje.setLinjenummer(this.parseLong(row.get(this.indexMap.get("Linjenummer"))));
-        linje.setDokument(this.processDokument(row));
         linje.setDellanding(this.processDellanding(row));
         linje.setFangstdata(this.processFangsData(row));
         linje.setFartøy(this.processFartøy(row));
@@ -158,24 +156,19 @@ public class LSS2XMLConverter {
         linje.setProdukt(this.processProdukt(row));
         linje.setRedskap(this.processRedskap(row));
         linje.setKvote(this.processKvote(row));
+        
+        linje.setDokumentnummer(row.get(this.indexMap.get("Dokumentnummer")));
+        linje.setDokumenttypeKode(this.parseBigInteger(row.get(this.indexMap.get("Dokumenttype (kode)"))));
+        linje.setDokumenttypeBokmål(row.get(this.indexMap.get("Dokumenttype (bokmål)")));
+        linje.setDokumentVersjonsnummer(this.parseBigInteger(row.get(this.indexMap.get("Dokument versjonsnummer"))));
+        linje.setDokumentFormulardato(row.get(this.indexMap.get("Dokument formulardato")));
+        linje.setDokumentElektroniskDato(row.get(this.indexMap.get("Dokument elektronisk dato")));
+        linje.setSalgslag(row.get(this.indexMap.get("Salgslag")));
+        linje.setSalgslagID(this.parseBigInteger(row.get(this.indexMap.get("Salgslag ID"))));
+        linje.setSalgslagKode(row.get(this.indexMap.get("Salgslag (kode)")));
+        linje.setFangstår(this.parseBigInteger(row.get(this.indexMap.get("Fangstår"))));
 
         return linje;
-    }
-
-    private DokumentType processDokument(List<String> row) throws Exception {
-
-        DokumentType dokument = this.factory.createDokumentType();
-        dokument.setDokumentnummer(row.get(this.indexMap.get("Dokumentnummer")));
-        dokument.setDokumenttypeKode(this.parseBigInteger(row.get(this.indexMap.get("Dokumenttype (kode)"))));
-        dokument.setDokumenttypeBokmål(row.get(this.indexMap.get("Dokumenttype (bokmål)")));
-        dokument.setDokumentVersjonsnummer(this.parseBigInteger(row.get(this.indexMap.get("Dokument versjonsnummer"))));
-        dokument.setDokumentFormulardato(row.get(this.indexMap.get("Dokument formulardato")));
-        dokument.setDokumentElektroniskDato(row.get(this.indexMap.get("Dokument elektronisk dato")));
-        dokument.setSalgslag(row.get(this.indexMap.get("Salgslag")));
-        dokument.setSalgslagID(this.parseBigInteger(row.get(this.indexMap.get("Salgslag ID"))));
-        dokument.setSalgslagKode(row.get(this.indexMap.get("Salgslag (kode)")));
-
-        return dokument;
     }
 
     private DellandingType processDellanding(List<String> row) {
@@ -192,7 +185,6 @@ public class LSS2XMLConverter {
         fangst.setFangstdagbokNummer(this.parseLong(row.get(this.indexMap.get("Fangstdagbok (nummer)"))));
         fangst.setFangstdagbokTurnummer(this.parseLong(row.get(this.indexMap.get("Fangstdagbok (turnummer)"))));
         fangst.setFangstfeltKode(row.get(this.indexMap.get("Fangstfelt (kode)")));
-        fangst.setFangstår(this.parseBigInteger(row.get(this.indexMap.get("Fangstår"))));
         fangst.setHovedområdeBokmål(row.get(this.indexMap.get("Hovedområde (bokmål)")));
         fangst.setHovedområdeFAOBokmål(row.get(this.indexMap.get("Hovedområde FAO (bokmål)")));
         fangst.setHovedområdeFAOKode(row.get(this.indexMap.get("Hovedområde FAO (kode)")));
