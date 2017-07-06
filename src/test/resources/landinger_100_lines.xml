@@ -48,31 +48,14 @@
             <Fiskernasjonalitet_bokmål>NORGE</Fiskernasjonalitet_bokmål>
         </fisker>
         <fartøy>
-            <Fartøynavn></Fartøynavn>
-            <FartøyID></FartøyID>
             <Registreringsmerke_seddel>3YQU</Registreringsmerke_seddel>
-            <Radiokallesignal_seddel></Radiokallesignal_seddel>
-            <Lengdegruppe_kode></Lengdegruppe_kode>
-            <Lengdegruppe_bokmål></Lengdegruppe_bokmål>
-            <FartøyGjelderFraDato></FartøyGjelderFraDato>
-            <FartøyGjelderTilDato></FartøyGjelderTilDato>
             <Fartøytype_kode>12</Fartøytype_kode>
             <Fartøytype_bokmål>Fritidsfartøy</Fartøytype_bokmål>
-            <Fartøykommune></Fartøykommune>
-            <Fartøyfylke></Fartøyfylke>
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>06</Kvotetype_kode>
             <Kvotetype_bokmål>Fritidsfiske</Kvotetype_bokmål>
         </kvote>
@@ -84,8 +67,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -162,31 +143,14 @@
             <Fiskernasjonalitet_bokmål>NORGE</Fiskernasjonalitet_bokmål>
         </fisker>
         <fartøy>
-            <Fartøynavn></Fartøynavn>
-            <FartøyID></FartøyID>
             <Registreringsmerke_seddel>3YQU</Registreringsmerke_seddel>
-            <Radiokallesignal_seddel></Radiokallesignal_seddel>
-            <Lengdegruppe_kode></Lengdegruppe_kode>
-            <Lengdegruppe_bokmål></Lengdegruppe_bokmål>
-            <FartøyGjelderFraDato></FartøyGjelderFraDato>
-            <FartøyGjelderTilDato></FartøyGjelderTilDato>
             <Fartøytype_kode>12</Fartøytype_kode>
             <Fartøytype_bokmål>Fritidsfartøy</Fartøytype_bokmål>
-            <Fartøykommune></Fartøykommune>
-            <Fartøyfylke></Fartøyfylke>
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>06</Kvotetype_kode>
             <Kvotetype_bokmål>Fritidsfiske</Kvotetype_bokmål>
         </kvote>
@@ -198,8 +162,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -276,31 +238,14 @@
             <Fiskernasjonalitet_bokmål>NORGE</Fiskernasjonalitet_bokmål>
         </fisker>
         <fartøy>
-            <Fartøynavn></Fartøynavn>
-            <FartøyID></FartøyID>
             <Registreringsmerke_seddel>3YQU</Registreringsmerke_seddel>
-            <Radiokallesignal_seddel></Radiokallesignal_seddel>
-            <Lengdegruppe_kode></Lengdegruppe_kode>
-            <Lengdegruppe_bokmål></Lengdegruppe_bokmål>
-            <FartøyGjelderFraDato></FartøyGjelderFraDato>
-            <FartøyGjelderTilDato></FartøyGjelderTilDato>
             <Fartøytype_kode>12</Fartøytype_kode>
             <Fartøytype_bokmål>Fritidsfartøy</Fartøytype_bokmål>
-            <Fartøykommune></Fartøykommune>
-            <Fartøyfylke></Fartøyfylke>
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>06</Kvotetype_kode>
             <Kvotetype_bokmål>Fritidsfiske</Kvotetype_bokmål>
         </kvote>
@@ -312,8 +257,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -390,31 +333,14 @@
             <Fiskernasjonalitet_bokmål>NORGE</Fiskernasjonalitet_bokmål>
         </fisker>
         <fartøy>
-            <Fartøynavn></Fartøynavn>
-            <FartøyID></FartøyID>
             <Registreringsmerke_seddel>3YQU</Registreringsmerke_seddel>
-            <Radiokallesignal_seddel></Radiokallesignal_seddel>
-            <Lengdegruppe_kode></Lengdegruppe_kode>
-            <Lengdegruppe_bokmål></Lengdegruppe_bokmål>
-            <FartøyGjelderFraDato></FartøyGjelderFraDato>
-            <FartøyGjelderTilDato></FartøyGjelderTilDato>
             <Fartøytype_kode>12</Fartøytype_kode>
             <Fartøytype_bokmål>Fritidsfartøy</Fartøytype_bokmål>
-            <Fartøykommune></Fartøykommune>
-            <Fartøyfylke></Fartøyfylke>
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>06</Kvotetype_kode>
             <Kvotetype_bokmål>Fritidsfiske</Kvotetype_bokmål>
         </kvote>
@@ -426,8 +352,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -504,31 +428,14 @@
             <Fiskernasjonalitet_bokmål>NORGE</Fiskernasjonalitet_bokmål>
         </fisker>
         <fartøy>
-            <Fartøynavn></Fartøynavn>
-            <FartøyID></FartøyID>
             <Registreringsmerke_seddel>3YQU</Registreringsmerke_seddel>
-            <Radiokallesignal_seddel></Radiokallesignal_seddel>
-            <Lengdegruppe_kode></Lengdegruppe_kode>
-            <Lengdegruppe_bokmål></Lengdegruppe_bokmål>
-            <FartøyGjelderFraDato></FartøyGjelderFraDato>
-            <FartøyGjelderTilDato></FartøyGjelderTilDato>
             <Fartøytype_kode>12</Fartøytype_kode>
             <Fartøytype_bokmål>Fritidsfartøy</Fartøytype_bokmål>
-            <Fartøykommune></Fartøykommune>
-            <Fartøyfylke></Fartøyfylke>
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>06</Kvotetype_kode>
             <Kvotetype_bokmål>Fritidsfiske</Kvotetype_bokmål>
         </kvote>
@@ -540,8 +447,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -618,31 +523,14 @@
             <Fiskernasjonalitet_bokmål>NORGE</Fiskernasjonalitet_bokmål>
         </fisker>
         <fartøy>
-            <Fartøynavn></Fartøynavn>
-            <FartøyID></FartøyID>
             <Registreringsmerke_seddel>3YQU</Registreringsmerke_seddel>
-            <Radiokallesignal_seddel></Radiokallesignal_seddel>
-            <Lengdegruppe_kode></Lengdegruppe_kode>
-            <Lengdegruppe_bokmål></Lengdegruppe_bokmål>
-            <FartøyGjelderFraDato></FartøyGjelderFraDato>
-            <FartøyGjelderTilDato></FartøyGjelderTilDato>
             <Fartøytype_kode>12</Fartøytype_kode>
             <Fartøytype_bokmål>Fritidsfartøy</Fartøytype_bokmål>
-            <Fartøykommune></Fartøykommune>
-            <Fartøyfylke></Fartøyfylke>
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>06</Kvotetype_kode>
             <Kvotetype_bokmål>Fritidsfiske</Kvotetype_bokmål>
         </kvote>
@@ -654,8 +542,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -732,31 +618,14 @@
             <Fiskernasjonalitet_bokmål>NORGE</Fiskernasjonalitet_bokmål>
         </fisker>
         <fartøy>
-            <Fartøynavn></Fartøynavn>
-            <FartøyID></FartøyID>
             <Registreringsmerke_seddel>3YQU</Registreringsmerke_seddel>
-            <Radiokallesignal_seddel></Radiokallesignal_seddel>
-            <Lengdegruppe_kode></Lengdegruppe_kode>
-            <Lengdegruppe_bokmål></Lengdegruppe_bokmål>
-            <FartøyGjelderFraDato></FartøyGjelderFraDato>
-            <FartøyGjelderTilDato></FartøyGjelderTilDato>
             <Fartøytype_kode>12</Fartøytype_kode>
             <Fartøytype_bokmål>Fritidsfartøy</Fartøytype_bokmål>
-            <Fartøykommune></Fartøykommune>
-            <Fartøyfylke></Fartøyfylke>
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>06</Kvotetype_kode>
             <Kvotetype_bokmål>Fritidsfiske</Kvotetype_bokmål>
         </kvote>
@@ -768,8 +637,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1032</Art_kode>
@@ -868,16 +735,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -889,8 +748,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -989,16 +846,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -1010,8 +859,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -1110,16 +957,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -1131,8 +970,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -1231,16 +1068,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -1252,8 +1081,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1023</Art_kode>
@@ -1352,16 +1179,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -1373,8 +1192,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102701</Art_kode>
@@ -1473,16 +1290,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -1494,8 +1303,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>2311</Art_kode>
@@ -1594,16 +1401,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -1615,8 +1414,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102701</Art_kode>
@@ -1715,16 +1512,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -1736,8 +1525,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1021</Art_kode>
@@ -1836,16 +1623,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -1857,8 +1636,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1021</Art_kode>
@@ -1957,16 +1734,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -1978,8 +1747,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1021</Art_kode>
@@ -2078,16 +1845,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -2099,8 +1858,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -2199,16 +1956,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -2220,8 +1969,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -2320,16 +2067,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -2341,8 +2080,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>2311</Art_kode>
@@ -2441,16 +2178,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -2462,8 +2191,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>2311</Art_kode>
@@ -2562,16 +2289,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -2583,8 +2302,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -2683,16 +2400,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -2704,8 +2413,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102701</Art_kode>
@@ -2804,16 +2511,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -2825,8 +2524,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102701</Art_kode>
@@ -2925,16 +2622,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -2946,8 +2635,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -3046,16 +2733,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -3067,8 +2746,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -3167,16 +2844,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -3188,8 +2857,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1021</Art_kode>
@@ -3288,16 +2955,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -3309,8 +2968,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1021</Art_kode>
@@ -3409,16 +3066,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -3430,8 +3079,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -3530,16 +3177,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -3551,8 +3190,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -3651,16 +3288,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -3672,8 +3301,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -3772,16 +3399,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -3793,8 +3412,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -3893,16 +3510,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -3914,8 +3523,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102701</Art_kode>
@@ -4014,16 +3621,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -4035,8 +3634,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1032</Art_kode>
@@ -4135,16 +3732,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -4156,8 +3745,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1021</Art_kode>
@@ -4256,16 +3843,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -4277,8 +3856,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1021</Art_kode>
@@ -4377,16 +3954,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -4398,8 +3967,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102701</Art_kode>
@@ -4498,16 +4065,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -4519,8 +4078,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>2311</Art_kode>
@@ -4619,16 +4176,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -4640,8 +4189,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1021</Art_kode>
@@ -4740,16 +4287,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -4761,8 +4300,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>2311</Art_kode>
@@ -4861,16 +4398,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -4882,8 +4411,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>2311</Art_kode>
@@ -4982,16 +4509,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -5003,8 +4522,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>2311</Art_kode>
@@ -5103,16 +4620,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -5124,8 +4633,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>2311</Art_kode>
@@ -5224,16 +4731,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -5245,8 +4744,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102701</Art_kode>
@@ -5345,16 +4842,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -5366,8 +4855,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -5466,16 +4953,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -5487,8 +4966,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -5587,16 +5064,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -5608,8 +5077,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -5708,16 +5175,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -5729,8 +5188,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1032</Art_kode>
@@ -5829,16 +5286,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -5850,8 +5299,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1021</Art_kode>
@@ -5950,16 +5397,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -5971,8 +5410,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>2311</Art_kode>
@@ -6071,16 +5508,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -6092,8 +5521,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -6192,16 +5619,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -6213,8 +5632,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -6313,16 +5730,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -6334,8 +5743,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -6434,16 +5841,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -6455,8 +5854,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -6555,16 +5952,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -6576,8 +5965,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -6676,16 +6063,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -6697,8 +6076,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -6797,16 +6174,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -6818,8 +6187,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>2311</Art_kode>
@@ -6918,16 +6285,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -6939,8 +6298,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>2311</Art_kode>
@@ -7039,16 +6396,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -7060,8 +6409,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1023</Art_kode>
@@ -7160,16 +6507,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -7181,8 +6520,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1021</Art_kode>
@@ -7281,16 +6618,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -7302,8 +6631,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1021</Art_kode>
@@ -7402,16 +6729,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -7423,8 +6742,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102701</Art_kode>
@@ -7523,16 +6840,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -7544,8 +6853,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1021</Art_kode>
@@ -7644,16 +6951,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -7665,8 +6964,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102701</Art_kode>
@@ -7765,16 +7062,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -7786,8 +7075,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>2311</Art_kode>
@@ -7886,16 +7173,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -7907,8 +7186,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -8007,16 +7284,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -8028,8 +7297,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -8128,16 +7395,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -8149,8 +7408,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1021</Art_kode>
@@ -8249,16 +7506,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -8270,8 +7519,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102701</Art_kode>
@@ -8370,16 +7617,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -8391,8 +7630,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1032</Art_kode>
@@ -8491,16 +7728,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -8512,8 +7741,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>2311</Art_kode>
@@ -8612,16 +7839,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -8633,8 +7852,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -8733,16 +7950,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -8754,8 +7963,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102701</Art_kode>
@@ -8854,16 +8061,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -8875,8 +8074,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1021</Art_kode>
@@ -8975,16 +8172,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -8996,8 +8185,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>2311</Art_kode>
@@ -9096,16 +8283,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -9117,8 +8296,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>2524</Art_kode>
@@ -9217,16 +8394,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -9238,8 +8407,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>2524</Art_kode>
@@ -9338,16 +8505,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -9359,8 +8518,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>2524</Art_kode>
@@ -9459,16 +8616,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -9480,8 +8629,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>2524</Art_kode>
@@ -9580,16 +8727,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -9601,8 +8740,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -9701,16 +8838,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -9722,8 +8851,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1032</Art_kode>
@@ -9822,16 +8949,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -9843,8 +8962,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1021</Art_kode>
@@ -9943,16 +9060,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -9964,8 +9073,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1021</Art_kode>
@@ -10064,16 +9171,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -10085,8 +9184,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -10185,16 +9282,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -10206,8 +9295,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102701</Art_kode>
@@ -10306,16 +9393,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -10327,8 +9406,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -10427,16 +9504,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -10448,8 +9517,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -10548,16 +9615,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -10569,8 +9628,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1021</Art_kode>
@@ -10669,16 +9726,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -10690,8 +9739,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1021</Art_kode>
@@ -10790,16 +9837,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -10811,8 +9850,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102202</Art_kode>
@@ -10911,16 +9948,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -10932,8 +9961,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>102701</Art_kode>
@@ -11032,16 +10059,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -11053,8 +10072,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1032</Art_kode>
@@ -11153,16 +10170,8 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
-            <KvotefartøyRegMerke></KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
             <Kvotetype_bokmål>Vanlig kvote</Kvotetype_bokmål>
         </kvote>
@@ -11174,8 +10183,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1021</Art_kode>
@@ -11225,9 +10232,6 @@
             <Landingsfylke>Oslo</Landingsfylke>
             <Landingsnasjon_kode>NOR</Landingsnasjon_kode>
             <Landingsnasjon_bokmål>NORGE</Landingsnasjon_bokmål>
-            <Produksjonsanlegg></Produksjonsanlegg>
-            <Produksjonskommune_kode></Produksjonskommune_kode>
-            <Produksjonskommune></Produksjonskommune>
         </produksjon>
         <fangstdata>
             <SisteFangstdato>03.11.2015</SisteFangstdato>
@@ -11274,14 +10278,7 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
             <KvotefartøyRegMerke>A 0002F</KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
@@ -11295,8 +10292,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>2524</Art_kode>
@@ -11347,9 +10342,6 @@
             <Landingsfylke>Oslo</Landingsfylke>
             <Landingsnasjon_kode>NOR</Landingsnasjon_kode>
             <Landingsnasjon_bokmål>NORGE</Landingsnasjon_bokmål>
-            <Produksjonsanlegg></Produksjonsanlegg>
-            <Produksjonskommune_kode></Produksjonskommune_kode>
-            <Produksjonskommune></Produksjonskommune>
         </produksjon>
         <fangstdata>
             <SisteFangstdato>03.11.2015</SisteFangstdato>
@@ -11396,14 +10388,7 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
             <KvotefartøyRegMerke>A 0002F</KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
@@ -11417,8 +10402,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>2524</Art_kode>
@@ -11469,9 +10452,6 @@
             <Landingsfylke>Oslo</Landingsfylke>
             <Landingsnasjon_kode>NOR</Landingsnasjon_kode>
             <Landingsnasjon_bokmål>NORGE</Landingsnasjon_bokmål>
-            <Produksjonsanlegg></Produksjonsanlegg>
-            <Produksjonskommune_kode></Produksjonskommune_kode>
-            <Produksjonskommune></Produksjonskommune>
         </produksjon>
         <fangstdata>
             <SisteFangstdato>03.11.2015</SisteFangstdato>
@@ -11518,14 +10498,7 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
             <KvotefartøyRegMerke>A 0002F</KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
@@ -11539,8 +10512,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1022</Art_kode>
@@ -11591,9 +10562,6 @@
             <Landingsfylke>Oslo</Landingsfylke>
             <Landingsnasjon_kode>NOR</Landingsnasjon_kode>
             <Landingsnasjon_bokmål>NORGE</Landingsnasjon_bokmål>
-            <Produksjonsanlegg></Produksjonsanlegg>
-            <Produksjonskommune_kode></Produksjonskommune_kode>
-            <Produksjonskommune></Produksjonskommune>
         </produksjon>
         <fangstdata>
             <SisteFangstdato>03.11.2015</SisteFangstdato>
@@ -11640,14 +10608,7 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
             <KvotefartøyRegMerke>A 0002F</KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
@@ -11661,8 +10622,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>1027</Art_kode>
@@ -11713,9 +10672,6 @@
             <Landingsfylke>Oslo</Landingsfylke>
             <Landingsnasjon_kode>NOR</Landingsnasjon_kode>
             <Landingsnasjon_bokmål>NORGE</Landingsnasjon_bokmål>
-            <Produksjonsanlegg></Produksjonsanlegg>
-            <Produksjonskommune_kode></Produksjonskommune_kode>
-            <Produksjonskommune></Produksjonskommune>
         </produksjon>
         <fangstdata>
             <SisteFangstdato>17.11.2015</SisteFangstdato>
@@ -11762,14 +10718,7 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
             <KvotefartøyRegMerke>A 0002F</KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
@@ -11783,8 +10732,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>2524</Art_kode>
@@ -11835,9 +10782,6 @@
             <Landingsfylke>Oslo</Landingsfylke>
             <Landingsnasjon_kode>NOR</Landingsnasjon_kode>
             <Landingsnasjon_bokmål>NORGE</Landingsnasjon_bokmål>
-            <Produksjonsanlegg></Produksjonsanlegg>
-            <Produksjonskommune_kode></Produksjonskommune_kode>
-            <Produksjonskommune></Produksjonskommune>
         </produksjon>
         <fangstdata>
             <SisteFangstdato>17.11.2015</SisteFangstdato>
@@ -11884,14 +10828,7 @@
             <Fartøynasjonalitet_kode>NOR</Fartøynasjonalitet_kode>
             <Fartøynasjonalitet_bokmål>NORGE</Fartøynasjonalitet_bokmål>
         </fartøy>
-        <mottakendefartøy>
-            <MottakendeFartøyRegMerke></MottakendeFartøyRegMerke>
-            <MottakendeFartøyRKAL></MottakendeFartøyRKAL>
-            <MottakendeFartøytype_kode></MottakendeFartøytype_kode>
-            <MottakendeFartøytype_bokmål></MottakendeFartøytype_bokmål>
-            <MottakendeFartøynasj_kode></MottakendeFartøynasj_kode>
-            <MottakendeFartøynasj_bokmål></MottakendeFartøynasj_bokmål>
-        </mottakendefartøy>
+        <mottakendefartøy/>
         <kvote>
             <KvotefartøyRegMerke>A 0002F</KvotefartøyRegMerke>
             <Kvotetype_kode>01</Kvotetype_kode>
@@ -11905,8 +10842,6 @@
         </redskap>
         <dellanding>
             <Dellanding_signal>0</Dellanding_signal>
-            <NesteMottaksstasjon></NesteMottaksstasjon>
-            <ForrigeMottakstasjon></ForrigeMottakstasjon>
         </dellanding>
         <produkt>
             <Art_kode>2524</Art_kode>

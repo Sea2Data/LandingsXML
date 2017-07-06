@@ -97,7 +97,7 @@
                     <archive>
                         <manifest>
                             <mainClass>
-                                imr.fd.ef.fdirformats.XML2LSSConverter
+                                imr.fd.ef.fdirformats.LSS2XMLConverter
                             </mainClass>
                         </manifest>
                     </archive>
