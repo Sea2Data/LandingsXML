@@ -51,18 +51,15 @@ public class XML2LSSConverterTest {
         System.out.println("convertFile");
         File xml = new File(XML2LSSConverterTest.class.getClassLoader().getResource("landinger_100_lines.xml").toURI());
 
-        File targetDir = File.createTempFile("tmpTestConvertFileHD", "");
-        targetDir.delete();
-        targetDir.mkdir();
-        targetDir.deleteOnExit();
+        File outfile = File.createTempFile("tmpTestConvertFileHD", "");
+        outfile.deleteOnExit();
 
-        XML2LSSConverter.convertFile(xml, targetDir);
+        XML2LSSConverter.convertFile(xml, outfile);
 
         
-        File outp = new File(targetDir.getAbsolutePath() + "/LandingsdataType.psv");
         File lss = new File(LSS2XMLConverterTest.class.getClassLoader().getResource("FDIR_HI_LSS_FANGST_2015_100_lines.psv").toURI());
         
-        assertEquals(countlines(outp), countlines(lss));
+        assertEquals(countlines(outfile), countlines(lss));
     }
     
     private int countlines(File f) throws FileNotFoundException, IOException{
