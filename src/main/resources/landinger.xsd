@@ -22,7 +22,12 @@
     </xs:complexType>
     <xs:complexType name="SeddellinjeType">
         <xs:sequence>
-            <xs:element name="dokument" type="DokumentType" maxOccurs="1" minOccurs="1" />
+            <xs:element name="Dokumenttype_Bokmål" type="xs:string"></xs:element>
+            <xs:element name="DokumentVersjonsnummer" type="xs:integer"></xs:element>
+            <xs:element name="DokumentFormulardato" type="xs:string"></xs:element>
+            <xs:element name="DokumentElektroniskDato" type="xs:string"></xs:element>
+            <xs:element name="SalgslagID" type="xs:integer"></xs:element>
+            <xs:element name="Salgslag" type="xs:string"></xs:element>
             <xs:element name="mottaker" type="MottakerType" maxOccurs="1" minOccurs="0"/>
             <xs:element name="produksjon" type="LandingOgProduksjonType" maxOccurs="1" minOccurs="0"/>
             <xs:element name="fangstdata" type="FangstdataType" maxOccurs="1" minOccurs="0"/>
@@ -43,16 +48,24 @@
                 </xs:appinfo>
             </xs:annotation>
         </xs:attribute>
-    </xs:complexType>
-    <xs:complexType name="DokumentType">
-        <xs:sequence>
-            <xs:element name="Dokumenttype_Bokmål" type="xs:string"></xs:element>
-            <xs:element name="DokumentVersjonsnummer" type="xs:integer"></xs:element>
-            <xs:element name="DokumentFormulardato" type="xs:string"></xs:element>
-            <xs:element name="DokumentElektroniskDato" type="xs:string"></xs:element>
-            <xs:element name="SalgslagID" type="xs:integer"></xs:element>
-            <xs:element name="Salgslag" type="xs:string"></xs:element>
-        </xs:sequence>
+        <xs:attribute name="Fangstår" type="xs:integer">
+            <xs:annotation>
+                <xs:appinfo>
+                    <imrd:imrApp>
+                        <imrd:key/>
+                    </imrd:imrApp>
+                </xs:appinfo>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="Dokumentnummer" type="xs:string">
+            <xs:annotation>
+                <xs:appinfo>
+                    <imrd:imrApp>
+                        <imrd:key/>
+                    </imrd:imrApp>
+                </xs:appinfo>
+            </xs:annotation>
+        </xs:attribute>
         <xs:attribute name="Salgslag_kode" type="xs:string">
             <xs:annotation>
                 <xs:appinfo>
@@ -63,15 +76,6 @@
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="Dokumenttype_Kode" type="xs:integer">
-            <xs:annotation>
-                <xs:appinfo>
-                    <imrd:imrApp>
-                        <imrd:key/>
-                    </imrd:imrApp>
-                </xs:appinfo>
-            </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="Dokumentnummer" type="xs:string">
             <xs:annotation>
                 <xs:appinfo>
                     <imrd:imrApp>
@@ -180,15 +184,6 @@
             <xs:element name="Fangstdagbok_nummer" type="xs:long"></xs:element>
             <xs:element name="Fangstdagbok_turnummer" type="xs:long"></xs:element>
         </xs:sequence>
-        <xs:attribute name="Fangstår" type="xs:integer">
-            <xs:annotation>
-                <xs:appinfo>
-                    <imrd:imrApp>
-                        <imrd:key/>
-                    </imrd:imrApp>
-                </xs:appinfo>
-            </xs:annotation>
-        </xs:attribute>
     </xs:complexType>
     <xs:complexType name="DellandingType">
         <xs:sequence>
