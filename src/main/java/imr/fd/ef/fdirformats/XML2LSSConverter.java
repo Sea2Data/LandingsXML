@@ -12,11 +12,10 @@ import HierarchicalData.RelationalConversion.ILeafNodeHandler;
 import HierarchicalData.RelationalConversion.NamingConventions.DoNothingNamingConvention;
 import HierarchicalData.RelationalConversion.NamingConventions.ITableMakerNamingConvention;
 import HierarchicalData.RelationalConversion.RelationalConvertionException;
-import HierarchicalData.RelationalConversion.TabConverter;
-import HierarchicalData.RelationalConversion.TableMaker;
 import HierarchicalData.SchemaReader;
 import LSSadapters.BigDecimalAdapter;
 import LandingsTypes.v1.LandingsdataType;
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -26,13 +25,10 @@ import java.io.PrintStream;
 import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.nio.file.FileAlreadyExistsException;
-import java.nio.file.Path;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.stream.XMLStreamException;
@@ -71,7 +67,8 @@ public class XML2LSSConverter {
     public static void convertFile(File xml, File lss_file) throws JAXBException, ParserConfigurationException, XMLStreamException, ITableMakerNamingConvention.NamingException, NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, RelationalConvertionException, IOException {
         XML2LSSConverter conv = new XML2LSSConverter();
         
-        PrintStream stream = new PrintStream(new FileOutputStream(lss_file));
+        PrintStream stream;
+        stream = new PrintStream(new BufferedOutputStream(new FileOutputStream(lss_file)));
         LandingsdataType data = IO.parse(new FileInputStream(xml), LandingsdataType.class);
         Iterator<List<String>> it = conv.converter.getTableContentIterator(data.getSeddellinje());
         conv.writer.writeLine(conv.converter.getHeaders(data.getSeddellinje().get(0)), stream);
