@@ -5,7 +5,7 @@
  */
 package imr.fd.ef.fdirformats;
 
-import HierarchicalData.SchemaReader;
+import XMLHandling.SchemaReader;
 import LandingsTypes.v1.DellandingType;
 import LandingsTypes.v1.FangstdataType;
 import LandingsTypes.v1.FartøyType;

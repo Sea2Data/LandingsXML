@@ -12,7 +12,7 @@ import HierarchicalData.RelationalConversion.ILeafNodeHandler;
 import HierarchicalData.RelationalConversion.NamingConventions.DoNothingNamingConvention;
 import HierarchicalData.RelationalConversion.NamingConventions.ITableMakerNamingConvention;
 import HierarchicalData.RelationalConversion.RelationalConvertionException;
-import HierarchicalData.SchemaReader;
+import XMLHandling.SchemaReader;
 import LSSadapters.BigDecimalAdapter;
 import LandingsTypes.v1.LandingsdataType;
 import java.io.BufferedOutputStream;
