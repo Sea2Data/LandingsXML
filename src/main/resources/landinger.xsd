@@ -38,6 +38,14 @@
             <xs:element name="redskap" type="RedskapType" maxOccurs="1" minOccurs="0"/>
             <xs:element name="dellanding" type="DellandingType" maxOccurs="1" minOccurs="0"/>
             <xs:element name="produkt" type="ProduktType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Art_bokmål" type="xs:string"></xs:element>
+            <xs:element name="ArtsgruppeHistorisk_kode" type="xs:string"></xs:element>
+            <xs:element name="ArtsgruppeHistorisk_bokmål" type="xs:string"></xs:element>
+            <xs:element name="HovedgruppeArt_kode" type="xs:string"></xs:element>
+            <xs:element name="HovedgruppeArt_bokmål" type="xs:string"></xs:element>
+            <xs:element name="ArtFAO_kode" type="xs:string"></xs:element>
+            <xs:element name="ArtFAO_bokmål" type="xs:string"></xs:element>
+
         </xs:sequence>
         <xs:attribute name="Linjenummer" type="xs:long" use="required">
             <xs:annotation>
@@ -76,6 +84,15 @@
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="Dokumenttype_Kode" type="xs:integer">
+            <xs:annotation>
+                <xs:appinfo>
+                    <imrd:imrApp>
+                        <imrd:key/>
+                    </imrd:imrApp>
+                </xs:appinfo>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="Art_kode" type="xs:string">
             <xs:annotation>
                 <xs:appinfo>
                     <imrd:imrApp>
@@ -194,14 +211,6 @@
     </xs:complexType>
     <xs:complexType name="ProduktType">
         <xs:sequence>
-            <xs:element name="Art_kode" type="xs:string"></xs:element>
-            <xs:element name="Art_bokmål" type="xs:string"></xs:element>
-            <xs:element name="ArtsgruppeHistorisk_kode" type="xs:string"></xs:element>
-            <xs:element name="ArtsgruppeHistorisk_bokmål" type="xs:string"></xs:element>
-            <xs:element name="HovedgruppeArt_kode" type="xs:string"></xs:element>
-            <xs:element name="HovedgruppeArt_bokmål" type="xs:string"></xs:element>
-            <xs:element name="ArtFAO_kode" type="xs:string"></xs:element>
-            <xs:element name="ArtFAO_bokmål" type="xs:string"></xs:element>
             <xs:element name="Produkttilstand_kode" type="xs:string"></xs:element>
             <xs:element name="Produkttilstand_bokmål" type="xs:string"></xs:element>
             <xs:element name="Konserveringsmåte_kode" type="xs:string"></xs:element>

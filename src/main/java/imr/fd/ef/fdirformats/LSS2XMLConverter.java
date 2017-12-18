@@ -78,7 +78,7 @@ public class LSS2XMLConverter {
 
     public static void convertFile(File lss, File xml, String encoding) throws JAXBException, FileNotFoundException, LSSProcessingException, IOException, Exception {
         FileInputStream instream = new FileInputStream(lss);
-        
+
         //count lines
         int nlines = 0;
         BufferedReader reader = new BufferedReader(new InputStreamReader(instream, encoding));
@@ -98,11 +98,10 @@ public class LSS2XMLConverter {
             System.out.println("nr: " + l + "/" + nlines);
             l++;
         }
-        
 
         LandingsdataType landingsdata = converter.factory.createLandingsdataType();
         landingsdata.getSeddellinje().addAll(linjer);
-        
+
         if (converter.indexMap.untouched().size() > 0) {
             throw new LSSProcessingException("Some columns not handled: " + converter.indexMap.untouched());
         }
@@ -156,7 +155,8 @@ public class LSS2XMLConverter {
         linje.setProdukt(this.processProdukt(row));
         linje.setRedskap(this.processRedskap(row));
         linje.setKvote(this.processKvote(row));
-        
+        linje.setArtKode(parseString(row.get(this.indexMap.get("Art (kode)"))));
+
         linje.setDokumentnummer(parseString(row.get(this.indexMap.get("Dokumentnummer"))));
         linje.setDokumenttypeKode(this.parseBigInteger(row.get(this.indexMap.get("Dokumenttype (kode)"))));
         linje.setDokumenttypeBokmål(parseString(row.get(this.indexMap.get("Dokumenttype (bokmål)"))));
@@ -167,6 +167,14 @@ public class LSS2XMLConverter {
         linje.setSalgslagID(this.parseBigInteger(row.get(this.indexMap.get("Salgslag ID"))));
         linje.setSalgslagKode(parseString(row.get(this.indexMap.get("Salgslag (kode)"))));
         linje.setFangstår(this.parseBigInteger(row.get(this.indexMap.get("Fangstår"))));
+
+        linje.setArtBokmål(parseString(row.get(this.indexMap.get("Art (bokmål)"))));
+        linje.setArtFAOBokmål(parseString(row.get(this.indexMap.get("Art FAO (bokmål)"))));
+        linje.setArtFAOKode(parseString(row.get(this.indexMap.get("Art FAO (kode)"))));
+        linje.setArtsgruppeHistoriskBokmål(parseString(row.get(this.indexMap.get("Artsgruppe historisk (bokmål)"))));
+        linje.setArtsgruppeHistoriskKode(parseString(row.get(this.indexMap.get("Artsgruppe historisk (kode)"))));
+        linje.setHovedgruppeArtBokmål(parseString(row.get(this.indexMap.get("Hovedgruppe art (bokmål)"))));
+        linje.setHovedgruppeArtKode(parseString(row.get(this.indexMap.get("Hovedgruppe art (kode)"))));
 
         return linje;
     }
@@ -292,17 +300,9 @@ public class LSS2XMLConverter {
         produkt.setAntallStykk(this.parseBigInteger(row.get(this.indexMap.get("Antall stykk"))));
         produkt.setAnvendelseBokmål(parseString(row.get(this.indexMap.get("Anvendelse (bokmål)"))));
         produkt.setAnvendelseKode(parseString(row.get(this.indexMap.get("Anvendelse (kode)"))));
-        produkt.setArtBokmål(parseString(row.get(this.indexMap.get("Art (bokmål)"))));
-        produkt.setArtFAOBokmål(parseString(row.get(this.indexMap.get("Art FAO (bokmål)"))));
-        produkt.setArtFAOKode(parseString(row.get(this.indexMap.get("Art FAO (kode)"))));
-        produkt.setArtKode(parseString(row.get(this.indexMap.get("Art (kode)"))));
-        produkt.setArtsgruppeHistoriskBokmål(parseString(row.get(this.indexMap.get("Artsgruppe historisk (bokmål)"))));
-        produkt.setArtsgruppeHistoriskKode(parseString(row.get(this.indexMap.get("Artsgruppe historisk (kode)"))));
         produkt.setBruttovekt(this.parseBigDecimal(row.get(this.indexMap.get("Bruttovekt"))));
         produkt.setHovedgruppeAnvendelseBokmål(parseString(row.get(this.indexMap.get("Hovedgr anvendelse (bokmål)"))));
         produkt.setHovedgruppeAnvendelseKode(parseString(row.get(this.indexMap.get("Hovedgruppe anvendelse (kode)"))));
-        produkt.setHovedgruppeArtBokmål(parseString(row.get(this.indexMap.get("Hovedgruppe art (bokmål)"))));
-        produkt.setHovedgruppeArtKode(parseString(row.get(this.indexMap.get("Hovedgruppe art (kode)"))));
         produkt.setKonserveringsmåteBokmål(parseString(row.get(this.indexMap.get("Konserveringsmåte (bokmål)"))));
         produkt.setKonserveringsmåteKode(parseString(row.get(this.indexMap.get("Konserveringsmåte (kode)"))));
         produkt.setKvalitetBokmål(parseString(row.get(this.indexMap.get("Kvalitet (bokmål)"))));
@@ -326,9 +326,9 @@ public class LSS2XMLConverter {
 
         return kvote;
     }
-    
-    private String parseString(String s){
-        if (s.length()==0){
+
+    private String parseString(String s) {
+        if (s.length() == 0) {
             return null;
         }
         return s;
