@@ -155,9 +155,9 @@ public class LSS2XMLConverter {
     /**
      * Produces a dummy file of the old format for testing purposes. File is
      * mostly correct, but contains only selected fields, undocumented fields
-     * might have arbitrary values, and sales notes might be split if The lss
-     * file is not sorted on dokumentid. Weights are deliberately set to hg even
-     * if unit is Kg to match old sins.
+     * might have arbitrary values, null weights are set to 0, and sales notes
+     * might be split if The lss file is not sorted on dokumentid. Weights are
+     * deliberately set to hg even if unit is Kg to match old sins.
      *
      * @param lss
      * @param xml
@@ -182,7 +182,7 @@ public class LSS2XMLConverter {
         landingsdataOld.setFangstAar(landingsdata.getSeddellinje().get(0).getFangstår());
         landingsdataOld.setId("dummyId");
         LandingsTypes.v0_1.SluttseddelType lastseddel = factory.createSluttseddelType();
-        lastseddel.setFiskeliste(factory.createFiskListeType());
+        lastseddel.setFiskeListe(factory.createFiskListeType());
         landingsdataOld.getSluttseddel().add(lastseddel);
         for (SeddellinjeType seddellinje : landingsdata.getSeddellinje()) {
             BigInteger snr;
@@ -192,7 +192,7 @@ public class LSS2XMLConverter {
             }
             if (!lastseddel.getSltsNr().equals(snr)) {
                 lastseddel = factory.createSluttseddelType();
-                lastseddel.setFiskeliste(factory.createFiskListeType());
+                lastseddel.setFiskeListe(factory.createFiskListeType());
                 landingsdataOld.getSluttseddel().add(lastseddel);
             }
             lastseddel.setDokType("" + seddellinje.getDokumenttypeKode());
@@ -209,27 +209,50 @@ public class LSS2XMLConverter {
             lastseddel.setFartRegm(seddellinje.getFartøy().getRegistreringsmerkeSeddel());
             lastseddel.setRedskap(seddellinje.getRedskap().getRedskapKode());
             lastseddel.setFartType(seddellinje.getFartøy().getFartøytypeKode());
+            lastseddel.setSalgslag(seddellinje.getSalgslagKode());
+            lastseddel.setSalgslagOrgnr("" + seddellinje.getSalgslagID());
+            lastseddel.setKjopLand(seddellinje.getMottaker().getMottakernasjonalitetKode());
+            lastseddel.setFangstRegion(seddellinje.getFangstdata().getHovedområdeFAOKode());
+            lastseddel.setLandingsLand(seddellinje.getProduksjon().getLandingsnasjonKode());
+            lastseddel.setLandingsMottak(seddellinje.getMottaker().getMottaksstasjon());
+            lastseddel.setLandingsKomm(seddellinje.getProduksjon().getLandingskommune());
+
             LandingsTypes.v0_1.FiskType f = factory.createFiskType();
             f.setFisk(seddellinje.getArtKode());
             LandingsTypes.v0_1.VektType vekt = factory.createVektType();
             vekt.setEnhet("KG");
             if (seddellinje.getProdukt().getRundvekt() != null) {
                 vekt.setValue(seddellinje.getProdukt().getRundvekt().doubleValue() * 10);
+            } else {
+                vekt.setValue(0);
             }
             f.setRundvekt(vekt);
-            f.setNo(BigInteger.valueOf(seddellinje.getLinjenummer()));
-            lastseddel.getFiskeliste().getLinje().add(f);
+            LandingsTypes.v0_1.VektType prodvekt = factory.createVektType();
+            prodvekt.setEnhet("KG");
+            if (seddellinje.getProdukt().getProduktvekt() != null) {
+                prodvekt.setValue(seddellinje.getProdukt().getProduktvekt().doubleValue() * 10);
+            } else {
+                prodvekt.setValue(0);
+            }
+            f.setProdvekt(prodvekt);
+            f.setKonservering(seddellinje.getProdukt().getKonserveringsmåteKode());
+            f.setTilstand(seddellinje.getProdukt().getProdukttilstandKode());
+            f.setKvalitet(seddellinje.getProdukt().getKvalitetKode());
+            f.setAnvendelse(seddellinje.getProdukt().getAnvendelseKode());
+            f.setId("" + seddellinje.getLinjenummer());
+            lastseddel.getFiskeListe().getLinje().add(f);
         }
 
         return landingsdataOld;
     }
 
     private static XMLGregorianCalendar convertDate(String sisteFangstdato) throws ParseException, DatatypeConfigurationException {
-        DateFormat df = new SimpleDateFormat("DD.MM.YYYY");
+        DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
         Date date = df.parse(sisteFangstdato);
         GregorianCalendar cal = new GregorianCalendar();
         cal.setTime(date);
-        return DatatypeFactory.newInstance().newXMLGregorianCalendar(cal);
+        XMLGregorianCalendar ret = DatatypeFactory.newInstance().newXMLGregorianCalendar(cal);
+        return ret;
     }
 
     /**

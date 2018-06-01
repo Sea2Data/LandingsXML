@@ -20,36 +20,36 @@
     -->
     <xs:complexType name="SluttseddelType">
         <xs:sequence>
-            <xs:element name="DokType" type="DokTypeEnum" />
-            <xs:element name="SltsNr" type="xs:integer" />
-            <xs:element name="FormularDato" type="xs:date" />
-            <xs:element name="Salgslag" type="SalgslagTypeEnum" />
-            <xs:element name="SalgslagOrgnr" type="xs:string" />
-            <xs:element name="KjopOrgnr" type="xs:string" />
-            <xs:element name="KjopKundenr" type="xs:string" />
-            <xs:element name="KjopLand" type="xs:string" />
-            <xs:element name="FiskerKomm" type="xs:string" />
-            <xs:element name="FiskerLand" type="xs:string" />
+            <xs:element name="DokType" type="DokTypeEnum"  minOccurs="0" />
+            <xs:element name="SltsNr" type="xs:integer"  minOccurs="0" />
+            <xs:element name="FormularDato" type="xs:date"  minOccurs="0" />
+            <xs:element name="Salgslag" type="SalgslagTypeEnum"  minOccurs="0" />
+            <xs:element name="SalgslagOrgnr" type="xs:string"  minOccurs="0" />
+            <xs:element name="KjopOrgnr" type="xs:string"  minOccurs="0" />
+            <xs:element name="KjopKundenr" type="xs:string"  minOccurs="0" />
+            <xs:element name="KjopLand" type="xs:string"  minOccurs="0" />
+            <xs:element name="FiskerKomm" type="xs:string"  minOccurs="0" />
+            <xs:element name="FiskerLand" type="xs:string"  minOccurs="0" />
             <xs:element name="FiskerManntall" type="FiskerManntallTypeEnum" minOccurs="0" maxOccurs="1" />
-            <xs:element name="FartRegm" type="xs:string" />
-            <xs:element name="FartLand" type="xs:string" />
-            <xs:element name="FartType" type="xs:string" />
-            <xs:element name="Antmann" type="xs:integer" />
-            <xs:element name="Kvotetype" type="xs:string" />
-            <xs:element name="SisteFangstDato" type="xs:date" />
-            <xs:element name="FangstRegion" type="xs:string" />
-            <xs:element name="FangstKystHav" type="KystHavTypeEnum" />
-            <xs:element name="FangstHomr" type="xs:string" />
-            <xs:element name="FangstLok" type="xs:string" />
-            <xs:element name="FangstSone" type="xs:string" />
-            <xs:element name="Redskap" type="xs:string" />
-            <xs:element name="Kvoteland" type="xs:string" />
-            <xs:element name="Fiskedager" type="xs:integer" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="LandingsDato" type="xs:date" />
-            <xs:element name="LandingsMottak" type="xs:string" />
-            <xs:element name="LandingsKomm" type="xs:string" />
-            <xs:element name="LandingsLand" type="xs:string" />
-            <xs:element name="Fiskeliste" type="FiskListeType" minOccurs="0" maxOccurs="1" />
+            <xs:element name="FartRegm" type="xs:string"  minOccurs="0" />
+            <xs:element name="FartLand" type="xs:string"  minOccurs="0" />
+            <xs:element name="FartType" type="xs:string"  minOccurs="0" />
+            <xs:element name="Antmann" type="xs:integer"  minOccurs="0" />
+            <xs:element name="Kvotetype" type="xs:string"  minOccurs="0" />
+            <xs:element name="SisteFangstDato" type="xs:date"  minOccurs="0" />
+            <xs:element name="FangstRegion" type="xs:string"  minOccurs="0" />
+            <xs:element name="FangstKystHav" type="KystHavTypeEnum"  minOccurs="0" />
+            <xs:element name="FangstHomr" type="xs:string"  minOccurs="0" />
+            <xs:element name="FangstLok" type="xs:string"  minOccurs="0" />
+            <xs:element name="FangstSone" type="xs:string"  minOccurs="0" />
+            <xs:element name="Redskap" type="xs:string"  minOccurs="0" />
+            <xs:element name="KvoteLand" type="xs:string"  minOccurs="0" />
+            <xs:element name="Fiskedager" type="xs:integer" minOccurs="0" maxOccurs="1" />
+            <xs:element name="LandingsDato" type="xs:date"  minOccurs="0" />
+            <xs:element name="LandingsMottak" type="xs:string"  minOccurs="0" />
+            <xs:element name="LandingsKomm" type="xs:string"  minOccurs="0" />
+            <xs:element name="LandingsLand" type="xs:string"  minOccurs="0" />
+            <xs:element name="FiskeListe" type="FiskListeType" minOccurs="0" maxOccurs="1" />
         </xs:sequence>
         <xs:attribute name="id" type="xs:string" use="required"/>
     </xs:complexType>
@@ -70,8 +70,8 @@
             <xs:element name="Prodvekt" type="VektType" />
             <xs:element name="Rundvekt" type="VektType" />
         </xs:sequence>
-        <xs:attribute name="no" type="xs:integer" use="required"/>
-        <xs:attribute name="id" type="xs:string" use="required"/>
+        <xs:attribute name="no" type="xs:integer"/>
+        <xs:attribute name="id" type="xs:string" />
     </xs:complexType>
 
     <xs:complexType name="VektType">
