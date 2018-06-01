@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           targetNamespace="http://www.imr.no/formats/nmdlandingdata/v1"
+           xmlns="http://www.imr.no/formats/nmdlandingdata/v1">
+
+    <xs:element name="Data" type="LandingdataType" />
+
+    <xs:complexType name="LandingdataType">
+        <xs:sequence>
+            <xs:element name="Sluttseddel" type="SluttseddelType" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="required"/>
+        <xs:attribute name="fangstAar" type="xs:integer" use="required"/>
+    </xs:complexType>
+
+    <!--
+        CruiseSerie type.
+    -->
+    <xs:complexType name="SluttseddelType">
+        <xs:sequence>
+            <xs:element name="DokType" type="DokTypeEnum" />
+            <xs:element name="SltsNr" type="xs:integer" />
+            <xs:element name="FormularDato" type="xs:date" />
+            <xs:element name="Salgslag" type="SalgslagTypeEnum" />
+            <xs:element name="SalgslagOrgnr" type="xs:string" />
+            <xs:element name="KjopOrgnr" type="xs:string" />
+            <xs:element name="KjopKundenr" type="xs:string" />
+            <xs:element name="KjopLand" type="xs:string" />
+            <xs:element name="FiskerKomm" type="xs:string" />
+            <xs:element name="FiskerLand" type="xs:string" />
+            <xs:element name="FiskerManntall" type="FiskerManntallTypeEnum" minOccurs="0" maxOccurs="1" />
+            <xs:element name="FartRegm" type="xs:string" />
+            <xs:element name="FartLand" type="xs:string" />
+            <xs:element name="FartType" type="xs:string" />
+            <xs:element name="Antmann" type="xs:integer" />
+            <xs:element name="Kvotetype" type="xs:string" />
+            <xs:element name="SisteFangstDato" type="xs:date" />
+            <xs:element name="FangstRegion" type="xs:string" />
+            <xs:element name="FangstKystHav" type="KystHavTypeEnum" />
+            <xs:element name="FangstHomr" type="xs:string" />
+            <xs:element name="FangstLok" type="xs:string" />
+            <xs:element name="FangstSone" type="xs:string" />
+            <xs:element name="Redskap" type="xs:string" />
+            <xs:element name="Kvoteland" type="xs:string" />
+            <xs:element name="Fiskedager" type="xs:integer" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="LandingsDato" type="xs:date" />
+            <xs:element name="LandingsMottak" type="xs:string" />
+            <xs:element name="LandingsKomm" type="xs:string" />
+            <xs:element name="LandingsLand" type="xs:string" />
+            <xs:element name="Fiskeliste" type="FiskListeType" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="FiskListeType">
+        <xs:sequence>
+            <xs:element name="Linje" type="FiskType" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="FiskType">
+        <xs:sequence>
+            <xs:element name="Fisk" type="xs:string" />
+            <xs:element name="Konservering" type="xs:string" />
+            <xs:element name="Tilstand" type="xs:string" />
+            <xs:element name="Kvalitet" type="xs:string" />
+            <xs:element name="Anvendelse" type="xs:string" />
+            <xs:element name="Prodvekt" type="VektType" />
+            <xs:element name="Rundvekt" type="VektType" />
+        </xs:sequence>
+        <xs:attribute name="no" type="xs:integer" use="required"/>
+        <xs:attribute name="id" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="VektType">
+        <xs:simpleContent>
+            <xs:extension base="xs:double">
+                <xs:attribute name="enhet" type="xs:string" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:simpleType name="KystHavTypeEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="0">
+                <xs:annotation>
+                    <xs:documentation>Hav utenfor 12 mils grensen</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="8">
+                <xs:annotation>
+                    <xs:documentation>Kyst innenfor 12 mils grensen</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="">
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="FiskerManntallTypeEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="A">
+                <xs:annotation>
+                    <xs:documentation>Blad A</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="B">
+                <xs:annotation>
+                    <xs:documentation>Blad B</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="U">
+                <xs:annotation>
+                    <xs:documentation>Ikkje i manntalet</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="N">
+                <xs:annotation>
+                    <xs:documentation>Ukjent manntalsstatus</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="">
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="DokTypeEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="0">
+                <xs:annotation>
+                    <xs:documentation>Sluttsetel (omsett fangst)</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:documentation>Landingssetel (ikkje omsett fangst)</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="">
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="SalgslagTypeEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="02">
+                <xs:annotation>
+                    <xs:documentation>SKG - Skagerakfisk</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="03">
+                <xs:annotation>
+                    <xs:documentation>RGL - Rogaland Fiskesalgslag</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="04">
+                <xs:annotation>
+                    <xs:documentation>VNF - Vest Norges Fiskeslagslag</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="06">
+                <xs:annotation>
+                    <xs:documentation>SRF - Sunnmøre og Romsdal Fiskesalgslag</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="07">
+                <xs:annotation>
+                    <xs:documentation>NRF - Norges Råfisklag</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="08">
+                <xs:annotation>
+                    <xs:documentation>NSL - Norges Sildesalgslag</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="10">
+                <xs:annotation>
+                    <xs:documentation>DIV - Diverse utanom salslaga (innlagt av FDIR, diverse kjelder)</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="">
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

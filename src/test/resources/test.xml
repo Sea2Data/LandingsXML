@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<data xmlns="http://www.imr.no/formats/nmdlandingdata/v1" Id="dummyId" Fangstaar="2015">
+    <Sluttseddel>
+        <SltsNr>700010390945</SltsNr>
+        <FartRegm>3YQU</FartRegm>
+        <SisteFangstDato>2014-12-28+01:00</SisteFangstDato>
+        <FangstHomr>27</FangstHomr>
+        <Redskap>33</Redskap>
+        <Fiskeliste>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">1950.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">6720.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">180.0</Rundvekt>
+            </Linje>
+        </Fiskeliste>
+    </Sluttseddel>
+    <Sluttseddel>
+        <SltsNr>700010408775</SltsNr>
+        <FartRegm>3YQU</FartRegm>
+        <SisteFangstDato>2014-12-28+01:00</SisteFangstDato>
+        <FangstHomr>27</FangstHomr>
+        <Redskap>33</Redskap>
+        <Fiskeliste>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">2625.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">4890.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">390.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>1032</Fisk>
+                <Rundvekt enhet="Kg">41.0</Rundvekt>
+            </Linje>
+        </Fiskeliste>
+    </Sluttseddel>
+    <Sluttseddel>
+        <SltsNr>700010476364</SltsNr>
+        <FartRegm>A 0001F</FartRegm>
+        <SisteFangstDato>2014-12-28+01:00</SisteFangstDato>
+        <FangstHomr>27</FangstHomr>
+        <Redskap>31</Redskap>
+        <Fiskeliste>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">2407.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">2478.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">2360.0</Rundvekt>
+            </Linje>
+        </Fiskeliste>
+    </Sluttseddel>
+    <Sluttseddel>
+        <SltsNr>700010475740</SltsNr>
+        <FartRegm>A 0001F</FartRegm>
+        <SisteFangstDato>2014-12-28+01:00</SisteFangstDato>
+        <FangstHomr>27</FangstHomr>
+        <Redskap>31</Redskap>
+        <Fiskeliste>
+            <Linje>
+                <Fisk>1023</Fisk>
+                <Rundvekt enhet="Kg">112.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102701</Fisk>
+                <Rundvekt enhet="Kg">467.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>2311</Fisk>
+                <Rundvekt enhet="Kg">451.0</Rundvekt>
+            </Linje>
+        </Fiskeliste>
+    </Sluttseddel>
+    <Sluttseddel>
+        <SltsNr>700010476364</SltsNr>
+        <FartRegm>A 0001F</FartRegm>
+        <SisteFangstDato>2014-12-28+01:00</SisteFangstDato>
+        <FangstHomr>27</FangstHomr>
+        <Redskap>31</Redskap>
+        <Fiskeliste>
+            <Linje>
+                <Fisk>102701</Fisk>
+                <Rundvekt enhet="Kg">2212.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>1021</Fisk>
+                <Rundvekt enhet="Kg">1358.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>1021</Fisk>
+                <Rundvekt enhet="Kg">1302.0</Rundvekt>
+            </Linje>
+        </Fiskeliste>
+    </Sluttseddel>
+    <Sluttseddel>
+        <SltsNr>700010476998</SltsNr>
+        <FartRegm>A 0001F</FartRegm>
+        <SisteFangstDato>2014-12-28+01:00</SisteFangstDato>
+        <FangstHomr>27</FangstHomr>
+        <Redskap>31</Redskap>
+        <Fiskeliste>
+            <Linje>
+                <Fisk>1021</Fisk>
+                <Rundvekt enhet="Kg">546.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">1168.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">1145.0</Rundvekt>
+            </Linje>
+        </Fiskeliste>
+    </Sluttseddel>
+    <Sluttseddel>
+        <SltsNr>700010476364</SltsNr>
+        <FartRegm>A 0001F</FartRegm>
+        <SisteFangstDato>2014-12-28+01:00</SisteFangstDato>
+        <FangstHomr>27</FangstHomr>
+        <Redskap>31</Redskap>
+        <Fiskeliste>
+            <Linje>
+                <Fisk>2311</Fisk>
+                <Rundvekt enhet="Kg">560.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>2311</Fisk>
+                <Rundvekt enhet="Kg">270.0</Rundvekt>
+            </Linje>
+        </Fiskeliste>
+    </Sluttseddel>
+    <Sluttseddel>
+        <SltsNr>700010475740</SltsNr>
+        <FartRegm>A 0001F</FartRegm>
+        <SisteFangstDato>2014-12-28+01:00</SisteFangstDato>
+        <FangstHomr>27</FangstHomr>
+        <Redskap>31</Redskap>
+        <Fiskeliste>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">625.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102701</Fisk>
+                <Rundvekt enhet="Kg">1784.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102701</Fisk>
+                <Rundvekt enhet="Kg">570.0</Rundvekt>
+            </Linje>
+        </Fiskeliste>
+    </Sluttseddel>
+    <Sluttseddel>
+        <SltsNr>700010473942</SltsNr>
+        <FartRegm>A 0001F</FartRegm>
+        <SisteFangstDato>2014-12-28+01:00</SisteFangstDato>
+        <FangstHomr>27</FangstHomr>
+        <Redskap>31</Redskap>
+        <Fiskeliste>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">354.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">1180.0</Rundvekt>
+            </Linje>
+        </Fiskeliste>
+    </Sluttseddel>
+    <Sluttseddel>
+        <SltsNr>700010475740</SltsNr>
+        <FartRegm>A 0001F</FartRegm>
+        <SisteFangstDato>2014-12-28+01:00</SisteFangstDato>
+        <FangstHomr>27</FangstHomr>
+        <Redskap>31</Redskap>
+        <Fiskeliste>
+            <Linje>
+                <Fisk>1021</Fisk>
+                <Rundvekt enhet="Kg">140.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>1021</Fisk>
+                <Rundvekt enhet="Kg">140.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">1510.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">1180.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">543.0</Rundvekt>
+            </Linje>
+        </Fiskeliste>
+    </Sluttseddel>
+    <Sluttseddel>
+        <SltsNr>700010473942</SltsNr>
+        <FartRegm>A 0001F</FartRegm>
+        <SisteFangstDato>2014-12-28+01:00</SisteFangstDato>
+        <FangstHomr>27</FangstHomr>
+        <Redskap>31</Redskap>
+        <Fiskeliste>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">1180.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102701</Fisk>
+                <Rundvekt enhet="Kg">4218.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>1032</Fisk>
+                <Rundvekt enhet="Kg">540.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>1021</Fisk>
+                <Rundvekt enhet="Kg">770.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>1021</Fisk>
+                <Rundvekt enhet="Kg">560.0</Rundvekt>
+            </Linje>
+        </Fiskeliste>
+    </Sluttseddel>
+    <Sluttseddel>
+        <SltsNr>700010476998</SltsNr>
+        <FartRegm>A 0001F</FartRegm>
+        <SisteFangstDato>2014-12-28+01:00</SisteFangstDato>
+        <FangstHomr>27</FangstHomr>
+        <Redskap>31</Redskap>
+        <Fiskeliste>
+            <Linje>
+                <Fisk>102701</Fisk>
+                <Rundvekt enhet="Kg">547.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>2311</Fisk>
+                <Rundvekt enhet="Kg">392.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>1021</Fisk>
+                <Rundvekt enhet="Kg">854.0</Rundvekt>
+            </Linje>
+        </Fiskeliste>
+    </Sluttseddel>
+    <Sluttseddel>
+        <SltsNr>700010473397</SltsNr>
+        <FartRegm>A 0001F</FartRegm>
+        <SisteFangstDato>2014-12-28+01:00</SisteFangstDato>
+        <FangstHomr>27</FangstHomr>
+        <Redskap>31</Redskap>
+        <Fiskeliste>
+            <Linje>
+                <Fisk>2311</Fisk>
+                <Rundvekt enhet="Kg">1283.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>2311</Fisk>
+                <Rundvekt enhet="Kg">945.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>2311</Fisk>
+                <Rundvekt enhet="Kg">479.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>2311</Fisk>
+                <Rundvekt enhet="Kg">198.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102701</Fisk>
+                <Rundvekt enhet="Kg">752.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">345.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">300.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">435.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>1032</Fisk>
+                <Rundvekt enhet="Kg">14.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>1021</Fisk>
+                <Rundvekt enhet="Kg">462.0</Rundvekt>
+            </Linje>
+        </Fiskeliste>
+    </Sluttseddel>
+    <Sluttseddel>
+        <SltsNr>700010480845</SltsNr>
+        <FartRegm>A 0001F</FartRegm>
+        <SisteFangstDato>2014-12-28+01:00</SisteFangstDato>
+        <FangstHomr>27</FangstHomr>
+        <Redskap>35</Redskap>
+        <Fiskeliste>
+            <Linje>
+                <Fisk>2311</Fisk>
+                <Rundvekt enhet="Kg">203.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">1180.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">1180.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">1723.0</Rundvekt>
+            </Linje>
+        </Fiskeliste>
+    </Sluttseddel>
+    <Sluttseddel>
+        <SltsNr>700010478408</SltsNr>
+        <FartRegm>A 0001F</FartRegm>
+        <SisteFangstDato>2014-12-28+01:00</SisteFangstDato>
+        <FangstHomr>27</FangstHomr>
+        <Redskap>31</Redskap>
+        <Fiskeliste>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">1723.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">1770.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">1888.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>2311</Fisk>
+                <Rundvekt enhet="Kg">132.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>2311</Fisk>
+                <Rundvekt enhet="Kg">378.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>1023</Fisk>
+                <Rundvekt enhet="Kg">91.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>1021</Fisk>
+                <Rundvekt enhet="Kg">1120.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>1021</Fisk>
+                <Rundvekt enhet="Kg">644.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102701</Fisk>
+                <Rundvekt enhet="Kg">4355.0</Rundvekt>
+            </Linje>
+        </Fiskeliste>
+    </Sluttseddel>
+    <Sluttseddel>
+        <SltsNr>700010480845</SltsNr>
+        <FartRegm>A 0001F</FartRegm>
+        <SisteFangstDato>2014-12-28+01:00</SisteFangstDato>
+        <FangstHomr>27</FangstHomr>
+        <Redskap>35</Redskap>
+        <Fiskeliste>
+            <Linje>
+                <Fisk>1021</Fisk>
+                <Rundvekt enhet="Kg">3024.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102701</Fisk>
+                <Rundvekt enhet="Kg">1220.0</Rundvekt>
+            </Linje>
+        </Fiskeliste>
+    </Sluttseddel>
+    <Sluttseddel>
+        <SltsNr>700010481784</SltsNr>
+        <FartRegm>A 0001F</FartRegm>
+        <SisteFangstDato>2014-12-28+01:00</SisteFangstDato>
+        <FangstHomr>27</FangstHomr>
+        <Redskap>32</Redskap>
+        <Fiskeliste>
+            <Linje>
+                <Fisk>2311</Fisk>
+                <Rundvekt enhet="Kg">891.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">1875.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">2625.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>1021</Fisk>
+                <Rundvekt enhet="Kg">2220.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102701</Fisk>
+                <Rundvekt enhet="Kg">365.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>1032</Fisk>
+                <Rundvekt enhet="Kg">311.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>2311</Fisk>
+                <Rundvekt enhet="Kg">297.0</Rundvekt>
+            </Linje>
+        </Fiskeliste>
+    </Sluttseddel>
+    <Sluttseddel>
+        <SltsNr>700010479998</SltsNr>
+        <FartRegm>A 0001F</FartRegm>
+        <SisteFangstDato>2014-12-28+01:00</SisteFangstDato>
+        <FangstHomr>27</FangstHomr>
+        <Redskap>33</Redskap>
+        <Fiskeliste>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">915.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102701</Fisk>
+                <Rundvekt enhet="Kg">2132.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>1021</Fisk>
+                <Rundvekt enhet="Kg">1358.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>2311</Fisk>
+                <Rundvekt enhet="Kg">338.0</Rundvekt>
+            </Linje>
+        </Fiskeliste>
+    </Sluttseddel>
+    <Sluttseddel>
+        <SltsNr>700010446077</SltsNr>
+        <FartRegm>A 0001F</FartRegm>
+        <SisteFangstDato>2014-12-28+01:00</SisteFangstDato>
+        <FangstHomr>27</FangstHomr>
+        <Redskap>55</Redskap>
+        <Fiskeliste>
+            <Linje>
+                <Fisk>2524</Fisk>
+                <Rundvekt enhet="Kg">600.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>2524</Fisk>
+                <Rundvekt enhet="Kg">230.0</Rundvekt>
+            </Linje>
+        </Fiskeliste>
+    </Sluttseddel>
+    <Sluttseddel>
+        <SltsNr>700010444277</SltsNr>
+        <FartRegm>A 0001F</FartRegm>
+        <SisteFangstDato>2014-12-28+01:00</SisteFangstDato>
+        <FangstHomr>27</FangstHomr>
+        <Redskap>55</Redskap>
+        <Fiskeliste>
+            <Linje>
+                <Fisk>2524</Fisk>
+                <Rundvekt enhet="Kg">450.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>2524</Fisk>
+                <Rundvekt enhet="Kg">250.0</Rundvekt>
+            </Linje>
+        </Fiskeliste>
+    </Sluttseddel>
+    <Sluttseddel>
+        <SltsNr>700010469301</SltsNr>
+        <FartRegm>A 0001F</FartRegm>
+        <SisteFangstDato>2014-12-28+01:00</SisteFangstDato>
+        <FangstHomr>27</FangstHomr>
+        <Redskap>32</Redskap>
+        <Fiskeliste>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">270.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>1032</Fisk>
+                <Rundvekt enhet="Kg">68.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>1021</Fisk>
+                <Rundvekt enhet="Kg">980.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>1021</Fisk>
+                <Rundvekt enhet="Kg">574.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">570.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102701</Fisk>
+                <Rundvekt enhet="Kg">616.0</Rundvekt>
+            </Linje>
+        </Fiskeliste>
+    </Sluttseddel>
+    <Sluttseddel>
+        <SltsNr>700010469556</SltsNr>
+        <FartRegm>A 0001F</FartRegm>
+        <SisteFangstDato>2014-12-28+01:00</SisteFangstDato>
+        <FangstHomr>27</FangstHomr>
+        <Redskap>32</Redskap>
+        <Fiskeliste>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">195.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">150.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>1021</Fisk>
+                <Rundvekt enhet="Kg">2800.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>1021</Fisk>
+                <Rundvekt enhet="Kg">72.0</Rundvekt>
+            </Linje>
+        </Fiskeliste>
+    </Sluttseddel>
+    <Sluttseddel>
+        <SltsNr>700010470516</SltsNr>
+        <FartRegm>A 0001F</FartRegm>
+        <SisteFangstDato>2014-12-28+01:00</SisteFangstDato>
+        <FangstHomr>27</FangstHomr>
+        <Redskap>35</Redskap>
+        <Fiskeliste>
+            <Linje>
+                <Fisk>102202</Fisk>
+                <Rundvekt enhet="Kg">390.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>102701</Fisk>
+                <Rundvekt enhet="Kg">280.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>1032</Fisk>
+                <Rundvekt enhet="Kg">27.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>1021</Fisk>
+                <Rundvekt enhet="Kg">3654.0</Rundvekt>
+            </Linje>
+        </Fiskeliste>
+    </Sluttseddel>
+    <Sluttseddel>
+        <SltsNr>200000938024</SltsNr>
+        <FartRegm>A 0002F</FartRegm>
+        <SisteFangstDato>2014-12-28+01:00</SisteFangstDato>
+        <FangstHomr>27</FangstHomr>
+        <Redskap>55</Redskap>
+        <Fiskeliste>
+            <Linje>
+                <Fisk>2524</Fisk>
+                <Rundvekt enhet="Kg">120.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>2524</Fisk>
+                <Rundvekt enhet="Kg">250.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>1022</Fisk>
+                <Rundvekt enhet="Kg">177.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>1027</Fisk>
+                <Rundvekt enhet="Kg">228.0</Rundvekt>
+            </Linje>
+        </Fiskeliste>
+    </Sluttseddel>
+    <Sluttseddel>
+        <SltsNr>200000938025</SltsNr>
+        <FartRegm>A 0002F</FartRegm>
+        <SisteFangstDato>2014-12-28+01:00</SisteFangstDato>
+        <FangstHomr>27</FangstHomr>
+        <Redskap>55</Redskap>
+        <Fiskeliste>
+            <Linje>
+                <Fisk>2524</Fisk>
+                <Rundvekt enhet="Kg">150.0</Rundvekt>
+            </Linje>
+            <Linje>
+                <Fisk>2524</Fisk>
+                <Rundvekt enhet="Kg">300.0</Rundvekt>
+            </Linje>
+        </Fiskeliste>
+    </Sluttseddel>
+</data>

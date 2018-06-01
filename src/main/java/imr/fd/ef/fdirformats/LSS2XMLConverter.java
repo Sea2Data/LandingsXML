@@ -5,6 +5,7 @@
  */
 package imr.fd.ef.fdirformats;
 
+import LandingsTypes.v0_1.LandingdataType;
 import XMLHandling.SchemaReader;
 import LandingsTypes.v1.DellandingType;
 import LandingsTypes.v1.FangstdataType;
@@ -30,12 +31,22 @@ import java.io.OutputStream;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.nio.file.FileAlreadyExistsException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import javax.xml.bind.JAXBException;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
  * Read LSS files and converts to xml.
@@ -62,21 +73,40 @@ public class LSS2XMLConverter {
             SchemaReader schemareader = new SchemaReader(LSS2XMLConverter.class.getClassLoader().getResourceAsStream("landinger.xsd"));
             System.out.println("Converts LSS file to xml-format: " + schemareader.getTargetNameSpace());
             System.out.println("Memory intensive for large files. Consider increasing heap size, java option: -Xmx<maxheapsize>, e.g: -Xmx8g");
-            System.out.println("Usage: <LSS file> <xml file> [encoding]");
+            System.out.println("Usage: <LSS file> <xml file> <encoding> [--dummy]");
+            System.out.println("Usage: Use 'system' for default encoding");
+            System.out.println("Usage: --dummy produces old format for testing purposes.");
             System.exit(0);
         }
-        String encoding = System.getProperty("file.encoding");
-        if (args.length == 3) {
-            encoding = args[2];
+        String encoding = args[2];
+
+        if (encoding.equals("system")) {
+            encoding = System.getProperty("file.encoding");
+        }
+
+        boolean dummy = false;
+        if (args.length == 4) {
+            if (args[3].equals("--dummy")) {
+                dummy = true;
+            } else {
+                System.out.println("Option: " + args[3] + "not recognized.");
+                System.exit(0);
+            }
         }
         File landings_xml = new File(args[1]);
         if (landings_xml.length() > 0) {
             throw new FileAlreadyExistsException("Landings xml file already exist");
         }
-        LSS2XMLConverter.convertFile(new File(args[0]), new File(args[1]), encoding);
+
+        if (dummy) {
+            LSS2XMLConverter.convertFile_01_dummy(new File(args[0]), new File(args[1]), encoding);
+        } else {
+            LSS2XMLConverter.convertFile(new File(args[0]), new File(args[1]), encoding);
+        }
+
     }
 
-    public static void convertFile(File lss, File xml, String encoding) throws JAXBException, FileNotFoundException, LSSProcessingException, IOException, Exception {
+    protected static LandingsdataType parseLSS(File lss, String encoding) throws FileNotFoundException, LSSProcessingException, Exception {
         FileInputStream instream = new FileInputStream(lss);
 
         //count lines
@@ -109,9 +139,97 @@ public class LSS2XMLConverter {
         reader.close();
         instream.close();
 
+        return landingsdata;
+    }
+
+    public static void convertFile(File lss, File xml, String encoding) throws JAXBException, FileNotFoundException, LSSProcessingException, IOException, Exception {
+
+        LandingsdataType landingsdata;
+        landingsdata = parseLSS(lss, encoding);
+
         OutputStream stream = new FileOutputStream(xml);
         HierarchicalData.IO.save(stream, landingsdata);
         stream.close();
+    }
+
+    /**
+     * Produces a dummy file of the old format for testing purposes. File is
+     * mostly correct, but contains only selected fields, undocumented fields
+     * might have arbitrary values, and sales notes might be split if The lss
+     * file is not sorted on dokumentid. Weights are deliberately set to hg even
+     * if unit is Kg to match old sins.
+     *
+     * @param lss
+     * @param xml
+     * @param encoding
+     * @throws LSSProcessingException
+     * @throws Exception
+     */
+    public static void convertFile_01_dummy(File lss, File xml, String encoding) throws LSSProcessingException, Exception {
+        LandingsdataType landingsdata;
+        landingsdata = parseLSS(lss, encoding);
+
+        LandingsTypes.v0_1.LandingdataType landingsdataOld = convertTo_01(landingsdata);
+
+        OutputStream stream = new FileOutputStream(xml);
+        HierarchicalData.IO.save(stream, landingsdataOld);
+        stream.close();
+    }
+
+    protected static LandingdataType convertTo_01(LandingsdataType landingsdata) throws ParseException, DatatypeConfigurationException {
+        LandingsTypes.v0_1.ObjectFactory factory = new LandingsTypes.v0_1.ObjectFactory();
+        LandingsTypes.v0_1.LandingdataType landingsdataOld = factory.createLandingdataType();
+        landingsdataOld.setFangstAar(landingsdata.getSeddellinje().get(0).getFangstår());
+        landingsdataOld.setId("dummyId");
+        LandingsTypes.v0_1.SluttseddelType lastseddel = factory.createSluttseddelType();
+        lastseddel.setFiskeliste(factory.createFiskListeType());
+        landingsdataOld.getSluttseddel().add(lastseddel);
+        for (SeddellinjeType seddellinje : landingsdata.getSeddellinje()) {
+            BigInteger snr;
+            snr = new BigInteger(seddellinje.getDokumentnummer());
+            if (lastseddel.getSltsNr() == null) {
+                lastseddel.setSltsNr(snr);
+            }
+            if (!lastseddel.getSltsNr().equals(snr)) {
+                lastseddel = factory.createSluttseddelType();
+                lastseddel.setFiskeliste(factory.createFiskListeType());
+                landingsdataOld.getSluttseddel().add(lastseddel);
+            }
+            lastseddel.setDokType("" + seddellinje.getDokumenttypeKode());
+            lastseddel.setFangstHomr(String.format("%02d", seddellinje.getFangstdata().getHovedområdeKode()));
+            lastseddel.setFangstKystHav("" + seddellinje.getFangstdata().getKystHavKode());
+            lastseddel.setFangstLok(seddellinje.getFangstdata().getLokasjonKode());
+            lastseddel.setFangstSone(seddellinje.getFangstdata().getSoneKode());
+            lastseddel.setFartLand(seddellinje.getFartøy().getFartøynasjonalitetKode());
+            lastseddel.setSisteFangstDato(convertDate(seddellinje.getFangstdata().getSisteFangstdato()));
+            if (seddellinje.getDokumentFormulardato() != null) {
+                lastseddel.setFormularDato(convertDate(seddellinje.getDokumentFormulardato()));
+            }
+            lastseddel.setLandingsDato(convertDate(seddellinje.getProduksjon().getLandingsdato()));
+            lastseddel.setFartRegm(seddellinje.getFartøy().getRegistreringsmerkeSeddel());
+            lastseddel.setRedskap(seddellinje.getRedskap().getRedskapKode());
+            lastseddel.setFartType(seddellinje.getFartøy().getFartøytypeKode());
+            LandingsTypes.v0_1.FiskType f = factory.createFiskType();
+            f.setFisk(seddellinje.getArtKode());
+            LandingsTypes.v0_1.VektType vekt = factory.createVektType();
+            vekt.setEnhet("KG");
+            if (seddellinje.getProdukt().getRundvekt() != null) {
+                vekt.setValue(seddellinje.getProdukt().getRundvekt().doubleValue() * 10);
+            }
+            f.setRundvekt(vekt);
+            f.setNo(BigInteger.valueOf(seddellinje.getLinjenummer()));
+            lastseddel.getFiskeliste().getLinje().add(f);
+        }
+
+        return landingsdataOld;
+    }
+
+    private static XMLGregorianCalendar convertDate(String sisteFangstdato) throws ParseException, DatatypeConfigurationException {
+        DateFormat df = new SimpleDateFormat("DD.MM.YYYY");
+        Date date = df.parse(sisteFangstdato);
+        GregorianCalendar cal = new GregorianCalendar();
+        cal.setTime(date);
+        return DatatypeFactory.newInstance().newXMLGregorianCalendar(cal);
     }
 
     /**

@@ -39,7 +39,7 @@ public class LSS2XMLConverterTest {
     }
 
     /**
-     * Test of main method, of class LSS2XMLConverter.
+     * Test of main method, of class LSS2XML_0_1_Converter.
      */
     @Test
     public void testMain() throws Exception {
@@ -59,7 +59,7 @@ public class LSS2XMLConverterTest {
     }
 
     /**
-     * Test of convertFile method, of class LSS2XMLConverter.
+     * Test of convertFile method, of class LSS2XML_0_1_Converter.
      */
     @Test
     public void testConvertFile() throws Exception {
@@ -78,7 +78,7 @@ public class LSS2XMLConverterTest {
     }
 
     /**
-     * Test of convertFile method, of class LSS2XMLConverter.
+     * Test of convertFile method, of class LSS2XML_0_1_Converter.
      */
     @Test
     public void testConvertFileException() throws Exception {
