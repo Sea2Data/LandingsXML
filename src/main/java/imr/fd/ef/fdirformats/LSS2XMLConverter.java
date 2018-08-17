@@ -6,6 +6,7 @@
 package imr.fd.ef.fdirformats;
 
 import LandingsTypes.v0_1.LandingdataType;
+import LandingsTypes.v1.ArtType;
 import XMLHandling.SchemaReader;
 import LandingsTypes.v1.DellandingType;
 import LandingsTypes.v1.FangstdataType;
@@ -19,6 +20,7 @@ import LandingsTypes.v1.MottakerType;
 import LandingsTypes.v1.ObjectFactory;
 import LandingsTypes.v1.ProduktType;
 import LandingsTypes.v1.RedskapType;
+import LandingsTypes.v1.SalgslagType;
 import LandingsTypes.v1.SeddellinjeType;
 import java.io.BufferedReader;
 import java.io.File;
@@ -39,10 +41,8 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import javax.xml.bind.JAXBException;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
@@ -69,6 +69,11 @@ public class LSS2XMLConverter {
     }
 
     public static void main(String[] args) throws LSSProcessingException, IOException, FileNotFoundException, Exception {
+        //args = new String[3];
+        //args[0] = "/Users/a5362/Google Drive/code/masters/formater_fdir/FDIRFormats/src/test/resources/FDIR_HI_LSS_FANGST_2015_100_lines.psv";
+        //args[1] = "/Users/a5362/Google Drive/code/masters/formater_fdir/FDIRFormats/src/test/resources/landinger_100_lines.xml";
+        //args[2] = "iso-8859-1";
+                
         if (args.length < 2) {
             SchemaReader schemareader = new SchemaReader(LSS2XMLConverter.class.getClassLoader().getResourceAsStream("landinger.xsd"));
             System.out.println("Converts LSS file to xml-format: " + schemareader.getTargetNameSpace());
@@ -196,21 +201,21 @@ public class LSS2XMLConverter {
                 landingsdataOld.getSluttseddel().add(lastseddel);
             }
             lastseddel.setDokType("" + seddellinje.getDokumenttypeKode());
-            lastseddel.setFangstHomr(String.format("%02d", seddellinje.getFangstdata().getHovedområdeKode()));
-            lastseddel.setFangstKystHav("" + seddellinje.getFangstdata().getKystHavKode());
-            lastseddel.setFangstLok(seddellinje.getFangstdata().getLokasjonKode());
+            lastseddel.setFangstHomr(String.format("%02d", seddellinje.getHovedområdeKode()));
+            lastseddel.setFangstKystHav("" + seddellinje.getKystHavKode());
+            lastseddel.setFangstLok(seddellinje.getLokasjonKode());
             lastseddel.setFangstSone(seddellinje.getFangstdata().getSoneKode());
-            lastseddel.setFartLand(seddellinje.getFartøy().getFartøynasjonalitetKode());
-            lastseddel.setSisteFangstDato(convertDate(seddellinje.getFangstdata().getSisteFangstdato()));
+            lastseddel.setFartLand(seddellinje.getFartøynasjonalitetKode());
+            lastseddel.setSisteFangstDato(convertDate(seddellinje.getSisteFangstdato()));
             if (seddellinje.getDokumentFormulardato() != null) {
                 lastseddel.setFormularDato(convertDate(seddellinje.getDokumentFormulardato()));
             }
             lastseddel.setLandingsDato(convertDate(seddellinje.getProduksjon().getLandingsdato()));
-            lastseddel.setFartRegm(seddellinje.getFartøy().getRegistreringsmerkeSeddel());
-            lastseddel.setRedskap(seddellinje.getRedskap().getRedskapKode());
+            lastseddel.setFartRegm(seddellinje.getRegistreringsmerkeSeddel());
+            lastseddel.setRedskap(seddellinje.getRedskapKode());
             lastseddel.setFartType(seddellinje.getFartøy().getFartøytypeKode());
-            lastseddel.setSalgslag(seddellinje.getSalgslagKode());
-            lastseddel.setSalgslagOrgnr("" + seddellinje.getSalgslagID());
+            lastseddel.setSalgslag(seddellinje.getSalgslag().getSalgslagKode());
+            lastseddel.setSalgslagOrgnr("" + seddellinje.getSalgslag().getSalgslagID());
             lastseddel.setKjopLand(seddellinje.getMottaker().getMottakernasjonalitetKode());
             lastseddel.setFangstRegion(seddellinje.getFangstdata().getHovedområdeFAOKode());
             lastseddel.setLandingsLand(seddellinje.getProduksjon().getLandingsnasjonKode());
@@ -297,26 +302,24 @@ public class LSS2XMLConverter {
         linje.setRedskap(this.processRedskap(row));
         linje.setKvote(this.processKvote(row));
         linje.setArtKode(parseString(row.get(this.indexMap.get("Art (kode)"))));
-
+        linje.setSalgslag(this.processSalgslag(row));
+        linje.setArt(this.processArt(row));
         linje.setDokumentnummer(parseString(row.get(this.indexMap.get("Dokumentnummer"))));
         linje.setDokumenttypeKode(this.parseBigInteger(row.get(this.indexMap.get("Dokumenttype (kode)"))));
         linje.setDokumenttypeBokmål(parseString(row.get(this.indexMap.get("Dokumenttype (bokmål)"))));
         linje.setDokumentVersjonsnummer(this.parseBigInteger(row.get(this.indexMap.get("Dokument versjonsnummer"))));
         linje.setDokumentFormulardato(parseString(row.get(this.indexMap.get("Dokument formulardato"))));
         linje.setDokumentElektroniskDato(parseString(row.get(this.indexMap.get("Dokument elektronisk dato"))));
-        linje.setSalgslag(parseString(row.get(this.indexMap.get("Salgslag"))));
-        linje.setSalgslagID(this.parseBigInteger(row.get(this.indexMap.get("Salgslag ID"))));
-        linje.setSalgslagKode(parseString(row.get(this.indexMap.get("Salgslag (kode)"))));
         linje.setFangstår(this.parseBigInteger(row.get(this.indexMap.get("Fangstår"))));
-
-        linje.setArtBokmål(parseString(row.get(this.indexMap.get("Art (bokmål)"))));
-        linje.setArtFAOBokmål(parseString(row.get(this.indexMap.get("Art FAO (bokmål)"))));
-        linje.setArtFAOKode(parseString(row.get(this.indexMap.get("Art FAO (kode)"))));
-        linje.setArtsgruppeHistoriskBokmål(parseString(row.get(this.indexMap.get("Artsgruppe historisk (bokmål)"))));
-        linje.setArtsgruppeHistoriskKode(parseString(row.get(this.indexMap.get("Artsgruppe historisk (kode)"))));
-        linje.setHovedgruppeArtBokmål(parseString(row.get(this.indexMap.get("Hovedgruppe art (bokmål)"))));
-        linje.setHovedgruppeArtKode(parseString(row.get(this.indexMap.get("Hovedgruppe art (kode)"))));
-
+        linje.setHovedområdeKode(this.parseBigInteger(row.get(this.indexMap.get("Hovedområde (kode)"))));
+        linje.setKystHavKode(this.parseBigInteger(row.get(this.indexMap.get("Kyst/hav (kode)"))));
+        linje.setLokasjonKode(parseString(row.get(this.indexMap.get("Lokasjon (kode)"))));
+        linje.setSisteFangstdato(parseString(row.get(this.indexMap.get("Siste fangstdato"))));
+        linje.setFartøynasjonalitetKode(parseString(row.get(this.indexMap.get("Fartøynasjonalitet (kode)"))));
+        linje.setRegistreringsmerkeSeddel(parseString(row.get(this.indexMap.get("Registreringsmerke (seddel)"))));
+        linje.setStørsteLengde(this.parseBigDecimal(row.get(this.indexMap.get("Største lengde"))));
+        linje.setHovedgruppeRedskapKode(parseString(row.get(this.indexMap.get("Hovedgruppe redskap (kode)"))));
+        linje.setRedskapKode(parseString(row.get(this.indexMap.get("Redskap (kode)"))));
         return linje;
     }
 
@@ -337,12 +340,9 @@ public class LSS2XMLConverter {
         fangst.setHovedområdeBokmål(parseString(row.get(this.indexMap.get("Hovedområde (bokmål)"))));
         fangst.setHovedområdeFAOBokmål(parseString(row.get(this.indexMap.get("Hovedområde FAO (bokmål)"))));
         fangst.setHovedområdeFAOKode(parseString(row.get(this.indexMap.get("Hovedområde FAO (kode)"))));
-        fangst.setHovedområdeKode(this.parseBigInteger(row.get(this.indexMap.get("Hovedområde (kode)"))));
-        fangst.setKystHavKode(this.parseBigInteger(row.get(this.indexMap.get("Kyst/hav (kode)"))));
-        fangst.setLokasjonKode(parseString(row.get(this.indexMap.get("Lokasjon (kode)"))));
+        
         fangst.setNordSørFor62GraderNord(parseString(row.get(this.indexMap.get("Nord/sør for 62 grader nord"))));
         fangst.setOmrådegrupperingBokmål(parseString(row.get(this.indexMap.get("Områdegruppering (bokmål)"))));
-        fangst.setSisteFangstdato(parseString(row.get(this.indexMap.get("Siste fangstdato"))));
         fangst.setSoneBokmål(parseString(row.get(this.indexMap.get("Sone (bokmål)"))));
         fangst.setSoneKode(parseString(row.get(this.indexMap.get("Sone (kode)"))));
 
@@ -362,7 +362,6 @@ public class LSS2XMLConverter {
         fartøy.setFartøykommune(parseString(row.get(this.indexMap.get("Fartøykommune"))));
         fartøy.setFartøykommuneKode(this.parseBigInteger(row.get(this.indexMap.get("Fartøykommune (kode)"))));
         fartøy.setFartøynasjonalitetBokmål(parseString(row.get(this.indexMap.get("Fartøynasjonalitet (bokmål)"))));
-        fartøy.setFartøynasjonalitetKode(parseString(row.get(this.indexMap.get("Fartøynasjonalitet (kode)"))));
         fartøy.setFartøynavn(parseString(row.get(this.indexMap.get("Fartøynavn"))));
         fartøy.setFartøytypeBokmål(parseString(row.get(this.indexMap.get("Fartøytype (bokmål)"))));
         fartøy.setFartøytypeKode(parseString(row.get(this.indexMap.get("Fartøytype (kode)"))));
@@ -372,9 +371,6 @@ public class LSS2XMLConverter {
         fartøy.setMotorkraft(this.parseBigInteger(row.get(this.indexMap.get("Motorkraft"))));
         fartøy.setOmbyggingsår(this.parseBigInteger(row.get(this.indexMap.get("Ombyggingsår"))));
         fartøy.setRadiokallesignalSeddel(parseString(row.get(this.indexMap.get("Radiokallesignal (seddel)"))));
-        fartøy.setRegistreringsmerkeSeddel(parseString(row.get(this.indexMap.get("Registreringsmerke (seddel)"))));
-        fartøy.setStørsteLengde(this.parseBigDecimal(row.get(this.indexMap.get("Største lengde"))));
-
         return fartøy;
     }
 
@@ -429,9 +425,7 @@ public class LSS2XMLConverter {
     private RedskapType processRedskap(List<String> row) {
         RedskapType redskap = this.factory.createRedskapType();
         redskap.setHovedgruppeRedskapBokmål(parseString(row.get(this.indexMap.get("Hovedgruppe redskap (bokmål)"))));
-        redskap.setHovedgruppeRedskapKode(parseString(row.get(this.indexMap.get("Hovedgruppe redskap (kode)"))));
         redskap.setRedskapBokmål(parseString(row.get(this.indexMap.get("Redskap (bokmål)"))));
-        redskap.setRedskapKode(parseString(row.get(this.indexMap.get("Redskap (kode)"))));
 
         return redskap;
     }
@@ -494,6 +488,27 @@ public class LSS2XMLConverter {
             return null;
         }
         return this.decimaladapter.parse(d);
+    }
+
+    private SalgslagType processSalgslag(List<String> row) {
+        SalgslagType salgslag = this.factory.createSalgslagType();
+        salgslag.setSalgslag(parseString(row.get(this.indexMap.get("Salgslag"))));
+        salgslag.setSalgslagID(this.parseBigInteger(row.get(this.indexMap.get("Salgslag ID"))));
+        salgslag.setSalgslagKode(parseString(row.get(this.indexMap.get("Salgslag (kode)"))));  
+        return salgslag;
+    }
+
+    private ArtType processArt(List<String> row) {
+        ArtType art = this.factory.createArtType();
+                art.setArtBokmål(parseString(row.get(this.indexMap.get("Art (bokmål)"))));
+        art.setArtFAOBokmål(parseString(row.get(this.indexMap.get("Art FAO (bokmål)"))));
+        art.setArtFAOKode(parseString(row.get(this.indexMap.get("Art FAO (kode)"))));
+        art.setArtsgruppeHistoriskBokmål(parseString(row.get(this.indexMap.get("Artsgruppe historisk (bokmål)"))));
+        art.setArtsgruppeHistoriskKode(parseString(row.get(this.indexMap.get("Artsgruppe historisk (kode)"))));
+        art.setHovedgruppeArtBokmål(parseString(row.get(this.indexMap.get("Hovedgruppe art (bokmål)"))));
+        art.setHovedgruppeArtKode(parseString(row.get(this.indexMap.get("Hovedgruppe art (kode)"))));
+
+        return art;
     }
 
     //keeps track of which keys has been accessed, so that we can ensure that all columns have been processed.

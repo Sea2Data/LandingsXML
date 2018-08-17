@@ -13,40 +13,44 @@
         </xs:documentation>
     </xs:annotation>
   
-    <xs:element name="landingsdata" type="LandingsdataType" />
+    <xs:element name="Landingsdata" type="LandingsdataType" />
     
     <xs:complexType name="LandingsdataType">
         <xs:sequence>
-            <xs:element name="seddellinje" type="SeddellinjeType" maxOccurs="unbounded" minOccurs="0" />
+            <xs:element name="Seddellinje" type="SeddellinjeType" maxOccurs="unbounded" minOccurs="0" />
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="SeddellinjeType">
         <xs:sequence>
-            <xs:element name="Dokumenttype_Bokmål" type="xs:string"></xs:element>
-            <xs:element name="DokumentVersjonsnummer" type="xs:integer"></xs:element>
-            <xs:element name="DokumentFormulardato" type="xs:string"></xs:element>
-            <xs:element name="DokumentElektroniskDato" type="xs:string"></xs:element>
-            <xs:element name="SalgslagID" type="xs:integer"></xs:element>
-            <xs:element name="Salgslag" type="xs:string"></xs:element>
-            <xs:element name="mottaker" type="MottakerType" maxOccurs="1" minOccurs="0"/>
-            <xs:element name="produksjon" type="LandingOgProduksjonType" maxOccurs="1" minOccurs="0"/>
-            <xs:element name="fangstdata" type="FangstdataType" maxOccurs="1" minOccurs="0"/>
-            <xs:element name="fisker" type="FiskerType" maxOccurs="1" minOccurs="0"/>
-            <xs:element name="fartøy" type="FartøyType" maxOccurs="1" minOccurs="0"/>
-            <xs:element name="mottakendefartøy" type="MottakendeFartøyType" maxOccurs="1" minOccurs="0"/>
-            <xs:element name="kvote" type="KvoteType" maxOccurs="1" minOccurs="0"/>
-            <xs:element name="redskap" type="RedskapType" maxOccurs="1" minOccurs="0"/>
-            <xs:element name="dellanding" type="DellandingType" maxOccurs="1" minOccurs="0"/>
-            <xs:element name="produkt" type="ProduktType" maxOccurs="1" minOccurs="0"/>
-            <xs:element name="Art_bokmål" type="xs:string"></xs:element>
-            <xs:element name="ArtsgruppeHistorisk_kode" type="xs:string"></xs:element>
-            <xs:element name="ArtsgruppeHistorisk_bokmål" type="xs:string"></xs:element>
-            <xs:element name="HovedgruppeArt_kode" type="xs:string"></xs:element>
-            <xs:element name="HovedgruppeArt_bokmål" type="xs:string"></xs:element>
-            <xs:element name="ArtFAO_kode" type="xs:string"></xs:element>
-            <xs:element name="ArtFAO_bokmål" type="xs:string"></xs:element>
+            <xs:element name="Dokumenttype_Kode" type="xs:integer" />
+            <xs:element name="Dokumenttype_Bokmål" type="KodeforklaringType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="DokumentVersjonsnummer" type="xs:integer" />
+            <xs:element name="DokumentFormulardato" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="DokumentElektroniskDato" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Salgslag" type="SalgslagType" />
+            <xs:element name="Mottaker" type="MottakerType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Produksjon" type="LandingOgProduksjonType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Fangstdata" type="FangstdataType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Fisker" type="FiskerType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Fartøy" type="FartøyType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Mottakendefartøy" type="MottakendeFartøyType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Kvote" type="KvoteType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Redskap" type="RedskapType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Dellanding" type="DellandingType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Produkt" type="ProduktType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Art" type="ArtType" maxOccurs="1" minOccurs="0"/>
 
         </xs:sequence>
+        <!-- identifiserer seddellinjer -->
+        <xs:attribute name="Dokumentnummer" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:appinfo>
+                    <imrd:imrApp>
+                        <imrd:key/>
+                    </imrd:imrApp>
+                </xs:appinfo>
+            </xs:annotation>
+        </xs:attribute>
         <xs:attribute name="Linjenummer" type="xs:long" use="required">
             <xs:annotation>
                 <xs:appinfo>
@@ -56,178 +60,161 @@
                 </xs:appinfo>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="Fangstår" type="xs:integer">
-            <xs:annotation>
-                <xs:appinfo>
-                    <imrd:imrApp>
-                        <imrd:key/>
-                    </imrd:imrApp>
-                </xs:appinfo>
-            </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="Dokumentnummer" type="xs:string">
-            <xs:annotation>
-                <xs:appinfo>
-                    <imrd:imrApp>
-                        <imrd:key/>
-                    </imrd:imrApp>
-                </xs:appinfo>
-            </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="Salgslag_kode" type="xs:string">
-            <xs:annotation>
-                <xs:appinfo>
-                    <imrd:imrApp>
-                        <imrd:key/>
-                    </imrd:imrApp>
-                </xs:appinfo>
-            </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="Dokumenttype_Kode" type="xs:integer">
-            <xs:annotation>
-                <xs:appinfo>
-                    <imrd:imrApp>
-                        <imrd:key/>
-                    </imrd:imrApp>
-                </xs:appinfo>
-            </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="Art_kode" type="xs:string">
-            <xs:annotation>
-                <xs:appinfo>
-                    <imrd:imrApp>
-                        <imrd:key/>
-                    </imrd:imrApp>
-                </xs:appinfo>
-            </xs:annotation>
-        </xs:attribute>
+
+        <!-- identifiserer fangst -->
+        <xs:attribute name="Art_kode" type="xs:string" />
+        <xs:attribute name="Registreringsmerke_seddel" type="xs:string" />
+        <xs:attribute name="Fangstår" type="xs:integer" />
+        <xs:attribute name="SisteFangstdato" type="xs:string" />
+
+        <!-- vanlige filtreringsparametere -->
+        <xs:attribute name="Redskap_kode" type="xs:string" />
+        <xs:attribute name="HovedgruppeRedskap_kode" type="xs:string" />
+        <xs:attribute name="Hovedområde_kode" type="xs:integer" />
+        <xs:attribute name="Lokasjon_kode" type="xs:string" />
+        <xs:attribute name="StørsteLengde" type="xs:decimal" />
+        <xs:attribute name="Fartøynasjonalitet_kode" type="xs:string" />
+        <xs:attribute name="KystHav_kode" type="xs:integer" />
+        
     </xs:complexType>
     <xs:complexType name="MottakerType">
         <xs:sequence>
-            <xs:element name="Mottakernasjonalitet_kode" type="xs:string"></xs:element>
-            <xs:element name="Mottakernasjonalitet_bokmål" type="xs:string"></xs:element>
-            <xs:element name="Mottaksstasjon" type="xs:string"></xs:element>
+            <xs:element name="Mottakernasjonalitet_kode" type="xs:string"/>
+            <xs:element name="Mottakernasjonalitet_bokmål" type="KodeforklaringType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Mottaksstasjon" type="xs:string" maxOccurs="1" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="LandingOgProduksjonType">
         <xs:sequence>
-            <xs:element name="Landingsdato" type="xs:string"></xs:element>
-            <xs:element name="Landingsklokkeslett" type="xs:string"></xs:element>
-            <xs:element name="Landingskommune_kode" type="xs:integer"></xs:element>
-            <xs:element name="Landingskommune" type="xs:string"></xs:element>
-            <xs:element name="Landingsfylke_kode" type="xs:integer"></xs:element>
-            <xs:element name="Landingsfylke" type="xs:string"></xs:element>
-            <xs:element name="Landingsnasjon_kode" type="xs:string"></xs:element>
-            <xs:element name="Landingsnasjon_bokmål" type="xs:string"></xs:element>
-            <xs:element name="Produksjonsanlegg" type="xs:string"></xs:element>
-            <xs:element name="Produksjonskommune_kode" type="xs:string"></xs:element>
-            <xs:element name="Produksjonskommune" type="xs:string"></xs:element>
+            <xs:element name="Landingsdato" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Landingsklokkeslett" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Landingskommune_kode" type="xs:integer" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Landingskommune" type="KodeforklaringType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Landingsfylke_kode" type="xs:integer" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Landingsfylke" type="KodeforklaringType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Landingsnasjon_kode" type="xs:string"/>
+            <xs:element name="Landingsnasjon_bokmål" type="KodeforklaringType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Produksjonsanlegg" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Produksjonskommune_kode" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Produksjonskommune" type="KodeforklaringType" maxOccurs="1" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="FiskerType">
         <xs:sequence>
-            <xs:element name="Fiskerkommune_kode" type="xs:integer"></xs:element>
-            <xs:element name="Fiskerkommune" type="xs:string"></xs:element>
-            <xs:element name="Fiskernasjonalitet_kode" type="xs:string"></xs:element>
-            <xs:element name="Fiskernasjonalitet_bokmål" type="xs:string"></xs:element>
+            <xs:element name="Fiskerkommune_kode" type="xs:integer" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Fiskerkommune" type="KodeforklaringType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Fiskernasjonalitet_kode" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Fiskernasjonalitet_bokmål" type="KodeforklaringType" maxOccurs="1" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="FartøyType">
         <xs:sequence>
-            <xs:element name="Fartøynavn" type="xs:string"></xs:element>
-            <xs:element name="FartøyID" type="xs:string"></xs:element>
-            <xs:element name="Registreringsmerke_seddel" type="xs:string"></xs:element>
-            <xs:element name="Radiokallesignal_seddel" type="xs:string"></xs:element>
-            <xs:element name="StørsteLengde" type="xs:decimal"></xs:element>
-            <xs:element name="Lengdegruppe_kode" type="xs:string"></xs:element>
-            <xs:element name="Lengdegruppe_bokmål" type="xs:string"></xs:element>
-            <xs:element name="Bruttotonnasje1969" type="xs:integer"></xs:element>
-            <xs:element name="BruttotonnasjeAnnen" type="xs:integer"></xs:element>
-            <xs:element name="Byggeår" type="xs:integer"></xs:element>
-            <xs:element name="Ombyggingsår" type="xs:integer"></xs:element>
-            <xs:element name="Motorkraft" type="xs:integer"></xs:element>
-            <xs:element name="Motorbyggeår" type="xs:integer"></xs:element>
-            <xs:element name="FartøyGjelderFraDato" type="xs:string"></xs:element>
-            <xs:element name="FartøyGjelderTilDato" type="xs:string"></xs:element>
-            <xs:element name="Fartøytype_kode" type="xs:string"></xs:element>
-            <xs:element name="Fartøytype_bokmål" type="xs:string"></xs:element>
-            <xs:element name="Fartøykommune_kode" type="xs:integer"></xs:element>
-            <xs:element name="Fartøykommune" type="xs:string"></xs:element>
-            <xs:element name="Fartøyfylke_kode" type="xs:integer"></xs:element>
-            <xs:element name="Fartøyfylke" type="xs:string"></xs:element>
-            <xs:element name="Fartøynasjonalitet_kode" type="xs:string"></xs:element>
-            <xs:element name="Fartøynasjonalitet_bokmål" type="xs:string"></xs:element>
+            <xs:element name="Fartøynavn" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="FartøyID" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Radiokallesignal_seddel" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Lengdegruppe_kode" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Lengdegruppe_bokmål" type="KodeforklaringType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Bruttotonnasje1969" type="xs:integer" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="BruttotonnasjeAnnen" type="xs:integer" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Byggeår" type="xs:integer" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Ombyggingsår" type="xs:integer" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Motorkraft" type="xs:integer" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Motorbyggeår" type="xs:integer" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="FartøyGjelderFraDato" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="FartøyGjelderTilDato" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Fartøytype_kode" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Fartøytype_bokmål" type="KodeforklaringType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Fartøykommune_kode" type="xs:integer" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Fartøykommune" type="KodeforklaringType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Fartøyfylke_kode" type="xs:integer" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Fartøyfylke" type="KodeforklaringType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Fartøynasjonalitet_bokmål" type="KodeforklaringType" maxOccurs="1" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="MottakendeFartøyType">
         <xs:sequence>
-            <xs:element name="MottakendeFartøyRegMerke" type="xs:string"></xs:element>
-            <xs:element name="MottakendeFartøyRKAL" type="xs:string"></xs:element>
-            <xs:element name="MottakendeFartøytype_kode" type="xs:string"></xs:element>
-            <xs:element name="MottakendeFartøytype_bokmål" type="xs:string"></xs:element>
-            <xs:element name="MottakendeFartøynasj_kode" type="xs:string"></xs:element>
-            <xs:element name="MottakendeFartøynasj_bokmål" type="xs:string"></xs:element>
+            <xs:element name="MottakendeFartøyRegMerke" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="MottakendeFartøyRKAL" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="MottakendeFartøytype_kode" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="MottakendeFartøytype_bokmål" type="KodeforklaringType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="MottakendeFartøynasj_kode" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="MottakendeFartøynasj_bokmål" type="KodeforklaringType" maxOccurs="1" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="KvoteType">
         <xs:sequence>
-            <xs:element name="KvotefartøyRegMerke" type="xs:string"></xs:element>
-            <xs:element name="Kvotetype_kode" type="xs:string"></xs:element>
-            <xs:element name="Kvotetype_bokmål" type="xs:string"></xs:element>
+            <xs:element name="KvotefartøyRegMerke" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Kvotetype_kode" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Kvotetype_bokmål" type="KodeforklaringType" maxOccurs="1" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="RedskapType">
         <xs:sequence>
-            <xs:element name="Redskap_kode" type="xs:string"></xs:element>
-            <xs:element name="Redskap_bokmål" type="xs:string"></xs:element>
-            <xs:element name="HovedgruppeRedskap_kode" type="xs:string"></xs:element>
-            <xs:element name="HovedgruppeRedskap_bokmål" type="xs:string"></xs:element>
+            <xs:element name="Redskap_bokmål" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="HovedgruppeRedskap_bokmål" type="KodeforklaringType" maxOccurs="1" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="FangstdataType">
         <xs:sequence>
-            <xs:element name="SisteFangstdato" type="xs:string"></xs:element>
-            <xs:element name="Fangstfelt_kode" type="xs:string"></xs:element>
-            <xs:element name="KystHav_kode" type="xs:integer"></xs:element>
-            <xs:element name="Hovedområde_kode" type="xs:integer"></xs:element>
-            <xs:element name="Hovedområde_bokmål" type="xs:string"></xs:element>
-            <xs:element name="Lokasjon_kode" type="xs:string"></xs:element>
-            <xs:element name="Sone_kode" type="xs:string"></xs:element>
-            <xs:element name="Sone_bokmål" type="xs:string"></xs:element>
-            <xs:element name="Områdegruppering_bokmål" type="xs:string"></xs:element>
-            <xs:element name="HovedområdeFAO_kode" type="xs:string"></xs:element>
-            <xs:element name="HovedområdeFAO_bokmål" type="xs:string"></xs:element>
-            <xs:element name="NordSørFor62GraderNord" type="xs:string"></xs:element>
-            <xs:element name="Fangstdagbok_nummer" type="xs:long"></xs:element>
-            <xs:element name="Fangstdagbok_turnummer" type="xs:long"></xs:element>
+            <xs:element name="Fangstfelt_kode" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Hovedområde_bokmål" type="KodeforklaringType" maxOccurs="1" minOccurs="0" />
+            <xs:element name="Sone_kode" type="xs:string" maxOccurs="1" minOccurs="0" />
+            <xs:element name="Sone_bokmål" type="KodeforklaringType" maxOccurs="1" minOccurs="0" />
+            <xs:element name="Områdegruppering_bokmål" type="xs:string" maxOccurs="1" minOccurs="0" />
+            <xs:element name="HovedområdeFAO_kode" type="xs:string" maxOccurs="1" minOccurs="0" />
+            <xs:element name="HovedområdeFAO_bokmål" type="KodeforklaringType" maxOccurs="1" minOccurs="0" />
+            <xs:element name="NordSørFor62GraderNord" type="xs:string" maxOccurs="1" minOccurs="0" />
+            <xs:element name="Fangstdagbok_nummer" type="xs:long" maxOccurs="1" minOccurs="0" />
+            <xs:element name="Fangstdagbok_turnummer" type="xs:long" maxOccurs="1" minOccurs="0" />
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="DellandingType">
         <xs:sequence>
-            <xs:element name="Dellanding_signal" type="xs:integer"></xs:element>
-            <xs:element name="NesteMottaksstasjon" type="xs:string"></xs:element>
-            <xs:element name="ForrigeMottakstasjon" type="xs:string"></xs:element>
+            <xs:element name="Dellanding_signal" type="xs:integer" maxOccurs="1" minOccurs="0" />
+            <xs:element name="NesteMottaksstasjon" type="xs:string" maxOccurs="1" minOccurs="0" />
+            <xs:element name="ForrigeMottakstasjon" type="xs:string" maxOccurs="1" minOccurs="0" />
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="ProduktType">
         <xs:sequence>
-            <xs:element name="Produkttilstand_kode" type="xs:string"></xs:element>
-            <xs:element name="Produkttilstand_bokmål" type="xs:string"></xs:element>
-            <xs:element name="Konserveringsmåte_kode" type="xs:string"></xs:element>
-            <xs:element name="Konserveringsmåte_bokmål" type="xs:string"></xs:element>
-            <xs:element name="Landingsmåte_kode" type="xs:string"></xs:element>
-            <xs:element name="Landingsmåte_bokmål" type="xs:string"></xs:element>
-            <xs:element name="Kvalitet_kode" type="xs:string"></xs:element>
-            <xs:element name="Kvalitet_bokmål" type="xs:string"></xs:element>
-            <xs:element name="Størrelsesgruppering_kode" type="xs:string"></xs:element>
-            <xs:element name="Anvendelse_kode" type="xs:string"></xs:element>
-            <xs:element name="Anvendelse_bokmål" type="xs:string"></xs:element>
-            <xs:element name="HovedgruppeAnvendelse_kode" type="xs:string"></xs:element>
-            <xs:element name="HovedgruppeAnvendelse_bokmål" type="xs:string"></xs:element>
-            <xs:element name="AntallStykk" type="xs:integer"></xs:element>
-            <xs:element name="Bruttovekt" type="xs:decimal"></xs:element>
-            <xs:element name="Produktvekt" type="xs:decimal"></xs:element>
-            <xs:element name="Rundvekt" type="xs:decimal"></xs:element>
+            <xs:element name="Produkttilstand_kode" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Produkttilstand_bokmål" type="KodeforklaringType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Konserveringsmåte_kode" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Konserveringsmåte_bokmål" type="KodeforklaringType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Landingsmåte_kode" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Landingsmåte_bokmål" type="KodeforklaringType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Kvalitet_kode" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Kvalitet_bokmål" type="KodeforklaringType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Størrelsesgruppering_kode" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Anvendelse_kode" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Anvendelse_bokmål" type="KodeforklaringType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="HovedgruppeAnvendelse_kode" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="HovedgruppeAnvendelse_bokmål" type="KodeforklaringType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="AntallStykk" type="xs:integer" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Bruttovekt" type="xs:decimal" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Produktvekt" type="xs:decimal" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Rundvekt" type="xs:decimal" maxOccurs="1" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
+    <xs:complexType name="SalgslagType">
+        <xs:sequence>
+            <xs:element name="SalgslagID" type="xs:integer" maxOccurs="1" minOccurs="0" />
+            <xs:element name="Salgslag" type="KodeforklaringType" maxOccurs="1" minOccurs="0" />
+            <xs:element name="Salgslag_kode" type="xs:string" maxOccurs="1" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ArtType">
+        <xs:sequence>
+            <xs:element name="Art_bokmål" type="KodeforklaringType" maxOccurs="1" minOccurs="0" />
+            <xs:element name="ArtsgruppeHistorisk_kode" type="xs:string" maxOccurs="1" minOccurs="0" />
+            <xs:element name="ArtsgruppeHistorisk_bokmål" type="KodeforklaringType" maxOccurs="1" minOccurs="0" />
+            <xs:element name="HovedgruppeArt_kode" type="xs:string" maxOccurs="1" minOccurs="0" />
+            <xs:element name="HovedgruppeArt_bokmål" type="KodeforklaringType" maxOccurs="1" minOccurs="0" />
+            <xs:element name="ArtFAO_kode" type="xs:string" maxOccurs="1" minOccurs="0" />
+            <xs:element name="ArtFAO_bokmål" type="KodeforklaringType" maxOccurs="1" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="KodeforklaringType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
 </xs:schema>

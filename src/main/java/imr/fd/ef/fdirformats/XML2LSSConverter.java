@@ -71,6 +71,7 @@ public class XML2LSSConverter {
         stream = new PrintStream(new BufferedOutputStream(new FileOutputStream(lss_file)));
         LandingsdataType data = IO.parse(new FileInputStream(xml), LandingsdataType.class);
         Iterator<List<String>> it = conv.converter.getTableContentIterator(data.getSeddellinje());
+        //assert false: "xml file in old format. Reconvert or set up conversion from original.";
         conv.writer.writeLine(conv.converter.getHeaders(data.getSeddellinje().get(0)), stream);
         while (it.hasNext()){
             conv.writer.writeLine(it.next(), stream);
