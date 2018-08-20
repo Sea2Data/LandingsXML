@@ -21,7 +21,7 @@ import LandingsTypes.v1.ObjectFactory;
 import LandingsTypes.v1.ProduktType;
 import LandingsTypes.v1.RedskapType;
 import LandingsTypes.v1.SalgslagdataType;
-import LandingsTypes.v1.SeddellinjeType; 
+import LandingsTypes.v1.SeddellinjeType;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.File;
@@ -78,7 +78,7 @@ public class LSS2XMLConverter {
         //args[0] = "/Users/a5362/Google Drive/code/masters/formater_fdir/FDIRFormats/src/test/resources/FDIR_HI_LSS_FANGST_2015_100_lines.psv";
         //args[1] = "/Users/a5362/Google Drive/code/masters/formater_fdir/FDIRFormats/src/test/resources/landinger_100_lines.xml";
         //args[2] = "iso-8859-1";
-                
+
         if (args.length < 2) {
             SchemaReader schemareader = new SchemaReader(LSS2XMLConverter.class.getClassLoader().getResourceAsStream("landinger.xsd"));
             System.out.println("Converts LSS file to xml-format: " + schemareader.getTargetNameSpace());
@@ -156,18 +156,17 @@ public class LSS2XMLConverter {
 
         OutputStream stream = new FileOutputStream(xml);
         BufferedOutputStream buf = new BufferedOutputStream(stream);
-        
+
         XMLStreamWriter xmlOut = XMLOutputFactory.newFactory().createXMLStreamWriter(buf);
         xmlOut.setDefaultNamespace("l:http://www.imr.no/formats/landinger/v1");
         xmlOut.writeStartDocument();
-        xmlOut.writeStartElement("l:http://www.imr.no/formats/landinger/v1", "Landingsdata");
+        xmlOut.writeStartElement("l:http://www.imr.no/formats/landinger/v1", "l:Landingsdata");
+        xmlOut.writeNamespace("l", "http://www.imr.no/formats/landinger/v1");
         JAXBContext context = JAXBContext.newInstance(SeddellinjeType.class);
         Marshaller marshaller = context.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
         
-        
         //parseLSS
-        
         FileInputStream instream = new FileInputStream(lss);
 
         //count lines
@@ -181,16 +180,14 @@ public class LSS2XMLConverter {
 
         LSS2XMLConverter converter = new LSS2XMLConverter();
         converter.processHeader(converter.getRow(reader.readLine()));
-        List<SeddellinjeType> linjer = new ArrayList<>(nlines);
 
         int l = 1;
         for (String line = reader.readLine(); line != null; line = reader.readLine()) {
             SeddellinjeType sl = converter.processRow(converter.getRow(line));
             marshaller.marshal(sl, xmlOut);
-            if (l%1000==0){
-                            System.out.println("nr: " + l + "/" + nlines);
+            if (l % 1000 == 0) {
+                System.out.println("nr: " + l + "/" + nlines);
             }
-
             l++;
         }
 
@@ -384,7 +381,7 @@ public class LSS2XMLConverter {
         fangst.setHovedområdeBokmål(parseString(row.get(this.indexMap.get("Hovedområde (bokmål)"))));
         fangst.setHovedområdeFAOBokmål(parseString(row.get(this.indexMap.get("Hovedområde FAO (bokmål)"))));
         fangst.setHovedområdeFAOKode(parseString(row.get(this.indexMap.get("Hovedområde FAO (kode)"))));
-        
+
         fangst.setNordSørFor62GraderNord(parseString(row.get(this.indexMap.get("Nord/sør for 62 grader nord"))));
         fangst.setOmrådegrupperingBokmål(parseString(row.get(this.indexMap.get("Områdegruppering (bokmål)"))));
         fangst.setSoneBokmål(parseString(row.get(this.indexMap.get("Sone (bokmål)"))));
@@ -538,13 +535,13 @@ public class LSS2XMLConverter {
         SalgslagdataType salgslag = this.factory.createSalgslagdataType();
         salgslag.setSalgslag(parseString(row.get(this.indexMap.get("Salgslag"))));
         salgslag.setSalgslagID(this.parseBigInteger(row.get(this.indexMap.get("Salgslag ID"))));
-        salgslag.setSalgslagKode(parseString(row.get(this.indexMap.get("Salgslag (kode)"))));  
+        salgslag.setSalgslagKode(parseString(row.get(this.indexMap.get("Salgslag (kode)"))));
         return salgslag;
     }
 
     private ArtType processArt(List<String> row) {
         ArtType art = this.factory.createArtType();
-                art.setArtBokmål(parseString(row.get(this.indexMap.get("Art (bokmål)"))));
+        art.setArtBokmål(parseString(row.get(this.indexMap.get("Art (bokmål)"))));
         art.setArtFAOBokmål(parseString(row.get(this.indexMap.get("Art FAO (bokmål)"))));
         art.setArtFAOKode(parseString(row.get(this.indexMap.get("Art FAO (kode)"))));
         art.setArtsgruppeHistoriskBokmål(parseString(row.get(this.indexMap.get("Artsgruppe historisk (bokmål)"))));

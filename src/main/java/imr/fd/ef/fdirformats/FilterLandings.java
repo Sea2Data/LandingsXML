@@ -158,7 +158,8 @@ public class FilterLandings {
 
         args = new String[1];
         args[0] = "/Users/a5362/Google Drive/code/masters/formater_fdir/FDIRFormats/src/test/resources/landinger_100_lines.xml";
-
+        args[0] = "/Users/a5362/code/masters/formater_fdir/FDIRFormats/output/landinger.xml";
+        
         FilterLandings filterlandings = new FilterLandings();
         File landings_xml = new File(args[0]);
         
