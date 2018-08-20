@@ -27,7 +27,7 @@
             <xs:element name="DokumentVersjonsnummer" type="xs:integer" />
             <xs:element name="DokumentFormulardato" type="xs:string" maxOccurs="1" minOccurs="0"/>
             <xs:element name="DokumentElektroniskDato" type="xs:string" maxOccurs="1" minOccurs="0"/>
-            <xs:element name="Salgslag" type="SalgslagType" />
+            <xs:element name="Salgslagdata" type="SalgslagdataType" maxOccurs="1" minOccurs="0" />
             <xs:element name="Mottaker" type="MottakerType" maxOccurs="1" minOccurs="0"/>
             <xs:element name="Produksjon" type="LandingOgProduksjonType" maxOccurs="1" minOccurs="0"/>
             <xs:element name="Fangstdata" type="FangstdataType" maxOccurs="1" minOccurs="0"/>
@@ -39,7 +39,6 @@
             <xs:element name="Dellanding" type="DellandingType" maxOccurs="1" minOccurs="0"/>
             <xs:element name="Produkt" type="ProduktType" maxOccurs="1" minOccurs="0"/>
             <xs:element name="Art" type="ArtType" maxOccurs="1" minOccurs="0"/>
-
         </xs:sequence>
         <!-- identifiserer seddellinjer -->
         <xs:attribute name="Dokumentnummer" type="xs:string" use="required">
@@ -196,7 +195,7 @@
             <xs:element name="Rundvekt" type="xs:decimal" maxOccurs="1" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="SalgslagType">
+    <xs:complexType name="SalgslagdataType">
         <xs:sequence>
             <xs:element name="SalgslagID" type="xs:integer" maxOccurs="1" minOccurs="0" />
             <xs:element name="Salgslag" type="KodeforklaringType" maxOccurs="1" minOccurs="0" />

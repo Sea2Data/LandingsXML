@@ -29,7 +29,7 @@
             <inheritance:extends> HierarchicalData.HierarchicalData </inheritance:extends>
             <annox:annotate target="package">@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters({@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = XMLadapters.BigDecimalAdapter.class, type = java.math.BigDecimal.class),@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = XMLadapters.BigIntegerAdapter.class, type = java.math.BigInteger.class)})</annox:annotate>            
             <annox:annotate>
-                <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="Selldellinje"/>
+                <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="Seddellinje"/>
             </annox:annotate>
         </jxb:bindings>
         <jxb:bindings node="//xs:complexType[@name='MottakerType']">
@@ -102,11 +102,11 @@
                     <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="Produkt"/>
                 </annox:annotate>
             </jxb:bindings>
-            <jxb:bindings node="//xs:complexType[@name='SalgslagType']">
+            <jxb:bindings node="//xs:complexType[@name='SalgslagdataType']">
                 <inheritance:extends> HierarchicalData.HierarchicalData </inheritance:extends>
                 <annox:annotate target="package">@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters({@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = XMLadapters.BigDecimalAdapter.class, type = java.math.BigDecimal.class),@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = XMLadapters.BigIntegerAdapter.class, type = java.math.BigInteger.class)})</annox:annotate>            
                 <annox:annotate>
-                    <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="Salgslag"/>
+                    <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="Salgslagdata"/>
                 </annox:annotate>
             </jxb:bindings>
             <jxb:bindings node="//xs:complexType[@name='ArtType']">

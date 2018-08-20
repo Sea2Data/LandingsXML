@@ -20,8 +20,8 @@ import LandingsTypes.v1.MottakerType;
 import LandingsTypes.v1.ObjectFactory;
 import LandingsTypes.v1.ProduktType;
 import LandingsTypes.v1.RedskapType;
-import LandingsTypes.v1.SalgslagType;
-import LandingsTypes.v1.SeddellinjeType;
+import LandingsTypes.v1.SalgslagdataType;
+import LandingsTypes.v1.SeddellinjeType; 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -214,8 +214,8 @@ public class LSS2XMLConverter {
             lastseddel.setFartRegm(seddellinje.getRegistreringsmerkeSeddel());
             lastseddel.setRedskap(seddellinje.getRedskapKode());
             lastseddel.setFartType(seddellinje.getFartøy().getFartøytypeKode());
-            lastseddel.setSalgslag(seddellinje.getSalgslag().getSalgslagKode());
-            lastseddel.setSalgslagOrgnr("" + seddellinje.getSalgslag().getSalgslagID());
+            lastseddel.setSalgslag(seddellinje.getSalgslagdata().getSalgslagKode());
+            lastseddel.setSalgslagOrgnr("" + seddellinje.getSalgslagdata().getSalgslagID());
             lastseddel.setKjopLand(seddellinje.getMottaker().getMottakernasjonalitetKode());
             lastseddel.setFangstRegion(seddellinje.getFangstdata().getHovedområdeFAOKode());
             lastseddel.setLandingsLand(seddellinje.getProduksjon().getLandingsnasjonKode());
@@ -302,7 +302,7 @@ public class LSS2XMLConverter {
         linje.setRedskap(this.processRedskap(row));
         linje.setKvote(this.processKvote(row));
         linje.setArtKode(parseString(row.get(this.indexMap.get("Art (kode)"))));
-        linje.setSalgslag(this.processSalgslag(row));
+        linje.setSalgslagdata(this.processSalgslag(row));
         linje.setArt(this.processArt(row));
         linje.setDokumentnummer(parseString(row.get(this.indexMap.get("Dokumentnummer"))));
         linje.setDokumenttypeKode(this.parseBigInteger(row.get(this.indexMap.get("Dokumenttype (kode)"))));
@@ -490,8 +490,8 @@ public class LSS2XMLConverter {
         return this.decimaladapter.parse(d);
     }
 
-    private SalgslagType processSalgslag(List<String> row) {
-        SalgslagType salgslag = this.factory.createSalgslagType();
+    private SalgslagdataType processSalgslag(List<String> row) {
+        SalgslagdataType salgslag = this.factory.createSalgslagdataType();
         salgslag.setSalgslag(parseString(row.get(this.indexMap.get("Salgslag"))));
         salgslag.setSalgslagID(this.parseBigInteger(row.get(this.indexMap.get("Salgslag ID"))));
         salgslag.setSalgslagKode(parseString(row.get(this.indexMap.get("Salgslag (kode)"))));  
