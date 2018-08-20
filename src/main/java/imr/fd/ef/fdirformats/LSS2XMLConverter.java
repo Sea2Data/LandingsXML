@@ -22,6 +22,7 @@ import LandingsTypes.v1.ProduktType;
 import LandingsTypes.v1.RedskapType;
 import LandingsTypes.v1.SalgslagdataType;
 import LandingsTypes.v1.SeddellinjeType; 
+import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -43,10 +44,14 @@ import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
+import javax.xml.stream.XMLOutputFactory;
+import javax.xml.stream.XMLStreamWriter;
 
 /**
  * Read LSS files and converts to xml.
@@ -149,12 +154,51 @@ public class LSS2XMLConverter {
 
     public static void convertFile(File lss, File xml, String encoding) throws JAXBException, FileNotFoundException, LSSProcessingException, IOException, Exception {
 
-        LandingsdataType landingsdata;
-        landingsdata = parseLSS(lss, encoding);
-
         OutputStream stream = new FileOutputStream(xml);
-        HierarchicalData.IO.save(stream, landingsdata);
-        stream.close();
+        BufferedOutputStream buf = new BufferedOutputStream(stream);
+        
+        XMLStreamWriter xmlOut = XMLOutputFactory.newFactory().createXMLStreamWriter(buf);
+        xmlOut.setDefaultNamespace("l:http://www.imr.no/formats/landinger/v1");
+        xmlOut.writeStartDocument();
+        xmlOut.writeStartElement("l:http://www.imr.no/formats/landinger/v1", "Landingsdata");
+        JAXBContext context = JAXBContext.newInstance(SeddellinjeType.class);
+        Marshaller marshaller = context.createMarshaller();
+        marshaller.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
+        
+        
+        //parseLSS
+        
+        FileInputStream instream = new FileInputStream(lss);
+
+        //count lines
+        int nlines = 0;
+        BufferedReader reader = new BufferedReader(new InputStreamReader(instream, encoding));
+        for (String line = reader.readLine(); line != null; line = reader.readLine()) {
+            nlines += 1;
+        }
+        instream.getChannel().position(0);
+        reader = new BufferedReader(new InputStreamReader(instream, encoding));
+
+        LSS2XMLConverter converter = new LSS2XMLConverter();
+        converter.processHeader(converter.getRow(reader.readLine()));
+        List<SeddellinjeType> linjer = new ArrayList<>(nlines);
+
+        int l = 1;
+        for (String line = reader.readLine(); line != null; line = reader.readLine()) {
+            SeddellinjeType sl = converter.processRow(converter.getRow(line));
+            marshaller.marshal(sl, xmlOut);
+            if (l%1000==0){
+                            System.out.println("nr: " + l + "/" + nlines);
+            }
+
+            l++;
+        }
+
+        reader.close();
+        instream.close();
+
+        xmlOut.writeEndDocument();
+        xmlOut.close();
     }
 
     /**

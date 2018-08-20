@@ -80,7 +80,8 @@ public class LSS2XMLConverterTest {
     /**
      * Test of convertFile method, of class LSS2XML_0_1_Converter.
      */
-    @Test
+    //test removed with change to streeaming conversion
+    //@Test
     public void testConvertFileException() throws Exception {
         System.out.println("convertFile");
 
