@@ -15,23 +15,29 @@ library(readr)
 
 
 lss_files=list("2016"="/Volumes/ces_prosjekt/ressurs/mare/fiskstat/sluttseddel/sluttseddel_LSS/mottatt2017/11_2017/FDIR_HI_LSS_FANGST_2016_PR_2017-10-31.psv", 
-               "2015"="/Volumes/ces_prosjekt/ressurs/mare/fiskstat/sluttseddel/sluttseddel_LSS_2005-2015/Fangst/FDIR_HI_LSS_FANGST_2015_PR_2016-12-08.psv")
+               "2015"="/Volumes/ces_prosjekt/ressurs/mare/fiskstat/sluttseddel/sluttseddel_LSS_2005-2015/Fangst/FDIR_HI_LSS_FANGST_2015_PR_2016-12-08.psv",
+               "2014"="/Volumes/ces_prosjekt/ressurs/mare/fiskstat/sluttseddel/sluttseddel_LSS_2005-2015/Fangst/FDIR_HI_LSS_FANGST_2014_PR_2016-12-08.psv",
+               "2013"="/Volumes/ces_prosjekt/ressurs/mare/fiskstat/sluttseddel/sluttseddel_LSS_2005-2015/Fangst/FDIR_HI_LSS_FANGST_2013_PR_2016-12-09.psv",
+               "2012"="/Volumes/ces_prosjekt/ressurs/mare/fiskstat/sluttseddel/sluttseddel_LSS_2005-2015/Fangst/FDIR_HI_LSS_FANGST_2012_PR_2016-12-09.psv",
+               "2011"="/Volumes/ces_prosjekt/ressurs/mare/fiskstat/sluttseddel/sluttseddel_LSS_2005-2015/Fangst/FDIR_HI_LSS_FANGST_2011_PR_2016-12-11.psv",
+               "2010"="/Volumes/ces_prosjekt/ressurs/mare/fiskstat/sluttseddel/sluttseddel_LSS_2005-2015/Fangst/FDIR_HI_LSS_FANGST_2010_PR_2016-12-11.psv",
+               "2009"="/Volumes/ces_prosjekt/ressurs/mare/fiskstat/sluttseddel/sluttseddel_LSS_2005-2015/Fangst/FDIR_HI_LSS_FANGST_2009_PR_2016-12-12.psv",
+               "2008"="/Volumes/ces_prosjekt/ressurs/mare/fiskstat/sluttseddel/sluttseddel_LSS_2005-2015/Fangst/FDIR_HI_LSS_FANGST_2008_PR_2016-12-12.psv",
+               "2007"="/Volumes/ces_prosjekt/ressurs/mare/fiskstat/sluttseddel/sluttseddel_LSS_2005-2015/Fangst/FDIR_HI_LSS_FANGST_2007_PR_2016-12-12.psv",
+               "2006"="/Volumes/ces_prosjekt/ressurs/mare/fiskstat/sluttseddel/sluttseddel_LSS_2005-2015/Fangst/FDIR_HI_LSS_FANGST_2006_PR_2016-12-13.psv",
+               "2005"="/Volumes/ces_prosjekt/ressurs/mare/fiskstat/sluttseddel/sluttseddel_LSS_2005-2015/Fangst/FDIR_HI_LSS_FANGST_2005_PR_2016-12-13.psv"
+               )
 species_selection <- list(sei=c("1032"), torsk=c("1022", "102201","102202", "102203", "102204"), sild=c("0611", "061101", "061102", "061103", "061104", "061105", "061106", "061107"))
 target_location <- "/Users/a5362/code/masters/formater_fdir/landingsets"
 converter_location <- "/Users/a5362/code/masters/formater_fdir/FDIRFormats/target/FDIRFormats-1.0-SNAPSHOT-jar-with-dependencies.jar"
 
-filter_and_dump <- function(year, species, data){
+filter_and_dump <- function(year, species, data, refresh=F){
   fn <- paste(year, "_", species, "_", paste(species_selection[[species]], collapse="_"), ".lss", sep="")
-  fp <- file.path(target_location, "LSS", fn)
+  fp <- file.path(target_location, "LSS", fn)  
   d <- data[data$Art..kode. %in% species_selection[[species]],]
   print(paste("writing", fp))
   write.table(d, file=fp, sep="|", row.names=F, col.names = names(imrParsers::landings_spec$cols), quote = F, fileEncoding = "latin1")
-  write.table(d, file=fp, sep="|", row.names=F, col.names = names(imrParsers::landings_spec$cols), quote = F, fileEncoding = "latin1")
-  
-}
 
-convert <- function(lss, target){
-  
 }
 
 get_lss <- function(){
@@ -58,26 +64,12 @@ convert <- function(filepath){
   system(execold)
 }
 
-convert_all <- function(target=target_location, overwrite=F){
+convert_all <- function(target=target_location){
   lssfiles <- file.path(target, "LSS")
   for (f in list.files(lssfiles)){
-    if (!overwrite){
-      if (file.exists(file.path(lssfiles, f))){
-          write(paste("File", file.path(lssfiles, f), "already exists."), stderr())
-      }
-        else{
           convert(file.path(lssfiles, f))      
         }
     }
-    else if (overwrite){
-      if (!file.exists(file.path(lssfiles, f))){
-        write(paste("Overwriting", file.path(lssfiles, f), "."), stderr())
-        file.remove(file.path(lssfiles, f))
-      }
-      convert(file.path(lssfiles, f))
-    }
-  }
-}
 
 compress <- function(){
   #compress files
@@ -85,5 +77,5 @@ compress <- function(){
 
 run <- function(){
   get_lss()
-  convert()
+  convert_all()
 }
