@@ -23,4 +23,5 @@ src/main/resources:
 * Contains proof of concept for streamed filtering (src/main/FilterLandings.java)
 
 ## Run ##
-Currently LSS to xml conversion is done by running java - jar target/LandingsXML-1.0-SNAPSHOT-jar-with-dependencies.jar. Run without arguments for usage description.
+* Currently LSS to xml conversion is done by running java - jar target/LandingsXML-1.0-SNAPSHOT-jar-with-dependencies.jar. Run without arguments for usage description.
+* Example for batch conversion is inclded as an R script in landingssets/populate_sets.R_
