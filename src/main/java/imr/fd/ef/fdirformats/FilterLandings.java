@@ -50,7 +50,7 @@ public class FilterLandings {
 
             if (this.reading) {
                 super.endElement(uri, localName, qName);
-            } //ensures reading is on whenever seddellinje is finished;
+            } //ensures reading_line is on whenever seddellinje is finished;
             else if (localName.equals(seddellinje)) {
                 this.reading = true;
             }
@@ -61,7 +61,7 @@ public class FilterLandings {
         public void startElement(String uri, String localName, String qName,
                 Attributes atts) throws SAXException {
 
-            //turns reading off for this seddellinje if it is not in species_codes_retained
+            //turns reading_line off for this seddellinje if it is not in species_codes_retained
             if (localName.equals(seddellinje)) {
                 if (this.species_codes_retained.contains(atts.getValue(art))) {
                     this.reading = true;
@@ -76,6 +76,64 @@ public class FilterLandings {
         }
     }
 
+        /**
+     * Filter for skipping certain species
+     */
+    class SkipSpeciesAndElements extends XMLFilterImpl {
+
+        private Set<String> species_codes_retained;
+        private Set<String> elements_skipped;
+        private boolean reading_line = true;
+        private boolean reading_element = true;
+        private final String seddellinje = "Seddellinje";
+        private final String art = "Art_kode";
+
+        public SkipSpeciesAndElements(Set<String> species_codes_retained, Set<String> elements_skipped) {
+            this.species_codes_retained = species_codes_retained;
+            this.elements_skipped = elements_skipped;
+        }
+
+        @Override
+        public void endElement(String uri, String localName, String qName)
+                throws SAXException {
+
+            if (this.reading_line && this.reading_element) {
+                super.endElement(uri, localName, qName);
+            } //ensures reading_line is on whenever seddellinje is finished;
+            
+            if (!this.reading_line && localName.equals(seddellinje)) {
+                this.reading_line = true;
+            }
+            
+            if (!this.reading_element && this.elements_skipped.contains(localName)){
+                this.reading_element = true;
+            }
+
+        }
+
+        @Override
+        public void startElement(String uri, String localName, String qName,
+                Attributes atts) throws SAXException {
+
+            //turns reading_line off for this seddellinje if it is not in species_codes_retained
+            if (localName.equals(seddellinje)) {
+                if (this.species_codes_retained.contains(atts.getValue(art))) {
+                    this.reading_line = true;
+                } else {
+                    this.reading_line = false;
+                }
+            }
+            
+            if (this.reading_element && this.elements_skipped.contains(localName)){
+                this.reading_element=false;
+            }
+
+            if (this.reading_line && this.reading_element) {
+                super.startElement(uri, localName, qName, atts);
+            }
+        }
+    }
+    
     /**
      * Filter for skipping certain elements
      */
@@ -94,7 +152,7 @@ public class FilterLandings {
 
             if (this.reading) {
                 super.endElement(uri, localName, qName);
-            } //ensures reading is on whenever skipped element is finnished;
+            } //ensures reading_line is on whenever skipped element is finnished;
             else if (elements_skipped.contains(localName)) {
                 this.reading = true;
             } else {
@@ -106,7 +164,7 @@ public class FilterLandings {
         public void startElement(String uri, String localName, String qName,
                 Attributes atts) throws SAXException {
 
-            //turns reading off for this element and child elements if it is in elements_skipped
+            //turns reading_line off for this element and child elements if it is in elements_skipped
             if (elements_skipped.contains(localName)) {
                 this.reading = false;
             }
@@ -123,7 +181,16 @@ public class FilterLandings {
      * @return
      */
     public LandingsdataType readLandingsSpecies(Set<String> species_codes_retained, InputStream xml) throws JAXBException, XMLStreamException, ParserConfigurationException, SAXException, IOException {
-        return IO.parse(xml, LandingsdataType.class, new SkipSpecies(species_codes_retained));
+        Set<String> skipelements = new HashSet<>();
+        skipelements.add("Salgslagdata");
+        skipelements.add("Mottaker");
+        skipelements.add("Produksjon");
+        skipelements.add("Fisker");
+        skipelements.add("Fartøy");
+        skipelements.add("Mottakendefartøy");
+        skipelements.add("Kvote");
+        skipelements.add("Dellanding");
+        return IO.parse(xml, LandingsdataType.class, new SkipSpeciesAndElements(species_codes_retained, skipelements));
     }
 
     /**
@@ -158,59 +225,26 @@ public class FilterLandings {
 
         args = new String[1];
         args[0] = "/Users/a5362/Google Drive/code/masters/formater_fdir/FDIRFormats/src/test/resources/landinger_100_lines.xml";
-        args[0] = "/Users/a5362/code/masters/formater_fdir/FDIRFormats/output/landinger.xml";
+        args[0] = "/Users/a5362/code/masters/formater_fdir/FDIRFormats/output/landinger_big.xml";
         
         FilterLandings filterlandings = new FilterLandings();
         File landings_xml = new File(args[0]);
-        
-        FileInputStream xml = new FileInputStream(landings_xml);
-        LandingsdataType unfiltered = IO.parse(xml, LandingsdataType.class);
-        int fisker = 0;
-        int art = 0;
-        for (SeddellinjeType s : unfiltered.getSeddellinje()) {
-            if (s.getFisker() != null) {
-                fisker++;
-            }
-            if (s.getArt()!=null){
-                art++;
-            }
-        }
-        System.out.println(fisker + " entries with fisker, and " + art + " entries with species in unfiltered read");
-        xml.close();
         
         FileInputStream xml1 = new FileInputStream(landings_xml);
         Set<String> retainspecies = new HashSet<>();
         retainspecies.add("102202");
         retainspecies.add("102701");
 
+        long start = System.currentTimeMillis();
         LandingsdataType speciesfiltered = filterlandings.readLandingsSpecies(retainspecies, xml1);
-
+        long stop = System.currentTimeMillis();
         for (SeddellinjeType s : speciesfiltered.getSeddellinje()) {
             if (!s.getArtKode().equals("102202") && !s.getArtKode().equals("102701")) {
                 assert false;
             }
         }
-        System.out.println(speciesfiltered.getSeddellinje().size() + " entries of species 102202 or 102701 in species filter read. No other species present.");
+        System.out.println(speciesfiltered.getSeddellinje().size() + " entries of species 102202 or 102701 in species filter read. No other species present. Parsed in " + (stop-start)/1000 + "s.");
 
         xml1.close();
-
-        FileInputStream xml2 = new FileInputStream(landings_xml);
-
-        LandingsdataType elementfiltered = filterlandings.readBasic(xml2);
-        fisker = 0;
-        art = 0;
-        for (SeddellinjeType s : elementfiltered.getSeddellinje()) {
-            if (s.getFisker() != null) {
-                fisker++;
-            }
-            if (s.getArt()!=null){
-                art++;
-            }
-        }
-        System.out.println(fisker + " entries with fisker, and " + art + " entries with species in basic-filtered read.");
-
-        xml2.close();
-
-        assert false : "test on big file";
     }
 }
