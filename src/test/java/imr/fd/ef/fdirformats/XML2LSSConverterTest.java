@@ -15,7 +15,6 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
@@ -46,7 +45,7 @@ public class XML2LSSConverterTest {
     /**
      * Test of convertFile method, of class XML2LSSConverter.
      */
-    @Test
+    //@Test
     public void testConvertFile() throws Exception {
         System.out.println("convertFile");
         File xml = new File(XML2LSSConverterTest.class.getClassLoader().getResource("landinger_100_lines.xml").toURI());

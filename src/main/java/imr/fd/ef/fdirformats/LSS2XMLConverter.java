@@ -158,10 +158,10 @@ public class LSS2XMLConverter {
         BufferedOutputStream buf = new BufferedOutputStream(stream);
 
         XMLStreamWriter xmlOut = XMLOutputFactory.newFactory().createXMLStreamWriter(buf);
-        xmlOut.setDefaultNamespace("l:http://www.imr.no/formats/landinger/v1");
+        xmlOut.setDefaultNamespace("l:http://www.imr.no/formats/landinger/v2");
         xmlOut.writeStartDocument();
-        xmlOut.writeStartElement("l:http://www.imr.no/formats/landinger/v1", "l:Landingsdata");
-        xmlOut.writeNamespace("l", "http://www.imr.no/formats/landinger/v1");
+        xmlOut.writeStartElement("l:http://www.imr.no/formats/landinger/v2", "l:Landingsdata");
+        xmlOut.writeNamespace("l", "http://www.imr.no/formats/landinger/v2");
         JAXBContext context = JAXBContext.newInstance(SeddellinjeType.class);
         Marshaller marshaller = context.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
@@ -352,7 +352,7 @@ public class LSS2XMLConverter {
         linje.setDokumentFormulardato(parseString(row.get(this.indexMap.get("Dokument formulardato"))));
         linje.setDokumentElektroniskDato(parseString(row.get(this.indexMap.get("Dokument elektronisk dato"))));
         linje.setFangstår(this.parseBigInteger(row.get(this.indexMap.get("Fangstår"))));
-        linje.setHovedområdeKode(this.parseBigInteger(row.get(this.indexMap.get("Hovedområde (kode)"))));
+        linje.setHovedområdeKode(row.get(this.indexMap.get("Hovedområde (kode)")));
         linje.setKystHavKode(this.parseBigInteger(row.get(this.indexMap.get("Kyst/hav (kode)"))));
         linje.setLokasjonKode(parseString(row.get(this.indexMap.get("Lokasjon (kode)"))));
         linje.setSisteFangstdato(parseString(row.get(this.indexMap.get("Siste fangstdato"))));

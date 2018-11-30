@@ -61,9 +61,9 @@ convert <- function(filepath){
   targetname <- gsub(".lss", ".xml", targetname)
   fp_new <- file.path(target_location, "xml", targetname)
   fp_old <- file.path(target_location, "xml_old", targetname)
-  execnew <- paste0("java -jar ", converter_location, " ", filepath, " ", fp_new, " latin1")
-  execold <- paste0("java -jar ", converter_location, " ", filepath, " ", fp_old, " latin1 --dummy")
-  system(execnew)
+  #execnew <- paste0("java -Xmx12g -jar ", converter_location, " ", filepath, " ", fp_new, " latin1")
+  execold <- paste0("java -Xmx12g -jar ", converter_location, " ", filepath, " ", fp_old, " latin1 --dummy")
+  #system(execnew)
   system(execold)
 }
 

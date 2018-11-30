@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Landingsdata xmlns="http://www.imr.no/formats/landinger/v1">
+<Landingsdata xmlns="http://www.imr.no/formats/landinger/v2">
     <Seddellinje Dokumentnummer="700010390945" Linjenummer="1" Art_kode="102202" Registreringsmerke_seddel="3YQU" Fangstår="2015" SisteFangstdato="26.03.2015" Redskap_kode="33" HovedgruppeRedskap_kode="3" Hovedområde_kode="5" Lokasjon_kode="25" Fartøynasjonalitet_kode="NOR" KystHav_kode="8">
         <Dokumenttype_Kode>0</Dokumenttype_Kode>
         <Dokumenttype_Bokmål>Sluttseddeldokument</Dokumenttype_Bokmål>

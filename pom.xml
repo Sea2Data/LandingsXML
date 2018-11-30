@@ -52,6 +52,9 @@
                                         <directory>${basedir}/src/main/resources</directory>
                                     </fileset>
                                 </schema>
+                                <schema>
+                                    <url>http://www.imr.no/formats/landing/landingdatav2.xsd</url>
+                                </schema>
                             </schemas>
                             <forceRegenerate>false</forceRegenerate>
                             <generateDirectory>${project.build.directory}/generated-sources/xjc</generateDirectory>

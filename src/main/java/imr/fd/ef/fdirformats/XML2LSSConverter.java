@@ -21,9 +21,12 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintStream;
 import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.nio.file.FileAlreadyExistsException;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -42,10 +45,13 @@ public class XML2LSSConverter {
     FlatTableMaker converter;
     DelimitedOutputWriter writer;
 
-    public XML2LSSConverter() throws JAXBException, ParserConfigurationException {
-        this.converter = new FlatTableMaker(new SchemaReader(XML2LSSConverter.class.getClassLoader().getResourceAsStream("landinger.xsd")), new LandingsLeafNodeHandler());
-        converter.setNamingConvention(new DoNothingNamingConvention());
-        this.writer = new DelimitedOutputWriter("|", "\\", null, ".psv", "");
+    public XML2LSSConverter() throws JAXBException, ParserConfigurationException, MalformedURLException, IOException {
+        throw new UnsupportedOperationException("Need to fix handling of xsd in schemareader");
+        //InputStream schemainput = new URL("http://www.imr.no/formats/landing/landingdatav2.xsd").openStream();
+        //this.converter = new FlatTableMaker(new SchemaReader(schemainput), new LandingsLeafNodeHandler());
+        //converter.setNamingConvention(new DoNothingNamingConvention());
+        //this.writer = new DelimitedOutputWriter("|", "\\", null, ".psv", "");
+        
     }
 
     public static void main(String[] args) throws LSSProcessingException, IOException, FileNotFoundException, Exception {
