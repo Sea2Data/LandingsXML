@@ -33,6 +33,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.net.URL;
 import java.nio.file.FileAlreadyExistsException;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -80,8 +81,8 @@ public class LSS2XMLConverter {
         //args[2] = "iso-8859-1";
 
         if (args.length < 2) {
-            SchemaReader schemareader = new SchemaReader(LSS2XMLConverter.class.getClassLoader().getResourceAsStream("landinger.xsd"));
-            System.out.println("Converts LSS file to xml-format: " + schemareader.getTargetNameSpace());
+            //SchemaReader schemareader = new SchemaReader(new URL("http://www.imr.no/formats/landing/landingdatav2.xsd").openStream());
+            System.out.println("Converts LSS file to xml-format: ");
             System.out.println("Memory intensive for large files. Consider increasing heap size, java option: -Xmx<maxheapsize>, e.g: -Xmx8g");
             System.out.println("Usage: <LSS file> <xml file> <encoding> [--dummy]");
             System.out.println("Usage: Use 'system' for default encoding");
@@ -157,7 +158,7 @@ public class LSS2XMLConverter {
         OutputStream stream = new FileOutputStream(xml);
         BufferedOutputStream buf = new BufferedOutputStream(stream);
 
-        XMLStreamWriter xmlOut = XMLOutputFactory.newFactory().createXMLStreamWriter(buf);
+        XMLStreamWriter xmlOut = XMLOutputFactory.newFactory().createXMLStreamWriter(buf, encoding);
         xmlOut.setDefaultNamespace("l:http://www.imr.no/formats/landinger/v2");
         xmlOut.writeStartDocument();
         xmlOut.writeStartElement("l:http://www.imr.no/formats/landinger/v2", "l:Landingsdata");
