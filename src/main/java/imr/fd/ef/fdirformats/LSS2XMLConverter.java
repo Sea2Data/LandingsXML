@@ -160,7 +160,7 @@ public class LSS2XMLConverter {
 
         XMLStreamWriter xmlOut = XMLOutputFactory.newFactory().createXMLStreamWriter(buf, encoding);
         xmlOut.setDefaultNamespace("l:http://www.imr.no/formats/landinger/v2");
-        xmlOut.writeStartDocument();
+        xmlOut.writeStartDocument(encoding, "1.0");
         xmlOut.writeStartElement("l:http://www.imr.no/formats/landinger/v2", "l:Landingsdata");
         xmlOut.writeNamespace("l", "http://www.imr.no/formats/landinger/v2");
         JAXBContext context = JAXBContext.newInstance(SeddellinjeType.class);
