@@ -53,7 +53,7 @@
                                     </fileset>
                                 </schema>
                                 <schema>
-                                    <url>http://www.imr.no/formats/landing/landingdatav2.xsd</url>
+                                    <url>https://www.imr.no/formats/landinger/v2/landingerv2.xsd</url>
                                 </schema>
                             </schemas>
                             <forceRegenerate>false</forceRegenerate>
