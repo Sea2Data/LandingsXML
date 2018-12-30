@@ -8,7 +8,7 @@ Landings are salesnotes and landing notes delivered from FDIR to IMR.
 src/main/resources:
 
 * landinger_0.1.xsd: Specification of tentative format used in development of stox-reca. This is not compatible with current deliveries from FDIR.
-* landinger.xsd: revised format, compatible with LSS (format now delivered from FDIR.)
+* The revised format is no longer maintained in this repo, but available from https://www.imr.no/formats/landinger/v2/landingerv2.xsd
 
 ## Rationale for landinger.xsd ##
 * The format spesification was developed by Edvin and Hans. Since the underlying data model is maintained at FDIR and delivered as pipe delimited tabular files (LSS-files), we have attempted to keep all variable names as close to the LSS names as possible. Since these are in Norwegian, type names are also made to be in Norwegian. The LSS-files also comes with a thorough documentation.
@@ -18,7 +18,7 @@ src/main/resources:
 	* From the landing lines it is possible to aggregate data on a  sales-note / landing-note, but it is not common practice in the industry to make one sales-note identify one trip, or one delivery of product. One delivery are frequently split on several notes. It is therefore common to treat a landing as all landings from a vessel on one day. The attributes necessary for this aggregation is therefore also added as attributes to the landing lines, to facilitate lookup/filtering on landings.
 
 ## Implementation ##
-* Contains methods for converting from LSS to xml and vice-versa (src/main/LSS2XMLConverter.java)
+* Contains methods for converting from LSS to xml and vice-versa (src/main/LSS2XMLConverter.java). XML to LSS conversion relies on a project atempting to generically parse xsd's. Changes made to the xsd for landings after spec was delivered to NMD does not work with this tentative xsd parser. So the XML to LSS conversion does not work. See code in StoX for conversion to tabular format.
 * Contains methods for producing the tentative landings model that was used in development of stox-eca (src/main/LSS2XMLConverter.java)
 * Contains proof of concept for streamed filtering (src/main/FilterLandings.java)
 
