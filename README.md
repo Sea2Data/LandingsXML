@@ -22,6 +22,10 @@ src/main/resources:
 * Contains methods for producing the tentative landings model that was used in development of stox-eca (src/main/LSS2XMLConverter.java)
 * Contains proof of concept for streamed filtering (src/main/FilterLandings.java)
 
+## memory profiling ##
+* I have been experimenting with reducing the memory footprint when reading from xml through reconfigurations of the jaxb unmarshaller. For comparison with the basic jaxb configuration checkout bindings tagged basicjaxbmapping
+* Preliminary results for memory profiles can be found in ./memprofiling/
+
 ## Run ##
 * Currently LSS to xml conversion is done by running java - jar target/LandingsXML-1.0-SNAPSHOT-jar-with-dependencies.jar. Run without arguments for usage description.
 * Example for batch conversion is inclded as an R script in landingssets/populate_sets.R_

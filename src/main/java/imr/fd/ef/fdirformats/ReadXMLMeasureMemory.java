@@ -21,6 +21,7 @@ public class ReadXMLMeasureMemory {
     
     public static void main(String[] args) throws FileNotFoundException, JAXBException, XMLStreamException{
         String xml = args[0];
+        //String xml = "/Users/a5362/landingsets/xml/filtered/2015_sild.xml";
         System.out.println("Start parse: " + xml);
         long start = System.currentTimeMillis();
         LandingsdataType l = IO.parse(new FileInputStream(xml), LandingsdataType.class);
