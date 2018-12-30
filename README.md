@@ -29,6 +29,9 @@ src/main/resources:
 * Preliminary results for memory profiles can be found in ./memprofiling/
 * profile output filenames refer tags that identify the xjb bindings used (landings.xjb).
 
+## compressed files ##
+* Since the format is rather verbose, it is quite compressable. Example for reading compressed files as stream is provided in ZippedReadExample
+
 ## Run ##
 * Currently LSS to xml conversion is done by running java - jar target/LandingsXML-1.0-SNAPSHOT-jar-with-dependencies.jar. Run without arguments for usage description.
 * Example for batch conversion is inclded as an R script in landingssets/populate_sets.R_
