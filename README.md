@@ -22,15 +22,16 @@ src/main/resources:
 * Contains methods for producing the tentative landings model that was used in development of stox-eca (src/main/LSS2XMLConverter.java)
 * Contains proof of concept for streamed filtering (src/main/FilterLandings.java)
 
-## memory profiling ##
+## memory tweaking ##
 * I have been experimenting with reducing the memory footprint when reading from xml by reconfigurations of the jaxb unmarshaller to reuse repeated values for immutable types. For comparison with the basic jaxb configuration checkout bindings tagged basicjaxbmapping.
+* The idea is to make the unmarshaller keep track of previous values for the same type, and return a reference to that, rather than constructing a new object. For an example see XMLadapters StringConstantAdapter. For immutable objects this should be safe for most practical purposes (anything not relying on comparing objects for being the same instance).
 * This kind of reconfiguration should be transparent for the user, but reduce memory footprint when repetition is common, and increase it when repetition is not.
 * Examples are provided for immutable types String, Integer and LocalDate
 * Preliminary results for memory profiles can be found in ./memprofiling/
-* profile output filenames refer tags that identify the xjb bindings used (landings.xjb).
+* profile output filenames refer tags that identify the xjb bindings used (landings.xjb). For all herring landings 2015, the memory footprint was reduced to about 32% of the basic jaxb mapping.
 
 ## compressed files ##
-* Since the format is rather verbose, it is quite compressable. Example for reading compressed files as stream is provided in ZippedReadExample
+* Since the format is rather verbose, it is quite compressable. Example for reading compressed files as stream is provided in ZippedReadExample.
 
 ## Run ##
 * Currently LSS to xml conversion is done by running java - jar target/LandingsXML-1.0-SNAPSHOT-jar-with-dependencies.jar. Run without arguments for usage description.
