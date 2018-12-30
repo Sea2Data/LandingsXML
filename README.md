@@ -28,7 +28,7 @@ src/main/resources:
 * This kind of reconfiguration should be transparent for the user, but reduce memory footprint when repetition is common, and increase it when repetition is not.
 * Examples are provided for immutable types String, Integer and LocalDate
 * Preliminary results for memory profiles can be found in ./memprofiling/
-* profile output filenames refer tags that identify the xjb bindings used (landings.xjb). For all herring landings 2015, the memory footprint was reduced to about 32% of the basic jaxb mapping.
+* profile output filenames in ./memprofiling/ refer git tags that identify the xjb bindings used (landings.xjb). For all herring landings 2015, the memory footprint was reduced to about 32% of the basic jaxb mapping.
 
 ## compressed files ##
 * Since the format is rather verbose, it is quite compressable. Example for reading compressed files as stream is provided in ZippedReadExample.
