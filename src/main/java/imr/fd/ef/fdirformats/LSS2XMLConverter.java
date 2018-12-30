@@ -7,7 +7,6 @@ package imr.fd.ef.fdirformats;
 
 import LandingsTypes.v0_1.LandingdataType;
 import LandingsTypes.v1.ArtType;
-import XMLHandling.SchemaReader;
 import LandingsTypes.v1.DellandingType;
 import LandingsTypes.v1.FangstdataType;
 import LandingsTypes.v1.FartøyType;
@@ -33,7 +32,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.net.URL;
 import java.nio.file.FileAlreadyExistsException;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -226,7 +224,7 @@ public class LSS2XMLConverter {
     protected static LandingdataType convertTo_01(LandingsdataType landingsdata) throws ParseException, DatatypeConfigurationException {
         LandingsTypes.v0_1.ObjectFactory factory = new LandingsTypes.v0_1.ObjectFactory();
         LandingsTypes.v0_1.LandingdataType landingsdataOld = factory.createLandingdataType();
-        landingsdataOld.setFangstAar(landingsdata.getSeddellinje().get(0).getFangstår());
+        landingsdataOld.setFangstAar(BigInteger.valueOf(landingsdata.getSeddellinje().get(0).getFangstår()));
         landingsdataOld.setId("dummyId");
         LandingsTypes.v0_1.SluttseddelType lastseddel = factory.createSluttseddelType();
         lastseddel.setFiskeListe(factory.createFiskListeType());
@@ -352,9 +350,9 @@ public class LSS2XMLConverter {
         linje.setDokumentVersjonsnummer(this.parseBigInteger(row.get(this.indexMap.get("Dokument versjonsnummer"))));
         linje.setDokumentFormulardato(parseString(row.get(this.indexMap.get("Dokument formulardato"))));
         linje.setDokumentElektroniskDato(parseString(row.get(this.indexMap.get("Dokument elektronisk dato"))));
-        linje.setFangstår(this.parseBigInteger(row.get(this.indexMap.get("Fangstår"))));
+        linje.setFangstår(this.parseInteger(row.get(this.indexMap.get("Fangstår"))));
         linje.setHovedområdeKode(row.get(this.indexMap.get("Hovedområde (kode)")));
-        linje.setKystHavKode(this.parseBigInteger(row.get(this.indexMap.get("Kyst/hav (kode)"))));
+        linje.setKystHavKode(this.parseInteger(row.get(this.indexMap.get("Kyst/hav (kode)"))));
         linje.setLokasjonKode(parseString(row.get(this.indexMap.get("Lokasjon (kode)"))));
         linje.setSisteFangstdato(parseString(row.get(this.indexMap.get("Siste fangstdato"))));
         linje.setFartøynasjonalitetKode(parseString(row.get(this.indexMap.get("Fartøynasjonalitet (kode)"))));
@@ -367,7 +365,7 @@ public class LSS2XMLConverter {
 
     private DellandingType processDellanding(List<String> row) {
         DellandingType dell = this.factory.createDellandingType();
-        dell.setDellandingSignal(this.parseBigInteger(row.get(this.indexMap.get("Dellanding (signal)"))));
+        dell.setDellandingSignal(this.parseInteger(row.get(this.indexMap.get("Dellanding (signal)"))));
         dell.setForrigeMottakstasjon(parseString(row.get(this.indexMap.get("Neste mottaksstasjon"))));
         dell.setNesteMottaksstasjon(parseString(row.get(this.indexMap.get("Forrige mottakstasjon"))));
 
@@ -395,23 +393,23 @@ public class LSS2XMLConverter {
         FartøyType fartøy = this.factory.createFartøyType();
         fartøy.setBruttotonnasje1969(this.parseBigInteger(row.get(this.indexMap.get("Bruttotonnasje 1969"))));
         fartøy.setBruttotonnasjeAnnen(this.parseBigInteger(row.get(this.indexMap.get("Bruttotonnasje annen"))));
-        fartøy.setByggeår(this.parseBigInteger(row.get(this.indexMap.get("Byggeår"))));
+        fartøy.setByggeår(this.parseInteger(row.get(this.indexMap.get("Byggeår"))));
         fartøy.setFartøyGjelderFraDato(parseString(row.get(this.indexMap.get("Fartøy gjelder fra dato"))));
         fartøy.setFartøyGjelderTilDato(parseString(row.get(this.indexMap.get("Fartøy gjelder til dato"))));
         fartøy.setFartøyID(parseString(row.get(this.indexMap.get("Fartøy ID"))));
         fartøy.setFartøyfylke(parseString(row.get(this.indexMap.get("Fartøyfylke"))));
-        fartøy.setFartøyfylkeKode(this.parseBigInteger(row.get(this.indexMap.get("Fartøyfylke (kode)"))));
+        fartøy.setFartøyfylkeKode(this.parseInteger(row.get(this.indexMap.get("Fartøyfylke (kode)"))));
         fartøy.setFartøykommune(parseString(row.get(this.indexMap.get("Fartøykommune"))));
-        fartøy.setFartøykommuneKode(this.parseBigInteger(row.get(this.indexMap.get("Fartøykommune (kode)"))));
+        fartøy.setFartøykommuneKode(this.parseInteger(row.get(this.indexMap.get("Fartøykommune (kode)"))));
         fartøy.setFartøynasjonalitetBokmål(parseString(row.get(this.indexMap.get("Fartøynasjonalitet (bokmål)"))));
         fartøy.setFartøynavn(parseString(row.get(this.indexMap.get("Fartøynavn"))));
         fartøy.setFartøytypeBokmål(parseString(row.get(this.indexMap.get("Fartøytype (bokmål)"))));
         fartøy.setFartøytypeKode(parseString(row.get(this.indexMap.get("Fartøytype (kode)"))));
         fartøy.setLengdegruppeKode(parseString(row.get(this.indexMap.get("Lengdegruppe (kode)"))));
         fartøy.setLengdegruppeBokmål(parseString(row.get(this.indexMap.get("Lengdegruppe (bokmål)"))));
-        fartøy.setMotorbyggeår(this.parseBigInteger(row.get(this.indexMap.get("Motorbyggeår"))));
+        fartøy.setMotorbyggeår(this.parseInteger(row.get(this.indexMap.get("Motorbyggeår"))));
         fartøy.setMotorkraft(this.parseBigInteger(row.get(this.indexMap.get("Motorkraft"))));
-        fartøy.setOmbyggingsår(this.parseBigInteger(row.get(this.indexMap.get("Ombyggingsår"))));
+        fartøy.setOmbyggingsår(this.parseInteger(row.get(this.indexMap.get("Ombyggingsår"))));
         fartøy.setRadiokallesignalSeddel(parseString(row.get(this.indexMap.get("Radiokallesignal (seddel)"))));
         return fartøy;
     }
@@ -419,7 +417,7 @@ public class LSS2XMLConverter {
     private FiskerType processFisker(List<String> row) {
         FiskerType fisker = this.factory.createFiskerType();
         fisker.setFiskerkommune(parseString(row.get(this.indexMap.get("Fiskerkommune"))));
-        fisker.setFiskerkommuneKode(this.parseBigInteger(row.get(this.indexMap.get("Fiskerkommune (kode)"))));
+        fisker.setFiskerkommuneKode(this.parseInteger(row.get(this.indexMap.get("Fiskerkommune (kode)"))));
         fisker.setFiskernasjonalitetBokmål(parseString(row.get(this.indexMap.get("Fiskernasjonalitet (bokmål)"))));
         fisker.setFiskernasjonalitetKode(parseString(row.get(this.indexMap.get("Fiskernasjonalitet (kode)"))));
 
@@ -451,10 +449,10 @@ public class LSS2XMLConverter {
         LandingOgProduksjonType produksjon = this.factory.createLandingOgProduksjonType();
         produksjon.setLandingsdato(parseString(row.get(this.indexMap.get("Landingsdato"))));
         produksjon.setLandingsfylke(parseString(row.get(this.indexMap.get("Landingsfylke"))));
-        produksjon.setLandingsfylkeKode(this.parseBigInteger(row.get(this.indexMap.get("Landingsfylke (kode)"))));
+        produksjon.setLandingsfylkeKode(this.parseInteger(row.get(this.indexMap.get("Landingsfylke (kode)"))));
         produksjon.setLandingsklokkeslett(parseString(row.get(this.indexMap.get("Landingsklokkeslett"))));
         produksjon.setLandingskommune(parseString(row.get(this.indexMap.get("Landingskommune"))));
-        produksjon.setLandingskommuneKode(this.parseBigInteger(row.get(this.indexMap.get("Landingskommune (kode)"))));
+        produksjon.setLandingskommuneKode(this.parseInteger(row.get(this.indexMap.get("Landingskommune (kode)"))));
         produksjon.setLandingsnasjonBokmål(parseString(row.get(this.indexMap.get("Landingsnasjon (bokmål)"))));
         produksjon.setLandingsnasjonKode(parseString(row.get(this.indexMap.get("Landingsnasjon (kode)"))));
         produksjon.setProduksjonsanlegg(parseString(row.get(this.indexMap.get("Produksjonsanlegg"))));
@@ -518,12 +516,20 @@ public class LSS2XMLConverter {
         return new Long(l);
     }
 
+    private Integer parseInteger(String i) {
+        if (i.length() == 0) {
+            return null;
+        }
+        return Integer.parseInt(i);
+    }
+    
     private BigInteger parseBigInteger(String i) {
         if (i.length() == 0) {
             return null;
         }
         return new BigInteger(i);
     }
+
 
     private BigDecimal parseBigDecimal(String d) throws Exception {
         if (d.length() == 0) {
@@ -535,7 +541,7 @@ public class LSS2XMLConverter {
     private SalgslagdataType processSalgslag(List<String> row) {
         SalgslagdataType salgslag = this.factory.createSalgslagdataType();
         salgslag.setSalgslag(parseString(row.get(this.indexMap.get("Salgslag"))));
-        salgslag.setSalgslagID(this.parseBigInteger(row.get(this.indexMap.get("Salgslag ID"))));
+        salgslag.setSalgslagID(this.parseInteger(row.get(this.indexMap.get("Salgslag ID"))));
         salgslag.setSalgslagKode(parseString(row.get(this.indexMap.get("Salgslag (kode)"))));
         return salgslag;
     }

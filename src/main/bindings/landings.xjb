@@ -18,6 +18,20 @@
         <jxb:bindings>
             <namespace:prefix name="" />
         </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:attribute[@name='Fangstår' or @name='KystHav_kode']">
+            <jxb:property>
+                <jxb:baseType>
+                    <xjc:javaType name="java.lang.Integer" adapter="XMLadapters.IntegerConstantAdapter" />
+                </jxb:baseType>
+            </jxb:property>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='Landingskommune_kode' or @name='Landingsfylke_kode' or @name='Fiskerkommune_kode' or @name='Byggeår' or @name='Ombyggingsår' or @name='Motorbyggeår' or @name='Fartøykommune_kode' or @name='Fartøyfylke_kode' or @name='Dellanding_signal' or @name='SalgslagID']">
+            <jxb:property>
+                <jxb:baseType>
+                    <xjc:javaType name="java.lang.Integer" adapter="XMLadapters.IntegerConstantAdapter" />
+                </jxb:baseType>
+            </jxb:property>
+        </jxb:bindings>
         <jxb:bindings multiple="true" node="//xs:attribute[@name='Art_kode' or @name='Registreringsmerke_seddel' or @name='Redskap_kode' or @name='HovedgruppeRedskap_kode' or @name='Hovedområde_kode' or @name='Lokasjon_kode' or @name='Fartøynasjonalitet_kode']">
             <jxb:property>
                 <jxb:baseType>

@@ -1,0 +1,34 @@
+Start parse: /Users/a5362/landingsets/xml/filtered/2015_sild.xml
+End parse ...
+Time: 1s
+objc[56308]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/bin/java (0x1060824c0) and /Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre/lib/libinstrument.dylib (0x124eda4e0). One of the two will be used. Which one is undefined.
+# WARNING: Unable to attach Serviceability Agent. You can try again with escalated privileges. Two options: a) use -Djol.tryWithSudo=true to try with sudo; b) echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+Memory: LandingsTypes.v1.LandingsdataType@2d38eb89d footprint:
+     COUNT       AVG       SUM   DESCRIPTION
+      5696        48    273408   LandingsTypes.v1.ArtType
+      5696        32    182272   LandingsTypes.v1.DellandingType
+      5696        64    364544   LandingsTypes.v1.FangstdataType
+      5696       104    592384   LandingsTypes.v1.FartøyType
+      5696        40    227840   LandingsTypes.v1.FiskerType
+      5696        32    182272   LandingsTypes.v1.KvoteType
+      5696        64    364544   LandingsTypes.v1.LandingOgProduksjonType
+         1        24        24   LandingsTypes.v1.LandingsdataType
+      5696        48    273408   LandingsTypes.v1.MottakendeFartøyType
+      5696        32    182272   LandingsTypes.v1.MottakerType
+      5696        88    501248   LandingsTypes.v1.ProduktType
+      5696        32    182272   LandingsTypes.v1.RedskapType
+      5696        32    182272   LandingsTypes.v1.SalgslagdataType
+      5696       168    956928   LandingsTypes.v1.SeddellinjeType
+     53573        43   2308872   [C
+     16549        23    397168   [I
+         1     25000     25000   [Ljava.lang.Object;
+       195        16      3120   java.lang.Integer
+      7074        24    169776   java.lang.Long
+     53573        24   1285752   java.lang.String
+     22631        40    905240   java.math.BigDecimal
+     25462        40   1018480   java.math.BigInteger
+         1        24        24   java.util.ArrayList
+      5696        48    273408   java.util.HashMap
+      5697        32    182304   java.util.LinkedList
+     74048        24   1777152   java.util.LinkedList$Node
+    338549            12811984   (total)
