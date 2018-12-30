@@ -11,7 +11,7 @@ src/main/resources:
 * The revised format is no longer maintained in this repo, but available from https://www.imr.no/formats/landinger/v2/landingerv2.xsd
 
 ## Rationale for landinger.xsd ##
-* The format spesification was developed by Edvin and Hans. Since the underlying data model is maintained at FDIR and delivered as pipe delimited tabular files (LSS-files), we have attempted to keep all variable names as close to the LSS names as possible. Since these are in Norwegian, type names are also made to be in Norwegian. The LSS-files also comes with a thorough documentation.
+* The format spesification was developed by Edvin and Hans. Since the underlying data model is maintained at FDIR and delivered as pipe delimited tabular files (LSS-files), we have attempted to keep all variable names as close to the LSS names as possible. Since these are in Norwegian, type names are also made to be in Norwegian. The LSS-files also comes with a thorough documentation (in Norwegian).
 * Since the format is verbose and the volume of data large, we have tried to facilitate streamed-filtering. That is filtering that does not require looking forward or backward from the processed tag. This is reflected in the following ways in the data model:
 	* We have added relevant filtering parameters as attributes to each landing line (SeddellinjeType).
 	* We have attempted to group parameters in order to facilitate in stream selection of which fields to include. If vessel details are not of interest, they can be excluded by dropping elements sluttseddellinje/fartøy while reading data.
@@ -23,8 +23,11 @@ src/main/resources:
 * Contains proof of concept for streamed filtering (src/main/FilterLandings.java)
 
 ## memory profiling ##
-* I have been experimenting with reducing the memory footprint when reading from xml through reconfigurations of the jaxb unmarshaller. For comparison with the basic jaxb configuration checkout bindings tagged basicjaxbmapping
+* I have been experimenting with reducing the memory footprint when reading from xml by reconfigurations of the jaxb unmarshaller to reuse repeated values for immutable types. For comparison with the basic jaxb configuration checkout bindings tagged basicjaxbmapping.
+* This kind of reconfiguration should be transparent for the user, but reduce memory footprint when repetition is common, and increase it when repetition is not.
+* Examples are provided for immutable types String, Integer and LocalDate
 * Preliminary results for memory profiles can be found in ./memprofiling/
+* profile output filenames refer tags that identify the xjb bindings used (landings.xjb).
 
 ## Run ##
 * Currently LSS to xml conversion is done by running java - jar target/LandingsXML-1.0-SNAPSHOT-jar-with-dependencies.jar. Run without arguments for usage description.
