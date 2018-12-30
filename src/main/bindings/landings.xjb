@@ -46,6 +46,20 @@
                 </jxb:baseType>
             </jxb:property>
         </jxb:bindings>
+                <jxb:bindings multiple="false" node="//xs:attribute[@name='SisteFangstdato']">
+            <jxb:property>
+                <jxb:baseType>
+                    <xjc:javaType name="java.time.LocalDate" adapter="XMLadapters.LocalDateConstantAdapter" />
+                </jxb:baseType>
+            </jxb:property>
+        </jxb:bindings>
+        <jxb:bindings multiple="false" node="//xs:element[@name='Landingsdato']">
+            <jxb:property>
+                <jxb:baseType>
+                    <xjc:javaType name="java.time.LocalDate" adapter="XMLadapters.LocalDateConstantAdapter" />
+                </jxb:baseType>
+            </jxb:property>
+        </jxb:bindings>
         
         <jxb:bindings node="//xs:complexType[@name='LandingsdataType']">
             <inheritance:extends> HierarchicalData.HierarchicalData </inheritance:extends>

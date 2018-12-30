@@ -21,6 +21,7 @@ import LandingsTypes.v1.ProduktType;
 import LandingsTypes.v1.RedskapType;
 import LandingsTypes.v1.SalgslagdataType;
 import LandingsTypes.v1.SeddellinjeType;
+import XMLadapters.LocalDateConstantAdapter;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.File;
@@ -36,6 +37,7 @@ import java.nio.file.FileAlreadyExistsException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -221,7 +223,7 @@ public class LSS2XMLConverter {
         stream.close();
     }
 
-    protected static LandingdataType convertTo_01(LandingsdataType landingsdata) throws ParseException, DatatypeConfigurationException {
+    protected static LandingdataType convertTo_01(LandingsdataType landingsdata) throws ParseException, DatatypeConfigurationException, Exception {
         LandingsTypes.v0_1.ObjectFactory factory = new LandingsTypes.v0_1.ObjectFactory();
         LandingsTypes.v0_1.LandingdataType landingsdataOld = factory.createLandingdataType();
         landingsdataOld.setFangstAar(BigInteger.valueOf(landingsdata.getSeddellinje().get(0).getFangstår()));
@@ -246,11 +248,11 @@ public class LSS2XMLConverter {
             lastseddel.setFangstLok(seddellinje.getLokasjonKode());
             lastseddel.setFangstSone(seddellinje.getFangstdata().getSoneKode());
             lastseddel.setFartLand(seddellinje.getFartøynasjonalitetKode());
-            lastseddel.setSisteFangstDato(convertDate(seddellinje.getSisteFangstdato()));
+                lastseddel.setSisteFangstDato(convertDate((new XMLadapters.LocalDateConstantAdapter()).marshal(seddellinje.getSisteFangstdato())));
             if (seddellinje.getDokumentFormulardato() != null) {
                 lastseddel.setFormularDato(convertDate(seddellinje.getDokumentFormulardato()));
             }
-            lastseddel.setLandingsDato(convertDate(seddellinje.getProduksjon().getLandingsdato()));
+            lastseddel.setLandingsDato(convertDate((new XMLadapters.LocalDateConstantAdapter()).marshal(seddellinje.getProduksjon().getLandingsdato())));
             lastseddel.setFartRegm(seddellinje.getRegistreringsmerkeSeddel());
             lastseddel.setRedskap(seddellinje.getRedskapKode());
             lastseddel.setFartType(seddellinje.getFartøy().getFartøytypeKode());
@@ -328,7 +330,7 @@ public class LSS2XMLConverter {
      * @throws LSSProcessingException if not all row elements are processed at
      * the end
      */
-    protected SeddellinjeType processRow(List<String> row) throws LSSProcessingException, Exception {
+    protected SeddellinjeType processRow(List<String> row) throws LSSProcessingException, Exception{
         SeddellinjeType linje = this.factory.createSeddellinjeType();
         linje.setLinjenummer(this.parseLong(row.get(this.indexMap.get("Linjenummer"))));
         linje.setDellanding(this.processDellanding(row));
@@ -354,7 +356,7 @@ public class LSS2XMLConverter {
         linje.setHovedområdeKode(row.get(this.indexMap.get("Hovedområde (kode)")));
         linje.setKystHavKode(this.parseInteger(row.get(this.indexMap.get("Kyst/hav (kode)"))));
         linje.setLokasjonKode(parseString(row.get(this.indexMap.get("Lokasjon (kode)"))));
-        linje.setSisteFangstdato(parseString(row.get(this.indexMap.get("Siste fangstdato"))));
+        linje.setSisteFangstdato(parseDate(row.get(this.indexMap.get("Siste fangstdato"))));
         linje.setFartøynasjonalitetKode(parseString(row.get(this.indexMap.get("Fartøynasjonalitet (kode)"))));
         linje.setRegistreringsmerkeSeddel(parseString(row.get(this.indexMap.get("Registreringsmerke (seddel)"))));
         linje.setStørsteLengde(this.parseBigDecimal(row.get(this.indexMap.get("Største lengde"))));
@@ -389,7 +391,7 @@ public class LSS2XMLConverter {
         return fangst;
     }
 
-    private FartøyType processFartøy(List<String> row) throws Exception {
+    private FartøyType processFartøy(List<String> row) {
         FartøyType fartøy = this.factory.createFartøyType();
         fartøy.setBruttotonnasje1969(this.parseBigInteger(row.get(this.indexMap.get("Bruttotonnasje 1969"))));
         fartøy.setBruttotonnasjeAnnen(this.parseBigInteger(row.get(this.indexMap.get("Bruttotonnasje annen"))));
@@ -447,7 +449,7 @@ public class LSS2XMLConverter {
 
     private LandingOgProduksjonType processProduksjon(List<String> row) {
         LandingOgProduksjonType produksjon = this.factory.createLandingOgProduksjonType();
-        produksjon.setLandingsdato(parseString(row.get(this.indexMap.get("Landingsdato"))));
+        produksjon.setLandingsdato(parseDate(row.get(this.indexMap.get("Landingsdato"))));
         produksjon.setLandingsfylke(parseString(row.get(this.indexMap.get("Landingsfylke"))));
         produksjon.setLandingsfylkeKode(this.parseInteger(row.get(this.indexMap.get("Landingsfylke (kode)"))));
         produksjon.setLandingsklokkeslett(parseString(row.get(this.indexMap.get("Landingsklokkeslett"))));
@@ -557,6 +559,11 @@ public class LSS2XMLConverter {
         art.setHovedgruppeArtKode(parseString(row.get(this.indexMap.get("Hovedgruppe art (kode)"))));
 
         return art;
+    }
+
+    private LocalDate parseDate(String get) {
+        LocalDateConstantAdapter ld = new LocalDateConstantAdapter();
+        return ld.unmarshal(get);
     }
 
     //keeps track of which keys has been accessed, so that we can ensure that all columns have been processed.
